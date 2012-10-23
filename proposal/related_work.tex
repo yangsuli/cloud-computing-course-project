@@ -1,0 +1,50 @@
+\section{Related Work}
+\label{section:related_work}
+
+As stated, the Web Storage interface is relatively new and little has been published to date regarding usage or performance.  While tutorials for simple didactic applications are easy to find (such as page counters or single-field "to do" lists), it has been more difficult to find standalone sites advertising their use of Web Storage in practice.  We suspect two major factors at work: 1) the novelty, both in terms of developer practices as well as the need to ensure compatibility with older browsers which do not support HTML5 standards, and 2) alternative technologies geared towards data-intensive operations.  Web Storage promises a simple interface using string-based, key-value pairs, but developers seeking client-stored functionality closer to that of full-featured database (such as indices, range queries, data typing, etc.) may opt instead for the W3C IndexedDB API (similarly, key-value based).  
+
+Discussion in the academic sphere has been limited, as well.  The bulk of the research on key-value stores has focused on large scale, distributed applications like Amazon’s Dynamo \cite{amazon:dynamo}, and not on typical browser applications. Nonetheless, some relevant work exists on both uses of Web Storage and key-value stores in applications.
+
+\subsection{Web Storage Applications}
+\label{subsection:web_storage}
+Many of the potential applications for Web Storage are immediately obvious. The specification itself suggests using them to augment cookies, or to act as a client side cache for documents and email \cite{w3c:webstorage}.  A survey conducted in early 2011 of top websites, including Bing, Google, Amazon, Twitter, Facebook, etc. concluded that only two of the sites surveyed were using LocalStorage objects to cache page data for quicker access via mobile devices, those being Google and Bing Search. \cite{case:bing_google}   There exists, however, a small body of research proposing more sophisticated advantages in caching.  Sync Kit \cite{benson:sync_kit} describes a particularly advanced implementation, wherein clients cache information from a server database and use Javascript templates to dynamically generate web pages from this data.  In effect, they extend web storage to cache non-user-generated data, and create several constructs to help avoid some of the traditional problems with database caching. While this paper relies on a full relational database on the client side (from which W3C has moved away \cite{w3c:websql}), some of the proposed techniques could be implemented with the key-value store that Web Storage provides, either by simplifying schemas or by using relational to key-value mappings.
+ 
+Not all proposals revolve around caching, however.  Cannon and Wohlstadter \cite{cannon:object_persistence} propose a system that uses Web Storage to persist client side Javascript objects that have been serialized with JSON. While this paper provides some benchmarking results, these center around serialization, and thus are not applicable to our work.
+
+\subsection{Key-Value Store Performance}
+\label{subsection:key-value_store_performance}
+
+Very little work has been done that investigates SQLite's performance as a key 
+value
+store.  The SQLite website has some analysis, but it relies on an outdated 
+version and compares itself to PostgreSQL and MySQL \cite{sqlite:speed}.  It
+uses very simple workloads for its tests, many of which are closer
+to typical key-value store operations than a standard database workload (bulk 
+insertions
+into a single table, updates on an indexed term, selections on an indexed term,
+etc.).  The results seem to indicate decent potential in this role, though it
+is difficult to trust them.
+
+Several more current SQLite benchmarks exist. Owens et. al \cite{owens:sqlite-berkeley-db}
+compare SQLite's performance to the SQL API of Oracle's Berkeley DB, a popular
+key-value store.  Their results show that, for a write-heavy workload, 
+Berkeley DB outperforms SQLite
+dramatically as the number of active writing threads rises, primarily because
+SQLite locks its entire database file when updating.  While Javascript does not
+allow multiple threads in the same application to access Web Storage \cite{cannon:object_persistence}, parallel access could
+still be an issue, since the browser may have multiple tabs with applications
+that attempt to simultaneously access a local storage instance.
+
+Gokhale et. al \cite{gokhale:kvzone} also analyze SQLite's performance, 
+comparing it to that of Berkeley DB, Tokyo Cabinet, and Alphard-FS, a 
+key-value store developed for the paper.  They find that, for both write-only
+and mixed read-write workloads, SQLite performs an order of magnitude worse.
+Thus, there is likely to be room for improvement within web storage, especially
+as local storage datasets start to grow large.
+
+However, both of the above benchmarks focus on write-heavy workloads with large
+datasets.  They do not
+consider aspects which are specific for browser data persistence: relatively 
+small data size, simultaneous access to multiple data stores, initital bulk 
+loading of data for preemptive web caching with subsequent small insertions
+and evictions, and relatively small, but frequent individual reads. 

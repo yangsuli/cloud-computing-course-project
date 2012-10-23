@@ -1,0 +1,85 @@
+\section{Computation Performance Measurements}
+\label{section:compute}
+
+In this section we try to stress the computing power provided by public cloud. The benchmark we used is SPECjvm2008, which focus the performance of a single application running on a Java Virtual Machine. The SPECjvm2008 workload mimics a variety of common general purpose application computations. The benchmark result reflects the performance of the (virtualized) hardware processor and memory subsystem, but has minimal dependency on file I/O and includes no remote network I/O. We chose this benchmark over some traditional computing benchmark such as SPECCPU2006 because it reassemble a typical application deployment in cloud: an application running on some kind of framework, and relying on the framework to provide some common services. Detailed documentation of SPECjvm2008 can be found in the SPEC website.
+
+We run SPECjvm2008 on three Amazon EC2 instances (small, medium and large) and one Microsoft Azure small instance. The detailed configuration of each instance is listed in Table \ref{table:configuration}.
+
+\begin{table*}
+\resizebox{\textwidth}{!}{%
+ \centering
+  \begin{tabular} {| l | l | l | l | l | l |}
+\hline
+Instance Type & CPU & Memory & Root Device Size & Operating System & Java Version \\
+\hline
+Amazon EC2 Small Instance (m1.small) & 1ECU 1 Core & 1.7 GB & 8GB & Ubuntu Server 12.04.1 LTS & jre1.5.0-22 \\
+Amazon EC2 Medium Instance (m1.medium) & 2ECUs 2Core & 3.7 GB & 8GB & Ubuntu Server 12.04.1 LTS & jre1.5.0-22 \\
+Amazon EC2 Large Instance (m1.large) & 4ECUs 2Cores & 7.5 GB &  8GB & Ubuntu Server 12.04.1 LTS & jre1.5.0-22 \\
+Microsoft Azure Small Instance & AMD Opteron(tm) Processor 4171 HE 1Core & 1.75GB & 27GB & Ubuntu Server 12.04.1 LTS & jre1.5.0-22 \\
+\hline
+\end{tabular}}
+\caption{Detailed configuration of each instance used for measurement.}
+\label{table:configuration}
+\end{table*}
+
+Note that for Amazon EC2 we report the CPU information in terms of ECU(EC2 Compute Unit), which is Amazon's abstraction of 1 Unit of computer resources, not real CPU cores. Amazon strives to deliver consistent and predictable performance per ECU. One ECU provides the equivalent CPU capacity of a 1.0-1.2 GHz 2007 Opteron or 2007 Xeon processor, but may be realized by other CPUs. In our experiments, the 2ECUs in EC2 medium instance are in fact realized by a single core 2GHz Inter Xeon CPU; even though by Amazon's definition, it has two "cores".
+
+\subsection{Results}
+\label{subsection:compute-results}
+The results of running SPECjvm2008 on these instances are shown in \ref{figure:compute-results-small}, \ref{figure:compute-results-medium}, \ref{figure:compute-results-large} and \ref{figure:compute-results-azure}. We also reported the composite results of 11 benchmark runs in Table \ref{table:compute-results} for an easier comparison. 
+
+
+\begin{table*}
+\center
+  \begin{tabular} {| l | l |}
+\hline
+Instance Type & SPECjvm2008 Base composite result (ops/m) \\
+\hline
+Amazon EC2 Small Instance (m1.small) & 12.69 \\
+Amazon EC2 Medium Instance (m1.medium) & 25.62 \\ 
+Amazon EC2 Large Instance (m1.large) & 23.54 \\
+Microsoft Azure Small Instance & 12.38  \\
+\hline
+\end{tabular}
+\caption{SPECjvm2008 base benchmark results (composite score of 11 benchmarks)}
+\label{table:compute-results}
+\end{table*}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=.4]{plots/spec-small.eps}
+\end{center}
+\caption{SPECjvm2008 Base benchmark results for Amazon EC2 small instance}
+\label{figure:compute-results-small}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=.4]{plots/spec-medium.eps}
+\end{center}
+\caption{SPECjvm2008 Base benchmark results for Amazon EC2 medium instance}
+\label{figure:compute-results-medium}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=.4]{plots/spec-large.eps}
+\end{center}
+\caption{SPECjvm2008 Base benchmark results for Amazon EC2 large instance}
+\label{figure:compute-results-large}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=.4]{plots/spec-azure.eps}
+\end{center}
+\caption{SPECjvm2008 Base benchmark results for Microsoft Azure small instance}
+\label{figure:compute-results-azure}
+\end{figure}
+
+\subsection{Discussion}
+\label{section:benchmarking-discussion}
+From the results we could see that the composite scores of Amazon EC2 small instance and Microsoft Azure small instance are roughly equivalent. However, they behave quite differently on each individual benchmark. EC2 small instance has significantly better performance in xml related workload, while Azure small instance outperforms EC2 in compiler and compress workload. This suggests that Microsoft and Amazon's cloud virtual instance, while comparable in numbers of CPU frequency, memory size and cost, have quite different computing performance characteristics. This may result from different cloud providers' different choices of CPU (Intel Xeon for EC2, and AMD Opeteron for Azure in our case), and other underlying hardware. So we might need to think carefully on which cloud service to use before we migrate our workload to cloud, as different workloads favors different cloud offerings. 
+
+We could also see that EC2 medium instance, which has twice as many ECUs and as much memory than EC2 small instance, does outperform the small instance by roughly two times in the benchmark run, which matches our expectation. However, with EC2 large instance we didn't observe such a nice linear performance scaling. EC2 large instance gets roughly the same composite score as the medium instance, and even performs significantly worse in some individual benchmarks, such as xml and serial. Further investigation is required to identify the reason of this. But I think it is related to the fact that instead of having higher frequency cores, the large instance has multiple cores of the same frequency of the medium instances, and those benchmarks are single threaded and can not utilize multiple cores effectively. One lesson learned from those experiment results is that larger instance does not automatically translate into better performance. You have to consider whether your application could benefit from the additional computation power, e.g., the additional cores.
