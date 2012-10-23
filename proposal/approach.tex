@@ -1,0 +1,45 @@
+\section{approach}
+\label{sec:approach}
+
+\subsection {\bf Testbed Setup}
+We plan to run several kinds of workload on WAIL machines to collect traces. Currently we could use up to 12 machines with 3-tier tree topology. We could also change the network topology and the oversubscription factor. 
+
+\subsection {\bf Measurement}
+We plan to run a couple of representative Hadoop workloads on HDFS and collect network/storage traces.
+
+We try to answer this question -- how are storage and network behaviors related with each other? For example,
+1) Is the bursty network traffic correlated with bursty storage activity at the same time? 
+2) How does storage background traffic influence the normal data transfer? How does the normal traffic relate to storage activity?
+3) How does the network topology and workload type affect the above network/storage interaction?
+
+\begin{itemize}
+	\item {\bf Metrics}
+We need to do some instrumentation in Hadoop and HDFS for collecting traces.
+
+Overall, we care about the job completion time. 
+
+For HDFS/storage, we plan to measure the following metrics:
+1) Disk-level behavior (bandwidth, IOPS) and HDFS-level behavior (throughput, I/O request rate)
+2) Bandwidth/throughput v.s. block size
+
+For network, we plan to measure the following metrics:
+1) Flow duration, distribution
+2) Flow rate, distribution
+
+	\item {\bf Workloads}
+We consider some representative Hadoop workloads:
+1) K-means: CPU intensive
+2) Terasort: Moderate CPU, Moderate I/O
+3) Grep: Moderate CPU and small I/O
+	
+	\item {\bf Scenarios}
+1) Single workload
+2) Mixed workload
+
+\end{itemize}
+
+\subsection{\bf Initial Simulations}
+After analyzing traces, we expect to come up with some heuristics and conduct initial simulations to demonstrate the benefits of network-aware storage. Some of the heuristics we have in mind now are:
+1) When reading blocks, if the data locality cannot be met, rather than randomly schedule a map task with the nearest input replica, we could choose a map task with the replica which it could fetch most quickly. When writing blocks, rather than randomly place a replica on a node in remote rack, we may also take how congested the link is into consideration when choosing the replica location/path to the destination.
+2) Put off HDFS block writes. We may put off HDFS writes of some replicas of a block when some links are heavy loaded.
+
