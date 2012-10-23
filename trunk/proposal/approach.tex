@@ -1,5 +1,28 @@
 \section{approach}
 \label{sec:approach}
+The basic idea would be closely measuring the behavior/interaction between the storage and network layer, and understand the correlations. We will aslo change different aspect of network, and see how that will (or will not) affect storage performance/behavior.
+
+Ideally, given a current network conditon (say, in a graph G), we want to know the utility function U(G) for storage system (this utility could have muliple dimensions, say, lentency, throughput, IOPS, etc.).Of course, this function will depend on what's going on in the storage system, too. So it is really U(G,S), where G is the network condtion and S is the storage  condition. How to meanfully define U, G and S and build an accurate model might be beyond the scope of this course project, though. So we try to break this know and ask the following questions, all of which would be useful when doing optimizations described in section \ref{section:motivation}.
+
+//TODO: this is something we could use AA's insight, and maybe Remzi's????
+1. What network traffic is storage system responsible for? What's the charactertics of such traffic. How does it compare with other traffic going on in the network?
+
+2. How would storage system create congested link? Could that be avoided given better knowledge of the network and the storage system? If not, could it be predicted? What's the link utilization properties of storage system.
+
+3. How fast does the pattern of the network usage of storage system change? How predictable are these changes?
+
+4. When is the storage system senstive to latency? When is it senstive to bandwidth/throuput? When is it not senstive to the performance of network and we could use the network to do other important stuff? 
+
+5. Where (that is, which link, or between which nodes) is the storage senstive to latnecy/bandwidth? Where is it not sensitive?
+
+6. Can we differiate different kinds of communication in a storage system (like blocking reading/v.s migration), either by inferring, or by explictly passing hints; and give different level of QoS to different communications, thus improve performance?
+
+7. Any more? Let's ask AA or Remzi
+
+
+
+
+
 
 \subsection {\bf Testbed Setup}
 We plan to run several kinds of workload on WAIL machines to collect traces. Currently we could use up to 12 machines with 3-tier tree topology. We could also change the network topology and the oversubscription factor. 
