@@ -5,7 +5,7 @@ The basic idea would be closely measuring the behavior/interaction between the s
 Ideally, given a current network conditon (say, in a graph G), we want to know the utility function U(G) for storage system (this utility could have muliple dimensions, say, lentency, throughput, IOPS, etc.).Of course, this function will depend on what's going on in the storage system, too. So it is really U(G,S), where G is the network condtion and S is the storage  condition. How to meanfully define U, G and S and build an accurate model might be beyond the scope of this course project, though. So we try to break this know and ask the following questions, all of which would be useful when doing optimizations described in section \ref{section:motivation}.
 
 //TODO: this is something we could use AA's insight, and maybe Remzi's????
-1. What network traffic is storage system responsible for? What's the charactertics of such traffic. How does it compare with other traffic going on in the network?
+1. What network traffic is storage system responsible for? What's the charactertics of such traffic (e.g., flow rate distribution? flow duration distribution). How does it compare with other traffic going on in the network?
 
 2. How would storage system create congested link? Could that be avoided given better knowledge of the network and the storage system? If not, could it be predicted? What's the link utilization properties of storage system.
 
@@ -17,43 +17,46 @@ Ideally, given a current network conditon (say, in a graph G), we want to know t
 
 6. Can we differiate different kinds of communication in a storage system (like blocking reading/v.s migration), either by inferring, or by explictly passing hints; and give different level of QoS to different communications, thus improve performance?
 
-7. Any more? Let's ask AA or Remzi
+7. When is I/O the performance bottleneck? And when is network the performance bottleneck? Are those two correlated? Could we do something to better avid those bottlenecks?
 
+8. Is the bursty network traffic correlated with bursty storage activity at the same time? 
 
+9. How does storage background traffic influence the normal data transfer? How does the normal traffic relate to storage activity?
+
+10. How does the network topology and workload type affect the above network/storage interaction?
+
+11. Any more? Let's ask AA or Remzi on this????
 
 
 
 
 \subsection {\bf Testbed Setup}
-We plan to run several kinds of workload on WAIL machines to collect traces. Currently we could use up to 12 machines with 3-tier tree topology. We could also change the network topology and the oversubscription factor. 
+Ideally, we would like to conduct our measurement in a real data center storage system deployed on a real datacenter network. Since that’s not possible, how do we setup our testbed to make sure our results are still relevant? 
+We choose HDFS to study, as it is a typical storage system in many data centers, and it is open sourced. We will deploy HDFS on a 12 nodes network. We plan to run several kinds of workload on WAIL machines to collect traces. Currently we could use up to 12 machines with 3-tier tree topology. We could also change the network topology and the oversubscription factor. 
+(Ask AA or Remzi: how to configure our testbed to best reflect data center storage system????)
+
+However, we need to deploy HDFS in a typical 
 
 \subsection {\bf Measurement}
 We plan to run a couple of representative Hadoop workloads on HDFS and collect network/storage traces.
 
-We try to answer this question -- how are storage and network behaviors related with each other? For example,
-1) Is the bursty network traffic correlated with bursty storage activity at the same time? 
-2) How does storage background traffic influence the normal data transfer? How does the normal traffic relate to storage activity?
-3) How does the network topology and workload type affect the above network/storage interaction?
+On the network level, we plan to collect the link utilization/congestion statistics and the flow charateritics(rate, duration, etc.) of storage traffic, the network topology, traffic matrices and rechability matrices. It is possible to take other network charactetistics into account, like network coding, middleboxes placed within the network, but we defer that into future network. (Anyting else? Ask AA?)
+
+Of course, we also need a way to differeiate HDFS traffic from other traffic, and also different kind of communication between HDFS nodes. We plan to instrument HDFS and the Linux network stack so that every packet has a special value in a particular field, indicating whether it is HDFS traffic, and what kind of HDFS traffic it is.
+
+On the storage level, we plan to monitor the disk usage (bandwidth, IOPS), and also record key events happening in HDFS (e.g., when does HDFS accept a write, when does it do block migration.) We will record GFS performance, such as throuput, respond time,request rate too. (Anyting else? Ask AA or Remzi)
+
 
 \begin{itemize}
-	\item {\bf Metrics}
-We need to do some instrumentation in Hadoop and HDFS for collecting traces.
+	\item {\bf Metrics and Workloads}
 
-Overall, we care about the job completion time. 
+Overall, we care about I/O throughput, latency and the job completion time. (Ask AA or Remzi: what kind of storage performance metric should we use?)
 
-For HDFS/storage, we plan to measure the following metrics:
-1) Disk-level behavior (bandwidth, IOPS) and HDFS-level behavior (throughput, I/O request rate)
-2) Bandwidth/throughput v.s. block size
-
-For network, we plan to measure the following metrics:
-1) Flow duration, distribution
-2) Flow rate, distribution
-
-	\item {\bf Workloads}
 We consider some representative Hadoop workloads:
 1) K-means: CPU intensive
 2) Terasort: Moderate CPU, Moderate I/O
 3) Grep: Moderate CPU and small I/O
+(Ask AA or Remzi: what kind of workload? I think we should start with an I/O intensive workload. But let's ask AA or Remzi for any better insights! Maybe ask AA or Remzi about using traces instead of artificial workloads?)
 	
 	\item {\bf Scenarios}
 1) Single workload
@@ -62,7 +65,13 @@ We consider some representative Hadoop workloads:
 \end{itemize}
 
 \subsection{\bf Initial Simulations}
+With these traces we collected, we also plan to simulated some potetential optimzations mentioned in section \ref{section:motivation} by replaying these traces in different, network/storage aware style, and measure how each optimzation will affect the system performance.
+
+\usepackage{comment}
+\begin{comment}
 After analyzing traces, we expect to come up with some heuristics and conduct initial simulations to demonstrate the benefits of network-aware storage. Some of the heuristics we have in mind now are:
+I think we listed potential optimzations in motivation section, so don't need to repeat here.
 1) When reading blocks, if the data locality cannot be met, rather than randomly schedule a map task with the nearest input replica, we could choose a map task with the replica which it could fetch most quickly. When writing blocks, rather than randomly place a replica on a node in remote rack, we may also take how congested the link is into consideration when choosing the replica location/path to the destination.
 2) Put off HDFS block writes. We may put off HDFS writes of some replicas of a block when some links are heavy loaded.
+\end{comment}
 
