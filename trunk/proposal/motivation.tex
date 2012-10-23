@@ -1,0 +1,20 @@
+\section{Motivation}
+\label{section:motivation}
+
+Let's look more closely and motivate our work with a more concrete example. For that purpose we will consider GFS, and its open source version HDFS \cite{hdfs}. GFS and its variation has been widely adapted in a lot of data centers, and many other storage system, e.g, Microsoft Azure cloud storage \cite{azure-storage}, adopted similar design options with GFS. We will briefly describe how GFS uses network, and identify potential performance boost we could get using an understanding of the nature of the interaction of GFS and network.
+
+A GFS cluster consists of a single master and multiple chunkservers and is accessed by mulitple clients. The size of a GFS cluster could be in order of thousands. Some major GFS network communication include:
+1. client will ask the master for chunck metadata information and master will reply. The data exchanged this way is typically small (FIXME: what size typically?)
+2.Master will request chunk location information from chunkservers at startup, and periodically thereafter.
+3.Master will backup its operation log in server backup machines, this will be of moderate size.
+4.Master will grant and renew leases for each active chunk to the chunk servers.
+5.Client will push data to chunk servers to write. The data changeed here is typically large, at least 64M in size in a typical setting.
+6.Chunk server will pipeline this write to different servers for replication, in a chain which is chosen freely by the system. Where to replicate these data is also within control of the system.
+7.Chunk server will transfer data to client when client performs reading. GFS is free to choose from which replica to serve the client. This is typically large, persistent data transfer too.
+8.Client and chunk servers will exchange control message to ensure ordering in the read/write process, for consistency purpose. These messages are small but delivering them in low latency will be critical for performance.
+9.GFS will do re-replication and rebalancing, either because a replica of a chunk is unavaible, or
+
+
+
+
+GFS reduce network overhead by keep a persistent TCP connection long? Prabablly not very important?
