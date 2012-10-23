@@ -1,0 +1,52 @@
+\section{Persistent Storage Measurements}
+\label{section:storage}
+
+Public cloud providers typically offer persistent storage options at different abstraction levels. For example, Amazon offers key-value store (S3), block level storage (EBS) and database level storage (DynamoDB). Here we constraint our study on block level storage performance, because this is the default storage option for EC2 instance, and also is quite popular.
+
+For block storage, we are interested in the bandwidth and latency, and weather the virtualized storage is able to deliver stable service even though it is multiplexed across many users. Particularly, Amazon recently announced Provisioned IOPS for its Elastic Block Storage service, which is designed to deliver predictable performance for I/O sensitive workloads. With Provisioned IOPS, Amazon EBS guarantee to sustain certain number of IO operations per second (IOPS) for the lifetime of the storage volume, while standard EBS delivers approximately 100 IOPS on a best effort basis. Thus it is of particular interest to compare the I/O performance variation of standard and Provision IOPS EBS service.
+
+Due to time constraints, our study on I/O performance is restricted to Amazon EBS service. To measure the I/O performance, we launched a set of synthetic works (4K random read/write, 4K and 4M sequential read/write) on both standard and Provision 100 IOPS EBS volume. All the volumes are 10G in size. Those volumes are attached to instances which are configured as in Table \ref{table:configuration}. Those workloads were repeated three times at different time of a day, aiming at catching the performance variation due to request burst in busy hours. 
+
+
+\begin{table*}
+\center
+   \begin{tabular} { | l | l | l | l | l | l | l |}
+\hline
+&\multicolumn{3}{| c |}{4K random read}& \multicolumn{3}{| c |}{4K random write}  \\
+\hline
+& run 1 & run 2 & run 3 & run 1 & run 2 & run 3 \\
+\hline
+Standard EBS on small EC2 instance & 70.87  & 48.07 & 45.31 &118.94 & 40.74& 40.11 \\ 
+Provision IOPS EBS on small EC2 instance & 63.34 & 100.56 & 82.66 & 84.32&100.46 & 82.72\\ 
+Standard EBS on large EC2 instance & 81.79 & 91.75 & 94.35 & 70.28& 76.12 & 78.22 \\ 
+Provision IOPS EBS on large EC2 instance & 100.51 & 100.56 & 100.50 & 100.46 & 100.53 & 100.48 \\ 
+\hline
+\end{tabular}
+\caption{Random I/O performance of Amazon EBS (in IOPS)}
+\label{table:io-random}
+\end{table*}
+
+\begin{table*}
+\resizebox{\textwidth}{!}{%
+\center
+   \begin{tabular} { | l | l | l | l | l | l | l |}
+\hline
+& \multicolumn{3}{| c |}{4M sequential read} & \multicolumn{3}{| c |}{4M sequential write}  \\
+\hline
+& run 1 & run 2 & run 3 & run 1 & run 2 & run 3 \\
+\hline
+Standard EBS on small EC2 instance & 34.27 mb/s & 33.03 mb/s & 35.08 mb/s & 25.53 mb/s  & 25.40 mb/s& 24.66 mb/s \\ 
+Provision IOPS EBS on small EC2 instance & 7.35 mb/s  & 7.47 mb/s & 7.42 mb/s & 7.00 mb/s & 7.03 mb/s& 7.02 mb/s\\ 
+Standard EBS on large EC2 instance & 54.65 mb/s & 54.05 mb/s & 56.64 mb/s & 40.17 mb/s & 40.82 mb/s  & 42.12 mb/s\\ 
+Provision IOPS EBS on large EC2 instance & 7.00 mb/s  & 7.18 mb/s & 7.20 mb/s & 7.20 mb/s & 6.93 mb/s & 7.24 mb/s\\ 
+\hline
+\end{tabular}}
+\caption{Sequential I/O performance of Amazon EBS}
+\label{table:io-sequential}
+\end{table*}
+
+The measurement results are reported in Table \ref{table:io-random} and Table \ref{table:io-sequential}. For random access we issue 4K read or write request randomly directly on the block device volume (i.e., I/O on /dev/*) for 5 minutes and measure the average operations performed per second we get. For sequential access, we issue 4M read or write request sequentially on the volume and measure the bandwidth obtained.
+
+From these results we could several observations. First, in terms of random I/O performance, measured by I/O operations per second, standard EBS service has a performance variation at different time of day. Though sometimes it could achieve 100 IPOS, sometimes we only get 40 IOPS. So applications sensitive to I/O latency should choose Provision IOPS EBS over standard service. Provision IOPS offers stable, over 100 IOPS in all of our three runs on EC2 large instance. On EC2 small instances, sometimes we do see lower than 100 IOPS, but this might be attributed to small instance's limited computation or memory capability. However, for sequential I/O, standard EBS constantly offers 5-7 folds better throughput than Provision IOPS EBS. This might be attributed to the fact that Provision IOPS EBS is specially designed to optimize random I/O but not sequential I/O performance. For application which cares about I/O throughput, standard EBS seems to be a much better and cheaper choice. Both random and sequential I/O performance is significantly worse than a typical IDE disk could deliver, thus application on the cloud should pay more attention on I/O constraints. Finally, noticing the different I/O performance on small and large instances despite the same underlying storage, we could conclude that I/O rate sometimes is limited by CPU/memory subsystem, at least for small instances.
+
+
