@@ -16,15 +16,10 @@ Ideally, given a current network conditon (say, in a graph G), we want to know t
 5. Is the bursty network traffic correlated with bursty storage activity at the same time? 
 
 
-
-
-
-
 \subsection {\bf Testbed Setup}
 Ideally, we would like to conduct our measurement in a real data center storage system deployed on a real datacenter network. Since that is not possible, how do we setup our testbed to make sure our results are still relevant? 
 We choose HDFS to study, as it is a typical storage system in many data centers, and it is open sourced. We will deploy HDFS on a 12 nodes network. We plan to run several kinds of workload on WAIL machines to collect traces. Currently we could use up to 12 machines with 3-tier tree topology. We could also change the network topology and the oversubscription factor. 
 
-However, we need to deploy HDFS in a typical 
 
 \subsection {\bf Measurement}
 We plan to run a couple of representative Hadoop workloads on HDFS and collect network/storage traces.
