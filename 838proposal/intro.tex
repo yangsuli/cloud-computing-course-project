@@ -9,7 +9,7 @@ However, very little research has been done on how network/storage system's inte
 
 %(FIXME: I hope I am confident with this assertion that no study has been done. Otherwise it would be embrassing....). 
 
-In fact, a lot of storage performance study assume a good enough network so that network is never a bottleneck, such as \cite{shedule-storage-system}, \cite{pisces}, and \cite{flat-datacenter-storage}.Traditional network optimization for data-intensive applications also thinks little about disk I/O and usually assume data can be accomodated in memory and accessed fast.
+In fact, a lot of storage performance study assume a good enough network so that network is never a bottleneck, such as \cite{schedule-storage-system}, \cite{pisces}, and \cite{flat-datacenter-storage}.Traditional network optimization for data-intensive applications also thinks little about disk I/O and usually assume data can be accomodated in memory and accessed fast.
 
 This is partially because traditionally most storage systems are deployed on private, dedicatea, stable and over-provisioned network.
  %(FIXME: prove this! At least give a few examples, better cite some literature.)
@@ -27,7 +27,7 @@ However, in mordern data centers, the assumption of private, stable, over-provis
 SDN enables much finer control over network. We could setup and tear down routes in a very small time scale, make centralized decision on a per flow basis. More extreme data center solutions could even add baindwidth/cable on the fly, either through optical switch \cite{c-through}, \cite{helios}, or through wireless network \cite{flyaways}. With such rich choice on route/bandwidth/latency, there are much more flexiblity on how storage system could use the underlying network wisely to improve its performance.
 
 \item {}
-With the promising future of virutal data center over real data center, e.g, CloudNaaS \cite{cloud-naas}, storage system could be operating on a virutal network, which is much more dynamic than physical network, and could even grow/shrink on demand.
+With the promising future of virutal data center over real data center, e.g, CloudNaaS \cite{cloudnaas}, storage system could be operating on a virutal network, which is much more dynamic than physical network, and could even grow/shrink on demand.
 
 \end{itemize}
 
