@@ -2,7 +2,7 @@
 \label{section:motivation}
 
 Let's look more closely and motivate our work with a more concrete example. 
-For that purpose we will consider GFS \cite{gfs}, and its open source version HDFS \cite{hdfs}. GFS and its variation has been widely adapted in a lot of data centers, and many other storage system, e.g, Microsoft Azure cloud storage \cite{azure-storage}, adopted similar design options with GFS. We will briefly describe how GFS uses network, and identify potential performance boost we could get using an understanding of the nature of the interaction of GFS and network.
+For that purpose we will consider GFS \cite{gfs}, and its open source version HDFS. GFS and its variation has been widely adapted in a lot of data centers, and many other storage system, e.g, Microsoft Azure cloud storage \cite{azure-storage}, adopted similar design options with GFS. We will briefly describe how GFS uses network, and identify potential performance boost we could get using an understanding of the nature of the interaction of GFS and network.
 
 A GFS cluster consists of a single master and multiple chunkservers and is accessed by mulitple clients. The size of a GFS cluster could be in order of thousands. Some major GFS network communication include:
 
