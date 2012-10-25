@@ -1,0 +1,27 @@
+\section{Introduction}
+\label{section:intro}
+
+Storage systems have long been relying on network to deliver its service. Network dependent system ranging from block device, such as NAS \cite{nas}; to distributed file systems, such as NFS \cite{nfs}, AFS \cite{afs} or GFS \cite{gfs}; to higher level key-value store \cite{dynamo}, \cite{big-table}, or even RAM based stroage, such as RAM cloud. They all rely heavily on network to transfer data, exchange control messages and realzie system-wide consistency. Thus network will affect those storage's system in interesting ways.
+
+However, very little research has been done on how network/storage system's interaction will affect each other's performance. There are some very prelimnary study which shows that network does affect storage system performance, e.g., for availability reasons, by default HDFS always puts three replicas at different racks through network. Only when all replicas are written successfully can the HDFS write operation be done. Therefore network plays a key role in storage performance, and in turn, in application performance. However, it hasn't been studied in a systematic way such that it could bring light to how we could construct storage system and network in the next generation data center, and how we can co-design SDS/SDN so that storage system could dynamically adapt to network to improve its performance (thus network aware storage), what information needs to be passed/inferred between network and storage. (FIXME: I hope I am confident with this assertion that no study has been done. Otherwise it would be embrassing....). In fact, a lot of storage performance study assume a good enough network so that network is never a bottleneck, such as (FIXME: cite something, I do know some of these examples.) Traditional network optimization for data-intensive applications also thinks little about disk I/O and usually assume data can be accomodated in memory and accessed fast.
+
+This is partially because traditionally most storage systems are deployed on private, dedicatea, stable and over-provisioned network. (FIXME: prove this! At least give a few examples, better cite some literature.) In such a relatively stable, hard-to-change network enviroment, it is relatively easy for the storage system to know the condition of underlying network it is operating on, and configure it statically and manually to optimize the performance. There are some very prelimnary study which shows that network does affect storage system performance, 
+
+However, in mordern data centers, the assumption of private, stable, over-provisioned network does not hold anymore. Instead, network become much, much more dynamic, especially for the following reasons:
+
+
+
+1. Instead of enjoying the luxury of a dedicated network, in a data center storage system may have to compete for network resources with ohter applications and other cloud tenants etc., especially in a non-fully bisectional network topology. This is in contrast to, say, a NAS system, which is connected to host using dedicated, high bandwidth network. (FIXME: is this true????)
+
+2. SDN enables much finer control over network. We could setup and tear down routes in a very small time scale, make centralized decision on a per flow basis. More extreme data center solutions could even add baindwidth/cable on the fly, either through optical switch \cite{c-through}, \cite{Hellio}, or through wireless network \cite{flyways}. With such rich choice on route/bandwidth/latency, there are much more flexiblity on how storage system could use the underlying network wisely to improve its performance.
+
+3. With the promising future of virutal data center over real data center, e.g, CloudNaaS \cite{cloud-naas}, storage system could be operating on a virutal network, which is much more dynamic than physical network, and could even grow/shrink on demand.
+
+We could continue to name other revolutionary changes which is now happening in modern data centers. But it becomes clear that in light of such dramatic changes, it is necessary for us to revisit how storage systems use network, and ask whether a network-aware storage, or a storage-aware network, would be possible and beneficial; whether or not we could combine knowledges of storage and network, and leverage the fine-grained control provided by SDS and SDN to provide an integrated solution to modern data center stroage systems.
+
+There are already some prelinmary work which shows how knowing a bit about the unerlying network could benefit stroage system a lot. A most naive example would be on a high bandwidth-delay network, increasing HDFS's block size will improve application performance significantly. (FIXME: cite this?) Yet we need to do better than this. The flat data center storage \cite{fds} is another good example on how leverage network knowledge (in their case, this network is full bi-sectional, and matches disk bandwidth), and take that into account when making storage level decision (e.g, where to put data sets) could improve stroage system performance dramatically. However, they all make over-simplifed network assumptions. E.g., flat data center storage assumes a good enough network all the time. While we want to understand how storage sytem and network interact dynamically, and how can we optimize those interactions.
+
+
+
+
+

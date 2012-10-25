@@ -1,0 +1,97 @@
+\documentclass{sig-alternate-10pt}
+
+\usepackage{times}
+
+\usepackage{url}
+\usepackage{color}
+\usepackage{graphicx}
+%\usepackage{subfigure}
+\usepackage{subfig}
+\usepackage{fixltx2e}
+
+\newcounter{linenum}
+\newenvironment{algorithm}[2]{\setcounter{linenum}{0}\begin{tabbing}\textsc{#1}\((#2)\)\\
+\makebox[0.2in]{}\=\+\kill}{\end{tabbing}}
+\newenvironment{algo}{\setcounter{linenum}{0}\begin{tabbing}\makebox[0.2in]{}\=\+\kill}{\end{tabbing}}
+\newenvironment{protocol}{\setcounter{linenum}{0}\begin{tabbing}\makebox[0.05in]{}\=\+\kill}{\end{tabbing}}
+\newenvironment{proto}{\setcounter{linenum}{0}\begin{tabbing}\makebox[-0.02in]{}\=\+\kill}{\end{tabbing}}
+\newcommand{\al}[1]{\'#1\\}
+\newcommand{\all}[1]{\addtocounter{linenum}{1}\'#1\\}
+\newcommand{\av}[1]{\textit{#1}}
+\newcommand{\aproc}[2]{\textsc{#1}\((#2)\)}
+\newcommand{\msg}[2]{$\langle$\textsl{#1};$#2 \rangle$}
+
+
+\newcommand{\minisection}[1]{\noindent{\bf #1.}}
+
+\newenvironment{compactitem}
+{
+    \begin{itemize}
+    \vspace{-1ex}
+    \setlength{\topsep}{0pt}
+    \setlength{\itemsep}{1pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+}
+{
+    \vspace{-1ex}
+    \end{itemize}
+}
+
+% Add page numbers, remove copyright box.  For submitted version only.
+\pagenumbering{arabic}
+%\makeatletter
+%\def\@copyrightspace{\relax}
+%\makeatother
+\usepackage{xspace}
+
+\newcommand{\aditya}[1]{{\color{cyan}{\bf aditya: #1}}}
+\newcommand{\ashok}[1]{{\color{green}{\bf ashok: #1}}}
+\newcommand{\theo}[1]{{\color{magenta}{\bf theo: #1}}}
+\newcommand{\yizheng}[1]{{\color{magenta}{\bf yizheng: #1}}}
+\newcommand{\Name}{NaPS\xspace}
+
+\usepackage[%
+  pdftitle={NaPS},%
+  pdfauthor={},%
+  pdfsubject={},%
+  pdfproducer={},%
+  pdfkeywords={}]{hyperref}
+
+\usepackage{breakurl}
+
+\begin{document}
+
+\setlength{\tabcolsep}{0.1cm}
+
+%\title{NaPS: Network-aware Placement and Scheduling in Clusters}
+
+\title{\Large \bf Network Aware Storage: Necessity, Feasibility and Possibility}
+
+\numberofauthors{2}
+%\author{v\input{version}}
+
+\author{
+Suli Yang\\
+suli@cs.wisc.edu
+\and
+Yizheng Chen\\
+brisk@cs.wisc.edu
+} % end author
+
+\maketitle
+
+%\input{abstract}
+\input{intro}
+\input{motivation}
+\input{approach}
+\input{related}
+%\input{plan}
+
+\nocite{*}
+%\begin{small}
+\bibliographystyle{abbrv}
+\bibliography{refs}
+%\end{small}
+
+\end{document}
