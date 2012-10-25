@@ -19,50 +19,14 @@
     year = {2011}
 }
 
-@inproceedings{quincy,
-    author = {Michael Isard and Vijayan Prabhakaran and Jon Currey andUdi Wieder and Kunal Talwar and Andrew Goldberg},
-    title = {{Quincy: Fair Scheduling for Distributed Computing Clusters}},
-    booktitle = {SOSP},
-    year = {2009}
-}
 
-
-@inproceedings{delay,
-    author = {M. Zaharia and D. Borthakur and J. S. Sarma and K. Elmeleegy and S. Shenker and I. Stoica},
-    title = {{Delay Scheduling: A Simple Technique for Achieving Locality and Fairness in Cluster Scheduling}},
-    booktitle = {EuroSys},
-    year = {2010}
-}
-
-@inproceedings{late,
-    author = {M. Zaharia and A. Konwinski and A. D. Joseph and R. Katz and I. Stoica},
-    title = {{Improving MapReduce Performance in Heterogeneous Environments}},
+@inproceedings{flat-datacenter-storage,
+    author = {Edmund B. Nightingaleand Jeremy Elson and Jinliang Fan and Owen Hofmann and Jon Howell and Yutaka Suzue},
+    title = {{Flat Datacenter Storage}},
     booktitle = {OSDI},
-    year = {2008}
-}
-
-@inproceedings{netprog,
-    author = {G. Wang and T. S. Eugene Ng and A. Shaikh},
-    title = {{Programming Your Network at Run-time for Big Data Applications}},
-    booktitle = {HotSDN},
     year = {2012}
 }
 
-
-
-@inproceedings{mantri,
-    author = {G. Ananthanarayanan and S. Kandula and A. Greenberg and I. Stoica and Y. Lu and B. Saha and E. Harris},
-    title = {{Reining in the Outliers in Map-Reduce Clusters using Mantri}},
-    booktitle = {OSDI},
-    year = {2010}
-}
-
-@inproceedings{dryad,
- author = {Isard, Michael and Budiu, Mihai and Yu, Yuan and Birrell, Andrew and Fetterly, Dennis},
- title = {{Dryad: distributed data-parallel programs from sequential building blocks}},
- booktitle = {Proceedings of ACM EuroSys},
- year = {2007},
-}
 
 @inproceedings{faircloud,
     author = {L. Popa and A. Krishnamurthy and S. Ratnasamy and I. Stoica},
@@ -72,24 +36,6 @@
 }
 
 
-@inproceedings{vl2,
-	title = {{VL2: A Scalable and Flexible Data Center Network}},
-	author={Albert Greenberg and James R. Hamilton and Jain et al, Navendu},
-	booktitle = {SIGCOMM},
-	year={2009}
-}
-
-
-@inproceedings{fattree,
- author = {Leiserson, Charles E.},
- title = {Fat-trees:  universal networks for hardware-efficient supercomputing},
- booktitle = {IEEE Transactions on Computers},
- volume = {34},
- issue = {10},
- month = {October},
- year = {1985},
- pages = {892--901},
-} 
 
 @misc{nas,
     title = {{Network-attached storage}},
@@ -102,28 +48,6 @@
     howpublished = {\url{http://hadoop.apache.org}}
 }
 
-@misc{hadoopcapacity,
-    title = {{Hadoop Capacity Scheduler}},
-    howpublished = {\url{http://hadoop.apache.org/docs/stable/capacity_scheduler.html}}
-}
-
-
-@misc{hfs,
-    title = {{Hadoop Fair Scheduler}},
-    howpublished = {\url{http://hadoop.apache.org/mapreduce/docs/current/fair_scheduler.html}}
-}
-
-
-@techreport{Hindman:EECS-2010-87,
-    Author = {Hindman, Benjamin and Konwinski, Andrew and Zaharia, Matei and Ghodsi, Ali and Joseph, Anthony D. and Katz, Randy H. and Shenker, Scott and Stoica, Ion},
-    Title = {Mesos: A Platform for Fine-Grained Resource Sharing in the Data Center},
-    Institution = {EECS Department, University of California, Berkeley},
-    Year = {2010},
-    Month = {May},
-    URL = {http://www.eecs.berkeley.edu/Pubs/TechRpts/2010/EECS-2010-87.html},
-    Number = {UCB/EECS-2010-87},
-    Abstract = {We present Mesos, a platform for sharing commodity clusters between multiple diverse cluster computing frameworks, such as Hadoop and MPI. Sharing improves cluster utilization and avoids per-framework data replication. Mesos shares resources in a fine-grained manner, allowing frameworks to achieve data locality by taking turns reading data stored on each machine. To support the sophisticated schedulers of today's frameworks, Mesos introduces a distributed two-level scheduling mechanism called resource offers. Mesos decides how many resources to offer each framework, while frameworks decide which resources to accept and which computations to run on them. Our experimental results show that Mesos can achieve near-optimal locality when sharing the cluster among diverse frameworks, can scale up to 50,000 nodes, and is resilient to node failures.}
-}
 
 @misc{gfs,
     author = {Sanjay Ghemawat and Howard Gobioff and Shun-Tak Leung},
@@ -192,3 +116,13 @@
     pages = {47--60},
     publisher = {USENIX Association}
 }
+
+@inproceedings{c-through,
+  title={c-Through: Part-time optics in data centers},
+  author={Wang, G. and Andersen, D.G. and Kaminsky, M. and Papagiannaki, K. and Ng, T.S.E. and Kozuch, M. and Ryan, M.},
+  booktitle={ACM SIGCOMM},
+  volume={10},
+  pages={327--338},
+  year={2010}
+}
+
