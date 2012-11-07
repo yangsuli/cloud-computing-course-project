@@ -11,7 +11,7 @@ A GFS cluster consists of a single master and multiple chunkservers and is acces
 5.Client will push data to chunk servers to write. The data changeed here is typically large, at least 64M in size in a typical setting.
 6.Chunk server will pipeline this write to different servers for replication, in a chain which is chosen freely by the system. Where to replicate these data is also within control of the system.
 7.Chunk server will transfer data to client when client performs reading. GFS is free to choose from which replica to serve the client. This is typically large, persistent data transfer too.
-8.Client and chunk servers will exchange control message to ensure ordering in the read/write process, for consistency purpose. These messages are small but delivering them in low latency will be critical for performance.
+8.Client and chunk servers will exchange control message to ensure ordering in the read/write process, for consistency purpose. These messages are small but delivering them in low latency will be critical for performance. (e.g, ack message to indicate slaves have finished writes. Could be a nice graphic example!)
 9.GFS will do re-replication and rebalancing, either because a replica of a chunk is unavaible, or because some chunkserver is more empty/full than others. Those are also large data transfer, but the speed of this transfer is not critical for system performance.
 10. Master and chunkservers periodically exchange HeartBeat and chunk identication informations.
 

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+<configuration>
+     <property>
+         <name>dfs.replication</name>
+         <value>1</value>
+     </property>
+<property>
+  <name>dfs.safemode.threshold.pct</name>
+  <value>0.0f</value>
+  <description>
+    Specifies the percentage of blocks that should satisfy
+    the minimal replication requirement defined by dfs.replication.min.
+    Values less than or equal to 0 mean not to start in safe mode.
+    Values greater than 1 will make safe mode permanent.
+  </description>
+</property>
+    <property>
+         <name>dfs.name.dir</name>
+         <value>/home/openflow/hadoop-tmp/dfs/name</value>
+     </property>
+     <property>
+         <name>dfs.data.dir</name>
+         <value>/home/openflow/hadoop-tmp/dfs/data/</value>
+     </property>
+     <property>
+         <name>dfs.checkpoint.dir</name>
+         <value>/home/openflow/hadoop-tmp/dfs/namesecondary</value>
+     </property>
+<property>
+  <name>dfs.block.size</name>
+  <value>67108864</value>
+  <description>The default block size for new files.</description>
+</property>
+</configuration>
