@@ -46,6 +46,10 @@ import org.apache.hadoop.util.DataChecksum;
 import org.apache.hadoop.util.StringUtils;
 import static org.apache.hadoop.hdfs.server.datanode.DataNode.DN_CLIENTTRACE_FORMAT;
 
+import org.apache.hadoop.hdfs.util.ADGTrafficTrace;
+import org.apache.hadoop.hdfs.util.ADGTrafficTrace.ADGTrafficDesc;
+
+
 /**
  * Thread for processing incoming/outgoing data stream.
  */
@@ -53,6 +57,11 @@ class DataXceiver implements Runnable, FSConstants {
   public static final Log LOG = DataNode.LOG;
   static final Log ClientTraceLog = DataNode.ClientTraceLog;
   
+  //ADG:
+  //This socket s is newly created to handle client connection
+  //We will defer set its traffic state until we receive the client op code in the run function
+  //yangsuli 11/25/2012
+
   Socket s;
   final String remoteAddress; // address of remote side
   final String localAddress;  // local address of this daemon
@@ -73,6 +82,12 @@ class DataXceiver implements Runnable, FSConstants {
 
   /**
    * Read/write data from/to the DataXceiveServer.
+   */
+
+  /**
+   * ADG:
+   * Note that the (newly created) socket got closed after handling each request
+   * yangsuli 11/25/2012
    */
   public void run() {
     DataInputStream in=null; 
@@ -96,6 +111,10 @@ class DataXceiver implements Runnable, FSConstants {
       long startTime = DataNode.now();
       switch ( op ) {
       case DataTransferProtocol.OP_READ_BLOCK:
+        //ADG
+	//readBlock will send some header info, the offset, the actual block data, and the end mark through this socket
+	//yangsuli 11/25/2012
+        ADGTrafficTrace.ADGSetSocketTrafficType(s, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_READ_DATA_BLOCK));
         readBlock( in );
         datanode.myMetrics.addReadBlockOp(DataNode.now() - startTime);
         if (local)
