@@ -60,6 +60,10 @@ import java.nio.ByteBuffer;
 
 import javax.net.SocketFactory;
 
+
+import org.apache.hadoop.hdfs.util.ADGTrafficTrace;
+import org.apache.hadoop.hdfs.util.ADGTrafficTrace.ADGTrafficDesc;
+
 /********************************************************
  * DFSClient can connect to a Hadoop Filesystem and 
  * perform basic file tasks.  It uses the ClientProtocol
@@ -1463,6 +1467,10 @@ public class DFSClient implements FSConstants, java.io.Closeable {
       if (dnSock != null && gotEOS && !eosBefore && nRead >= 0
           && needChecksum()) {
         //checksum is verified and there are no errors.
+        //ADG:
+        //Added code to instruct the socket to be marked as sending CHECKSUM_OK traffic
+        //yangsuli 11/25/2012
+	ADGTrafficTrace.ADGSetSocketTrafficType(dnSock, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_READ_DATA_ACK));
         checksumOk(dnSock);
       }
       return nRead;
@@ -1656,6 +1664,22 @@ public class DFSClient implements FSConstants, java.io.Closeable {
               checksum.getChecksumSize());
     }
 
+    //ADG: this sock is going to be used to send header information 
+    //in the begining of each block data transfer
+    //After that this socket is used to recive block data (I think)
+    //Note that even though they construct a new input/output stream for each block
+    //They are reusing the same socket, i.e., the same flow
+    // Data got sent here is Client data read request/header info
+    // We need to set TrafficType every time
+    //as it could be used to send checksum previously
+    //The header info includes:
+    //DataTransferProtocol.DATA_TRANSFER_VERSION );
+    //DataTransferProtocol.OP_READ_BLOCK
+    //blockId, genStamp, startOffset, length and client Name
+    //Then this socket is used to recive block data 
+    //and some asscoicated info (offset, checksum etc.)
+    //yangsuli 11/25/2012
+
     public static BlockReader newBlockReader(Socket sock, String file, long blockId, Token<BlockTokenIdentifier> accessToken, 
         long genStamp, long startOffset, long len, int bufferSize) throws IOException {
       return newBlockReader(sock, file, blockId, accessToken, genStamp, startOffset, len, bufferSize,
@@ -1695,6 +1719,7 @@ public class DFSClient implements FSConstants, java.io.Closeable {
                                        String clientName)
                                        throws IOException {
       // in and out will be closed when sock is closed (by the caller)
+      ADGTrafficTrace.ADGSetSocketTrafficType(sock, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_READ_DATA_REQUEST));
       DataOutputStream out = new DataOutputStream(
         new BufferedOutputStream(NetUtils.getOutputStream(sock,HdfsConstants.WRITE_TIMEOUT)));
 
@@ -2322,7 +2347,16 @@ public class DFSClient implements FSConstants, java.io.Closeable {
             }
           } else {
             // go to the datanode
+
+	    /*
+	     * ADG: this dn socket is going to be used to
+	     * 1. send client request (header) for block read
+	     * 2. send checksum_ok status
+	     * so instruct the socket struct to indicate so
+	     * yangsuli 11/25/2012
+	     */
             dn = socketFactory.createSocket();
+      	    ADGTrafficTrace.ADGSetSocketTrafficType(dn, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_READ_DATA_REQUEST));
             NetUtils.connect(dn, targetAddr, socketTimeout);
             dn.setSoTimeout(socketTimeout);
             reader = BlockReader.newBlockReader(dn, src, 
