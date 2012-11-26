@@ -123,6 +123,11 @@ class DataXceiver implements Runnable, FSConstants {
           datanode.myMetrics.incrReadsFromRemoteClient();
         break;
       case DataTransferProtocol.OP_WRITE_BLOCK:
+	// ADG
+	// writeBlock will write block and (maybe) send reply to the client
+        // It will also initiate the pipeline and send data to next datanode
+        // So we defer set traffic type in the writeBlock() function
+	// yangsuli 11/25/2012
         writeBlock( in );
         datanode.myMetrics.addWriteBlockOp(DataNode.now() - startTime);
         if (local)
@@ -252,6 +257,14 @@ class DataXceiver implements Runnable, FSConstants {
    * @param in The stream to read from
    * @throws IOException
    */
+
+  /*
+   * ADG:
+   * check http://blog.csdn.net/sxf_824/article/details/4842337 or
+   * http://blog.csdn.net/xhh198781/article/details/6974358 for
+   * the flow of this function
+   * yangsuli 11/25/2012
+   */
   private void writeBlock(DataInputStream in) throws IOException {
     DatanodeInfo srcDataNode = null;
     LOG.debug("writeBlock receive buf size " + s.getReceiveBufferSize() +
@@ -259,6 +272,9 @@ class DataXceiver implements Runnable, FSConstants {
     //
     // Read in the header
     //
+    // ADG
+    // Read info from client (or prev datanode)flow about this
+    // yangsuli 11/25/2012
     Block block = new Block(in.readLong(), 
         dataXceiverServer.estimateBlockSize, in.readLong());
     LOG.info("Receiving block " + block + 
@@ -284,6 +300,16 @@ class DataXceiver implements Runnable, FSConstants {
     }
     Token<BlockTokenIdentifier> accessToken = new Token<BlockTokenIdentifier>();
     accessToken.readFields(in);
+    // ADG
+    // Read info from client (or prev datanode) about this write up to this point
+    // yangsuli 11/25/2012
+
+
+    //ADG
+    //replyOut is used to send ack to the client or to upstream datanodes
+    //this ack is sent either when a time threshold passed or when a packet is received and processed
+    //yangsuli 11/25/2012
+    ADGTrafficTrace.ADGSetSocketTrafficType(s, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_WRITE_DATA_ACK));
     DataOutputStream replyOut = null;   // stream to prev target
     replyOut = new DataOutputStream(
                    NetUtils.getOutputStream(s, datanode.socketWriteTimeout));
@@ -342,6 +368,14 @@ class DataXceiver implements Runnable, FSConstants {
              new BufferedOutputStream(
                          NetUtils.getOutputStream(mirrorSock, writeTimeout),
                          SMALL_BUFFER_SIZE));
+          //ADG:
+          //mirrorOut is used to send data packets (what the client writes) to downstream datanodes
+          //This includes block write header (opcode, version number blockId etc) in the beginning and then for each packet packet header and the packet payload 
+          //TODO:
+          //We might want to differeniate the client traffic and the pipeline traffic
+          //yangsuli 11/25/2012
+          ADGTrafficTrace.ADGSetSocketTrafficType(mirrorSock, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_WRITE_DATA_HEADER));
+
           mirrorIn = new DataInputStream(NetUtils.getInputStream(mirrorSock));
 
           // Write header: Copied from DFSClient.java!
@@ -364,6 +398,7 @@ class DataXceiver implements Runnable, FSConstants {
 
           blockReceiver.writeChecksumHeader(mirrorOut);
           mirrorOut.flush();
+
 
           // read connect ack (only for clients, not for replication req)
           if (client.length() != 0) {
@@ -412,6 +447,7 @@ class DataXceiver implements Runnable, FSConstants {
         replyOut.flush();
       }
 
+       ADGTrafficTrace.ADGSetSocketTrafficType(mirrorSock, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_WRITE_DATA_PACKETS));
       // receive the block and mirror to the next target
       String mirrorAddr = (mirrorSock == null) ? null : mirrorNode;
       blockReceiver.receiveBlock(mirrorOut, mirrorIn, replyOut,

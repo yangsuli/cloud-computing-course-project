@@ -28,6 +28,13 @@ public class ADGTrafficTrace {
 		/*
 		 * The following share a socket(flow)
 		 */
+        public static final byte TRAFFIC_WRITE_DATA_ACK = (byte) 14;
+
+        /*
+         * The following share a socket (flow)
+         */
+        public static final byte TRAFFIC_WRITE_DATA_HEADER = (byte) 15;
+        public static final byte TRAFFIC_WRITE_DATA_PACKETS = (byte) 16;
 
 
 
