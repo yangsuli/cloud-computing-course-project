@@ -3471,6 +3471,12 @@ public class DFSClient implements FSConstants, java.io.Closeable {
                                      DataNode.SMALL_BUFFER_SIZE));
         blockReplyStream = new DataInputStream(NetUtils.getInputStream(s));
 
+        //ADG: mark header transmission
+        //This includes opcode, blockId, client string and pipelined datanodes
+        //And I think this socket is going to to closed after this particular socket
+        //yangsuli 11/29/2012
+        ADGTrafficTrace.ADGSetSocketTrafficType(s,new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_WRITE_CLIENT_DATA_HEADER));
+
         out.writeShort( DataTransferProtocol.DATA_TRANSFER_VERSION );
         out.write( DataTransferProtocol.OP_WRITE_BLOCK );
         out.writeLong( block.getBlockId() );
@@ -3486,6 +3492,12 @@ public class DFSClient implements FSConstants, java.io.Closeable {
         accessToken.write(out);
         checksum.writeHeader( out );
         out.flush();
+
+        //ADG:
+        //After the header, this socket will be used to send block data excusively, I think
+        //FIXME: need to verify this
+        //yangsuli 11/29/2012
+        ADGTrafficTrace.ADGSetSocketTrafficType(s,new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_WRITE_CLIENT_DATA_PACKETS));
 
         // receive ack for connect
         pipelineStatus = blockReplyStream.readShort();
