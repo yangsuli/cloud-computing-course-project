@@ -374,7 +374,7 @@ class DataXceiver implements Runnable, FSConstants {
           //TODO:
           //We might want to differeniate the client traffic and the pipeline traffic
           //yangsuli 11/25/2012
-          ADGTrafficTrace.ADGSetSocketTrafficType(mirrorSock, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_WRITE_DATA_HEADER));
+          ADGTrafficTrace.ADGSetSocketTrafficType(mirrorSock, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_WRITE_PIPELINE_DATA_HEADER));
 
           mirrorIn = new DataInputStream(NetUtils.getInputStream(mirrorSock));
 
@@ -447,7 +447,7 @@ class DataXceiver implements Runnable, FSConstants {
         replyOut.flush();
       }
 
-       ADGTrafficTrace.ADGSetSocketTrafficType(mirrorSock, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_WRITE_DATA_PACKETS));
+       ADGTrafficTrace.ADGSetSocketTrafficType(mirrorSock, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_WRITE_PIPELINE_DATA_PACKETS));
       // receive the block and mirror to the next target
       String mirrorAddr = (mirrorSock == null) ? null : mirrorNode;
       blockReceiver.receiveBlock(mirrorOut, mirrorIn, replyOut,
