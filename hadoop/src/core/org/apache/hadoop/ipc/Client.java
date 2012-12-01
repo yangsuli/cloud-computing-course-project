@@ -64,6 +64,12 @@ import org.apache.hadoop.security.token.TokenSelector;
 import org.apache.hadoop.security.token.TokenInfo;
 import org.apache.hadoop.util.ReflectionUtils;
 
+//ADG
+import org.apache.hadoop.ipc.RPC.Invocation;
+import org.apache.hadoop.util.ADGTrafficTrace;
+import org.apache.hadoop.util.ADGTrafficTrace.ADGTrafficDesc;
+//End ADG editing
+
 /** A client for an IPC service.  IPC calls take a single {@link Writable} as a
  * parameter, and return a {@link Writable} as their value.  A service runs on
  * a port and is defined by a parameter class and a value class.
@@ -148,6 +154,12 @@ public class Client {
       synchronized (Client.this) {
         this.id = counter++;
       }
+    }
+
+    //ADG
+    public String getMethodName(){
+        Invocation invo = (Invocation)this.param;
+        return invo.getMethodName();
     }
 
     /** Indicate when the call is complete and the
@@ -270,6 +282,14 @@ public class Client {
           " from " + ((ticket==null)?"an unknown user":ticket.getUserName()));
       this.setDaemon(true);
     }
+
+    //ADG
+    //Add an get socket function so that we could easily refer to the socket
+    //yangsuli 11/30/2012
+    public Socket socket(){
+        return this.socket;
+    }
+    //End ADG editing
 
     /** Update lastActivity with the current time. */
     private void touch() {
@@ -1150,6 +1170,11 @@ public class Client {
           ConnectionId remoteId = ConnectionId.getConnectionId(addresses[i],
               protocol, ticket, 0, conf);
           Connection connection = getConnection(remoteId, call);
+          //ADG
+          //this is where we send method name (in string) and paramters
+          //So we can just determin traffic type by method name in the call object.
+          //yangsuli 11/30/2012
+          ADGTrafficTrace.ADGSetRPCSendTrafficType(connection.socket(), call.getMethodName());
           connection.sendParam(call);             // send each parameter
         } catch (IOException e) {
           // log errors

@@ -85,6 +85,12 @@ import org.apache.hadoop.security.token.TokenIdentifier;
 import org.apache.hadoop.util.ReflectionUtils;
 import org.apache.hadoop.util.StringUtils;
 
+//ADG
+import org.apache.hadoop.ipc.RPC.Invocation;
+import org.apache.hadoop.util.ADGTrafficTrace;
+import org.apache.hadoop.util.ADGTrafficTrace.ADGTrafficDesc;
+//End ADG
+
 /** An abstract IPC service.  IPC calls take a single {@link Writable} as a
  * parameter, and return a {@link Writable} as their value.  A service runs on
  * a port and is defined by a parameter class and a value class.
@@ -264,6 +270,15 @@ public abstract class Server {
       this.timestamp = System.currentTimeMillis();
       this.response = null;
     }
+
+    //ADG
+    //add this helper function to ease getting method name from this class
+    //yangsuli 11/30/2012
+    public String getMethodName(){
+        Invocation invo = (Invocation)this.param;
+        return invo.getMethodName();
+    }
+    //End ADG editing
     
     @Override
     public String toString() {
@@ -737,6 +752,12 @@ public abstract class Server {
           //
           // Send as much data as we can in the non-blocking fashion
           //
+          //ADG FIXME
+          //We covered the paramter sending and response sending part
+          //however, there might be other traffic in the RPC connection (regular ping, say)
+          //Not captured yet
+          //yangsuli 11/30/2012
+          ADGTrafficTrace.ADGSetRPCResponseTrafficType(channel.socket(), call.getMethodName());
           int numBytes = channelWrite(channel, call.response);
           if (numBytes < 0) {
             return true;

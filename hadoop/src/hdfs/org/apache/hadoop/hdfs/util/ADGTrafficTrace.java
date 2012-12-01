@@ -9,6 +9,7 @@ import javax.net.SocketFactory;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketException;
+import java.lang.String;
 
 
 public class ADGTrafficTrace {
@@ -57,6 +58,23 @@ public class ADGTrafficTrace {
 		private byte type;
 	}
 
+        //ADG
+        //For the RPC style communication
+        //internally, it should aslo call ADGSetSocketTrafficType(sock, desc).
+        //Just needs to determine traffic type according to method name
+        //SO it is easer for whoever calls it.
+        //yangsuli 11/30/2012
+    public static boolean ADGSetRPCSendTrafficType(Socket sock, String method){
+        //FIXME:
+        //implementing it
+        return true;
+    }
+
+    public static boolean ADGSetRPCResponseTrafficType(Socket sock, String method){
+        //FIXME:
+        //implementing it
+        return true;
+    }
 
 	public static boolean ADGSetSocketTrafficType(Socket sock, ADGTrafficDesc desc){
 	

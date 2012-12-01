@@ -70,7 +70,12 @@ public class RPC {
 
 
   /** A method invocation, including the method name and its parameters.*/
-  private static class Invocation implements Writable, Configurable {
+  //ADG
+  //change this class to be public
+  //since we need it to get method name
+  //yangsuli 11/30/2012
+  public static class Invocation implements Writable, Configurable {
+  //private static class Invocation implements Writable, Configurable {
     private String methodName;
     private Class[] parameterClasses;
     private Object[] parameters;
