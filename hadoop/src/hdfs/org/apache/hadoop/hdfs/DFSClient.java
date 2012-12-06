@@ -61,8 +61,8 @@ import java.nio.ByteBuffer;
 import javax.net.SocketFactory;
 
 
-import org.apache.hadoop.hdfs.util.ADGTrafficTrace;
-import org.apache.hadoop.hdfs.util.ADGTrafficTrace.ADGTrafficDesc;
+import org.apache.hadoop.util.ADGTrafficTrace;
+import org.apache.hadoop.util.ADGTrafficTrace.ADGTrafficDesc;
 
 /********************************************************
  * DFSClient can connect to a Hadoop Filesystem and 

@@ -46,8 +46,8 @@ import org.apache.hadoop.util.DataChecksum;
 import org.apache.hadoop.util.StringUtils;
 import static org.apache.hadoop.hdfs.server.datanode.DataNode.DN_CLIENTTRACE_FORMAT;
 
-import org.apache.hadoop.hdfs.util.ADGTrafficTrace;
-import org.apache.hadoop.hdfs.util.ADGTrafficTrace.ADGTrafficDesc;
+import org.apache.hadoop.util.ADGTrafficTrace;
+import org.apache.hadoop.util.ADGTrafficTrace.ADGTrafficDesc;
 
 
 /**
