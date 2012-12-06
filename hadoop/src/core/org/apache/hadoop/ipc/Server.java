@@ -757,7 +757,7 @@ public abstract class Server {
           //however, there might be other traffic in the RPC connection (regular ping, say)
           //Not captured yet
           //yangsuli 11/30/2012
-          ADGTrafficTrace.ADGSetRPCResponseTrafficType(channel.socket(), call.getMethodName());
+          ADGTrafficTrace.ADGSetRPCResponseTrafficType(channel.socket(), call.getMethodName(), "ResponsePlaceOneTAG");
           int numBytes = channelWrite(channel, call.response);
           if (numBytes < 0) {
             return true;

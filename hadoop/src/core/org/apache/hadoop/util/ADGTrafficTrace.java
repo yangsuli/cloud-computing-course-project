@@ -3,7 +3,7 @@
  * yangsuli 11/25/2012
  */
 
-package org.apache.hadoop.hdfs.util;
+package org.apache.hadoop.util;
 
 import javax.net.SocketFactory;
 import java.net.InetSocketAddress;
@@ -13,6 +13,7 @@ import java.lang.String;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
 
 public class ADGTrafficTrace {
 

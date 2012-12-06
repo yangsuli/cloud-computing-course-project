@@ -1068,6 +1068,11 @@ public class Client {
                        throws InterruptedException, IOException {
     Call call = new Call(param);
     Connection connection = getConnection(remoteId, call);
+    //ADG
+    //this is where we send method name (in string) and paramters
+    //So we can just determin traffic type by method name in the call object.
+    //yangsuli 11/30/2012
+    ADGTrafficTrace.ADGSetRPCSendTrafficType(connection.socket(), call.getMethodName(), "CallPlaceOneTag");
     connection.sendParam(call);                 // send the parameter
     boolean interrupted = false;
     synchronized (call) {
@@ -1174,7 +1179,7 @@ public class Client {
           //this is where we send method name (in string) and paramters
           //So we can just determin traffic type by method name in the call object.
           //yangsuli 11/30/2012
-          ADGTrafficTrace.ADGSetRPCSendTrafficType(connection.socket(), call.getMethodName());
+          ADGTrafficTrace.ADGSetRPCSendTrafficType(connection.socket(), call.getMethodName(), "CallPlaceTwoTAG");
           connection.sendParam(call);             // send each parameter
         } catch (IOException e) {
           // log errors
