@@ -19,7 +19,6 @@ public class ADGTrafficTrace {
 
      public static final Log LOG = LogFactory.getLog(ADGTrafficTrace.class);
 
-	public static class ADGTrafficDesc {
 		/*
 		 * These two share the same flow
 		 * refer to DFSClient.java BlockReader related code
@@ -53,15 +52,230 @@ public class ADGTrafficTrace {
         public static final byte TRAFFIC_WRITE_PIPELINE_DATA_PACKETS = (byte) 18;
 
 
+        /*
+         * The following RPC traffic share the same socket/connection pool
+         */
+
+        /*
+         * The following traffic are basically DatanodeCommands and their replies.
+         * Detailed Description of each kind of traffic can be found in the comment of DatanodeProtocol.java
+         * SEND_TRAFFIC are initiated from the datanode side
+         * While RESPOND_TRAFFIC are initiated from the namenode side
+         */
+
+        /**
+        * sendHeartbeat() tells the NameNode that the DataNode is still
+        * alive and well.  Includes some status info, too. 
+        * It also gives the NameNode a chance to return 
+        * an array of "DatanodeCommand" objects.
+        * A DatanodeCommand tells the DataNode to invalidate local block(s), 
+        * or to copy them to other DataNodes, etc.
+        */
+        public static final byte TRAFFIC_RPC_SEND_HEARTBEAT = (byte) 19;
+        //This actually contains an array of block-oriented commands for datanode to execute
+        public static final byte TRAFFIC_RPC_RESPOND_HEARTBEAT = (byte) 20; 
+
+
+        //traffic only happens at system start up, thus deemed not important
+        public static final byte TRAFFIC_RPC_STARTUP_INIT = (byte) 21;
+        public static final byte TRAFFIC_RPC_RESPOND_STARTUP_INIT = (byte) 22;
+
+        /*
+         * Debugging or Error dealint Traffic. Not very interesting to us right now
+         */
+        public static final byte TRAFFIC_RPC_ERROR = (byte) 27;
+        public static final byte TRAFFIC_RPC_ERROR_RESPOND = (byte) 28;
+        /*
+         * Upgrade or maitains traffic
+         * Not very interesting to us right now
+         */
+        public static final byte TRAFFIC_RPC_UPGRATE_MAINTAIN = (byte) 29; 
+        public static final byte TRAFFIC_RPC_UPGRATE_MAINTAIN_RESPOND = (byte) 30; 
+
+        /*
+         * Both blockReprot and blockReceived are dananodes reporting
+         * its recent status to namenode
+         */
+         public static final byte TRAFFIC_RPC_BLOCK_REPORT = (byte)23;
+        public static final byte TRAFFIC_RPC_RESPOND_BLOCK_REPORT = (byte)24;
+
+
+        public static final byte TRAFFIC_RPC_SEND_BLOCK_RECEIVED = (byte)25;
+        public static final byte TRAFFIC_RPC_RESPOND_BLOCK_RECIVED = (byte)26;
+
+        /*
+         * FIXME:
+         * THis could be called by client too
+         * Needs to differenciate
+         * But for now those are all error traffic that we don't care
+         * Thus now we dont uses these, instead they go to error traffic, I think
+         * yangsuli 12/6/2012
+         */
+         public static final byte TRAFFIC_RPC_BAD_BLOCK_REPORT = (byte)31;
+        public static final byte TRAFFIC_RPC_RESPOND_BAD_BLOCK_REPORT = (byte)32;
+
+
+        /*
+         * Request metadata of a block from the namenode
+         */
+        public static final byte TRAFFIC_RPC_REQUEST_BLOCK_METADATA = (byte)33;
+        public static final byte TRAFFIC_RPC_REQUEST_BLOCK_METADATA_RESPOND = (byte)34;
+
+        /*
+         * Datanode report commit of a sychrouse operaton on block
+         * I think
+         * yangsuli 12/6/2012
+         */
+        public static final byte TRAFFIC_RPC_COMMIT_BLOCK_SYNC = (byte)35; 
+        public static final byte TRAFFIC_RPC_COMMIT_BLOCK_SYNC_RESPOND = (byte)36; 
+
+        /*
+         * FIXME:
+         * This could be called either from the dananode or the client
+         * Thus need a mechanism to differenciate these two
+         * yangsuli 12/6/2012
+         */
+        public static final byte TRAFFIC_RPC_GET_VERSION = (byte)39;
+        public static final byte TRAFFIC_RPC_GET_VERSION_RESPOND = (byte)40;
+
+        /*
+         * The following traffic are between client and the namenodes
+         * Detailed Description of each kind of traffic can be found in the comment of ClientProtocol.java
+         * SEND_TRAFFIC are initiated from the client side
+         * While RESPOND_TRAFFIC are initiated from the namenode side
+         */
+
+        /*
+         * Client request metadata
+         */
+        public static final byte TRAFFIC_RPC_CLIENT_REQ_BLOCK_LOC = (byte)37;
+        public static final byte TRAFFIC_RPC_CLIENT_REQ_BLOCK_LOC_RESPOND = (byte)38;
+
+        /*
+         * File Operations (doesn't involve bulk data transfer
+         */
+        public static final byte TRAFFIC_RPC_CLIENT_CREATE_FILE = (byte)41;
+        public static final byte TRAFFIC_RPC_CLIENT_CREATE_FILE_RESPOND = (byte)42;
+        public static final byte TRAFFIC_RPC_CLIENT_APPEND_FILE = (byte)43;
+        public static final byte TRAFFIC_RPC_CLIENT_APPEND_FILE_RESPOND = (byte)44;
+        public static final byte TRAFFIC_RPC_CLIENT_SET_REPLICA_FILE = (byte)45;
+        public static final byte TRAFFIC_RPC_CLIENT_SET_REPLICA_FILE_RESPOND = (byte)46;
+        public static final byte TRAFFIC_RPC_CLIENT_SET_PERM_FILE = (byte)47;
+        public static final byte TRAFFIC_RPC_CLIENT_SET_PERM_FILE_RESPOND = (byte)48;
+        public static final byte TRAFFIC_RPC_CLIENT_SET_OWN_FILE = (byte)49;
+        public static final byte TRAFFIC_RPC_CLIENT_SET_OWN_FILE_RESPOND = (byte)50;
+        public static final byte TRAFFIC_RPC_CLIENT_SET_TIME_FILE = (byte)77;
+        public static final byte TRAFFIC_RPC_CLIENT_SET_TIME_FILE_RESPOND = (byte)78;
+        public static final byte TRAFFIC_RPC_CLIENT_ABAND_BLK = (byte)51;
+        public static final byte TRAFFIC_RPC_CLIENT_ABAND_BLK_RESPOND = (byte)52;
+        public static final byte TRAFFIC_RPC_CLIENT_ADD_BLK = (byte)51;
+        public static final byte TRAFFIC_RPC_CLIENT_ADD_BLK_RESPOND = (byte)52;
+        public static final byte TRAFFIC_RPC_CLIENT_COMPLETE_FILE = (byte)53; 
+        public static final byte TRAFFIC_RPC_CLIENT_COMPLETE_FILE_RESPOND = (byte)54;
+        public static final byte TRAFFIC_RPC_CLIENT_REPORT_BAD_BLK = (byte)55;
+        public static final byte TRAFFIC_RPC_CLIENT_REPORT_BAD_BLK_RESPOND = (byte)56;
+
+        /*
+         * fsync...
+         */
+        public static final byte TRAFFIC_RPC_CLIENT_FSYNC = (byte)75;
+        public static final byte TRAFFIC_RPC_CLIENT_FSYNC_RESPOND = (byte)76;
+
+        /*
+         * Get File Info and such
+         */
+        public static final byte TRAFFIC_RPC_CLIENT_GET_INFO_FILE = (byte)71;
+        public static final byte TRAFFIC_RPC_CLIENT_GET_INFO_FILE_RESPOND = (byte)72;
+        public static final byte TRAFFIC_RPC_CLIENT_GET_CONTENT_SUM = (byte)73;
+        public static final byte TRAFFIC_RPC_CLIENT_GET_CONTENT_SUM_RESPOND = (byte)74;
+
+
+        /*
+         * Client do namespace management
+         */
+        public static final byte TRAFFIC_RPC_CLIENT_RENAME_PATH = (byte)57;
+        public static final byte TRAFFIC_RPC_CLIENT_RENAME_PATH_RESPOND = (byte)58;
+        public static final byte TRAFFIC_RPC_CLIENT_DEL_PATH = (byte)57;
+        public static final byte TRAFFIC_RPC_CLIENT_DEL_PATH_RESPOND = (byte)58;
+        public static final byte TRAFFIC_RPC_CLIENT_MKDIR = (byte)59;
+        public static final byte TRAFFIC_RPC_CLIENT_MKDIR_RESPOND = (byte)60;
+
+        public static final byte TRAFFIC_RPC_CLIENT_GET_DIR_LIST = (byte)61;
+        public static final byte TRAFFIC_RPC_CLIENT_GET_DIR_LIST_RESPOND = (byte)62;
+
+        /*
+         * Client Lease Related
+         */
+        public static final byte TRAFFIC_RPC_CLIENT_RENEW_LEASE = (byte)63;
+        public static final byte TRAFFIC_RPC_CLIENT_RENEW_LEASE_RESPOND = (byte)64;
+
+
+        /*
+         * Client Get System Stats
+         */
+        public static final byte TRAFFIC_RPC_CLIENT_GET_STAT = (byte)65;
+        public static final byte TRAFFIC_RPC_CLIENT_GET_STAT_RESPOND = (byte)66;
+        public static final byte TRAFFIC_RPC_CLIENT_GET_DN_REPORT = (byte)67;
+        public static final byte TRAFFIC_RPC_CLIENT_GET_DN_REPORT_RESPOND = (byte)68;
+        public static final byte TRAFFIC_RPC_CLIENT_GET_PREF_BLK_SIZE = (byte)69;
+        public static final byte TRAFFIC_RPC_CLIENT_GET_PREF_BLK_SIZE_RESPOND = (byte)70;
+
+        /*
+         * Client Side Security Stuff
+         */
+        public static final byte TRAFFIC_RPC_CLIENT_GET_TOKEN = (byte)79;
+        public static final byte TRAFFIC_RPC_CLIENT_GET_TOKEN_RESPOND = (byte)80;
+        public static final byte TRAFFIC_RPC_CLIENT_RENEW_TOKEN = (byte)81;
+        public static final byte TRAFFIC_RPC_CLIENT_RENEW_TOKEN_RESPOND = (byte)82;
+        public static final byte TRAFFIC_RPC_CLIENT_CANCLE_TOKEN = (byte)83;
+        public static final byte TRAFFIC_RPC_CLIENT_CANCLE_TOKEN_RESPOND = (byte)84;
+
+        /*
+         * Coummunication between secondary NameNode and Namenode
+         */
+        public static final byte TRAFFIC_RPC_2ND_GET_BLOCK = (byte)85;
+        public static final byte TRAFFIC_RPC_2ND_GET_BLOCK_RESPOND = (byte)86;
+        public static final byte TRAFFIC_RPC_2ND_GET_BLOCK_KEYS = (byte)87;
+        public static final byte TRAFFIC_RPC_2ND_GET_BLOCK_KEYS_RESPOND = (byte)88;
+        public static final byte TRAFFIC_RPC_2ND_GET_LOG_SIZE = (byte)89;
+        public static final byte TRAFFIC_RPC_2ND_GET_LOG_SIZE_RESPOND = (byte)90; 
+        public static final byte TRAFFIC_RPC_2ND_ROLL_LOG = (byte)91;
+        public static final byte TRAFFIC_RPC_2ND_ROLL_LOG_RESPOND = (byte)92; 
+        public static final byte TRAFFIC_RPC_2ND_ROLL_FSIMG = (byte)93;
+        public static final byte TRAFFIC_RPC_2ND_ROLL_FSIMG_RESPOND = (byte)94;
+
+        /*
+         * General Security Stuff
+         * I am not quite sure if HDFS ever use it, even though NameNode has implemeted it
+         * yangsuli 12/8/2012
+         */
+        public static final byte TRAFFIC_RPC_SECURITY_REFRESH = (byte)95;
+        public static final byte TRAFFIC_RPC_SECURITY_REFRESH_RESPOND = (byte)96;
 
 
 
+        public static final byte TRAFFIC_RPC_UNKNOWN = (byte)97;
+        public static final byte TRAFFIC_RPC_UNKNOWN_RESPOND = (byte)98;
+
+        /*
+         * Some traffic other than the HDFS traffic
+         * For now we have the periodic heartbeat  
+         * between the TaskTracker and the JobTracker.
+         * There might be others.
+         * FIXME:
+         * Can we just run HDFS without any other componenets?
+         * yangsuli 12/8/2012
+         */
+        public static final byte TRAFFIC_RPC_OTHER = (byte)99;
+        public static final byte TRAFFIC_RPC_OTHER_RESPOND = (byte)99;
 
 
+
+	public static class ADGTrafficDesc {
 	    public ADGTrafficDesc(byte type){
 			this.type = type;
 		}
-		private byte type;
+		protected byte type;
 	}
 
         //ADG
@@ -74,15 +288,223 @@ public class ADGTrafficTrace {
         //FIXME:
         //implementing it
         LOG.info("ADG RPC Request Method (Tag: " + tag + "): "+method);        
-        return true;
+        if(method.equals("sendHeartbeat")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_SEND_HEARTBEAT),tag);  
+        }else if(method.equals("register") ||
+                method.equals("getBuildVersion")
+                ){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_STARTUP_INIT),tag);  
+        }else if(method.equals("blockReport")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_BLOCK_REPORT), tag);
+        }else if(method.equals("blockReceived")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_SEND_BLOCK_RECEIVED), tag);
+        }else if(method.equals("errorReport") ||
+                method.equals("reportBadBlocks")
+        ){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_ERROR), tag);
+        }else if(method.equals("processUpgradeCommand") ||
+                method.equals("setSafeMode") ||
+                method.equals("saveNamespace") ||
+                method.equals("refreshNodes") ||
+                method.equals("finalizeUpgrade") ||
+                method.equals("distributedUpgradeProgress") ||
+                method.equals("metaSave") ||
+                method.equals("setQuota")
+        ){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_UPGRATE_MAINTAIN), tag);
+        }else if(method.equals("nextGenerationStamp")
+        ){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_REQUEST_BLOCK_METADATA), tag);
+        }else if(method.equals("commitBlockSynchronization")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_COMMIT_BLOCK_SYNC), tag); 
+        }else if(method.equals("getProtocolVersion") ||
+                method.equals("versionRequest") 
+                ){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_GET_VERSION), tag);
+        }else if(method.equals("getBlockLocations")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_REQ_BLOCK_LOC), tag);
+        }else if(method.equals("create")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_CREATE_FILE), tag);
+        }else if(method.equals("append")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_APPEND_FILE), tag);
+        }else if(method.equals("setReplication")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_SET_REPLICA_FILE), tag);
+        }else if(method.equals("setPermission")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_SET_PERM_FILE), tag);
+        }else if(method.equals("setOwner")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_SET_OWN_FILE), tag);
+        }else if(method.equals("abandonBlock")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_ABAND_BLK), tag);
+        }else if(method.equals("addBlock")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_ADD_BLK), tag);
+        }else if(method.equals("complete")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_COMPLETE_FILE), tag);
+        }else if(method.equals("getFileInfo")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_GET_INFO_FILE), tag);
+        }else if(method.equals("getContentSummary")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_GET_CONTENT_SUM), tag);
+        }else if(method.equals("fsync")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_FSYNC), tag);
+        }else if(method.equals("rename")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_RENAME_PATH), tag);
+        }else if(method.equals("delete")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_DEL_PATH), tag);
+        }else if(method.equals("mkdirs")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_MKDIR), tag);
+        }else if(method.equals("getListing")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_GET_DIR_LIST), tag);
+        }else if(method.equals("renewLease")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_RENEW_LEASE), tag);
+        }else if(method.equals("getStats")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_GET_STAT), tag);
+        }else if(method.equals("getDataNodeInfo")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_GET_DN_REPORT), tag);
+        }else if(method.equals("getPreferredBlockSize")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_GET_PREF_BLK_SIZE), tag);
+        }else if(method.equals("setTimes")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_SET_TIME_FILE), tag);
+        }else if(method.equals("getDelegationToken")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_GET_TOKEN), tag);
+        }else if(method.equals("renewDelegationToken")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_RENEW_TOKEN), tag);
+        }else if(method.equals("cancleDelegationToken")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_CANCLE_TOKEN), tag);
+        }else if(method.equals("getBlocks")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_2ND_GET_BLOCK), tag);
+        }else if(method.equals("getBlockKeys")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_2ND_GET_BLOCK_KEYS), tag);
+        }else if(method.equals("getEditLogSize")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_2ND_GET_LOG_SIZE), tag);
+        }else if(method.equals("rollEditLog")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_2ND_ROLL_LOG), tag);
+        }else if(method.equals("rollFsImage")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_2ND_ROLL_FSIMG), tag);
+        }else if(method.equals("refreshUserToGroupsMappings") ||
+                method.equals("refreshSuperUserGroupsConfiguration") ||
+                method.equals("refreshServiceAcl")
+                ){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_SECURITY_REFRESH), tag);
+        }else if(method.equals("heartbeat") ||
+                method.equals("getSystemDir")
+                ){//Somt non-HDFS traffic, really shouldn't be here
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_OTHER), tag);
+        }else{
+            LOG.warn("ADG WARNING:Don't know such a method: " + method +"! Probably missed something!!!!");
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_UNKNOWN), tag);
+        }
+
     }
+        
 
     public static boolean ADGSetRPCResponseTrafficType(Socket sock, String method, String tag){
-        //FIXME:
-        //implementing it
         LOG.info("ADG RPC Respond Method (Tag: " + tag + "): "+method);        
-        return true;
+        if(method.equals("sendHeartbeat")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_RESPOND_HEARTBEAT),tag);  
+        }else if(method.equals("register")
+                ){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_RESPOND_STARTUP_INIT),tag);  
+        }else if(method.equals("blockReport")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_RESPOND_BLOCK_REPORT), tag);
+        }else if(method.equals("blockReceived")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_RESPOND_BLOCK_RECIVED), tag);
+        }else if(method.equals("errorReport") ||
+                method.equals("reportBadBlocks")
+        ){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_ERROR_RESPOND), tag);
+        }else if(method.equals("processUpgradeCommand") ||
+                method.equals("setSafeMode") ||
+                method.equals("saveNamespace") ||
+                method.equals("refreshNodes") ||
+                method.equals("finalizeUpgrade") ||
+                method.equals("distributedUpgradeProgress") ||
+                method.equals("metaSave") ||
+                method.equals("setQuota")
+
+        ){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_UPGRATE_MAINTAIN_RESPOND), tag);
+        }else if(method.equals("nextGenerationStamp")
+        ){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_REQUEST_BLOCK_METADATA_RESPOND), tag);
+        }else if(method.equals("commitBlockSynchronization")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_COMMIT_BLOCK_SYNC_RESPOND), tag); 
+        }else if(method.equals("getProtocolVersion") ||
+                method.equals("versionRequest") 
+                ){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_GET_VERSION_RESPOND), tag);
+        }else if(method.equals("getBlockLocations")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_REQ_BLOCK_LOC_RESPOND), tag);
+        }else if(method.equals("create")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_CREATE_FILE_RESPOND), tag);
+        }else if(method.equals("append")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_APPEND_FILE_RESPOND), tag);
+        }else if(method.equals("setReplication")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_SET_REPLICA_FILE_RESPOND), tag);
+        }else if(method.equals("setPermission")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_SET_PERM_FILE_RESPOND), tag);
+        }else if(method.equals("setOwner")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_SET_OWN_FILE_RESPOND), tag);
+        }else if(method.equals("abandonBlock")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_ABAND_BLK_RESPOND), tag);
+        }else if(method.equals("addBlock")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_ADD_BLK_RESPOND), tag);
+        }else if(method.equals("complete")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_COMPLETE_FILE_RESPOND), tag);
+        }else if(method.equals("getFileInfo")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_GET_INFO_FILE_RESPOND), tag);
+        }else if(method.equals("getContentSummary")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_GET_CONTENT_SUM_RESPOND), tag);
+        }else if(method.equals("fsync")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_FSYNC_RESPOND), tag);
+        }else if(method.equals("rename")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_RENAME_PATH_RESPOND), tag);
+        }else if(method.equals("delete")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_DEL_PATH_RESPOND), tag);
+        }else if(method.equals("mkdirs")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_MKDIR_RESPOND), tag);
+        }else if(method.equals("getListing")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_GET_DIR_LIST_RESPOND), tag);
+        }else if(method.equals("renewLease")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_RENEW_LEASE_RESPOND), tag);
+        }else if(method.equals("getStats")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_GET_STAT_RESPOND), tag);
+        }else if(method.equals("getDataNodeInfo")){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_GET_DN_REPORT_RESPOND), tag);
+        }else if(method.equals("getPreferredBlockSize")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_GET_PREF_BLK_SIZE_RESPOND), tag);
+        }else if(method.equals("setTimes")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_SET_TIME_FILE_RESPOND), tag);
+        }else if(method.equals("getDelegationToken")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_GET_TOKEN_RESPOND), tag);
+        }else if(method.equals("renewDelegationToken")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_RENEW_TOKEN_RESPOND), tag);
+        }else if(method.equals("cancleDelegationToken")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_CLIENT_CANCLE_TOKEN_RESPOND), tag);
+        }else if(method.equals("getBlocks")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_2ND_GET_BLOCK_RESPOND), tag);
+        }else if(method.equals("getBlockKeys")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_2ND_GET_BLOCK_KEYS_RESPOND), tag);
+        }else if(method.equals("getEditLogSize")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_2ND_GET_LOG_SIZE_RESPOND), tag);
+        }else if(method.equals("rollEditLog")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_2ND_ROLL_LOG_RESPOND), tag);
+        }else if(method.equals("rollFsImage")){ 
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_2ND_ROLL_FSIMG_RESPOND), tag);
+        }else if(method.equals("refreshUserToGroupsMappings") ||
+                method.equals("refreshSuperUserGroupsConfiguration") ||
+                method.equals("refreshServiceAcl")
+                ){
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_SECURITY_REFRESH_RESPOND), tag);
+        }else if(method.equals("heartbeat")){//Somt non-HDFS traffic, really shouldn't be here
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_OTHER_RESPOND), tag);
+        }else{
+            LOG.warn("ADG WARNING:Don't know such a method! Probably missed something!!!!");
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_UNKNOWN_RESPOND), tag);
+        }
+
+
     }
+
+
 
 	public static boolean ADGSetSocketTrafficType(Socket sock, ADGTrafficDesc desc){
 	
@@ -100,7 +522,7 @@ public class ADGTrafficTrace {
 	}
 
 	public static boolean ADGSetSocketTrafficType(Socket sock, ADGTrafficDesc desc, String tag){
-        LOG.info("ADG Method (Tag: " + tag + "):  ADGSetSocketTrafficType(Socket sock, ADGTrafficDesc desc)");        
+        LOG.info("ADG Set Traffice Type " + desc.type +"(Tag: " + tag + "):  ADGSetSocketTrafficType");        
         return true;
     }
 }
