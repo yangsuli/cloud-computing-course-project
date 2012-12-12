@@ -114,7 +114,7 @@ class DataXceiver implements Runnable, FSConstants {
         //ADG
 	//readBlock will send some header info, the offset, the actual block data, and the end mark through this socket
 	//yangsuli 11/25/2012
-        ADGTrafficTrace.ADGSetSocketTrafficType(s, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_READ_DATA_BLOCK));
+        ADGTrafficTrace.ADGSetSocketTrafficType(s, new ADGTrafficDesc(ADGTrafficTrace.TRAFFIC_READ_DATA_BLOCK));
         readBlock( in );
         datanode.myMetrics.addReadBlockOp(DataNode.now() - startTime);
         if (local)
@@ -309,7 +309,7 @@ class DataXceiver implements Runnable, FSConstants {
     //replyOut is used to send ack to the client or to upstream datanodes
     //this ack is sent either when a time threshold passed or when a packet is received and processed
     //yangsuli 11/25/2012
-    ADGTrafficTrace.ADGSetSocketTrafficType(s, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_WRITE_DATA_ACK));
+    ADGTrafficTrace.ADGSetSocketTrafficType(s, new ADGTrafficDesc(ADGTrafficTrace.TRAFFIC_WRITE_DATA_ACK));
     DataOutputStream replyOut = null;   // stream to prev target
     replyOut = new DataOutputStream(
                    NetUtils.getOutputStream(s, datanode.socketWriteTimeout));
@@ -374,7 +374,7 @@ class DataXceiver implements Runnable, FSConstants {
           //TODO:
           //We might want to differeniate the client traffic and the pipeline traffic
           //yangsuli 11/25/2012
-          ADGTrafficTrace.ADGSetSocketTrafficType(mirrorSock, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_WRITE_PIPELINE_DATA_HEADER));
+          ADGTrafficTrace.ADGSetSocketTrafficType(mirrorSock, new ADGTrafficDesc(ADGTrafficTrace.TRAFFIC_WRITE_PIPELINE_DATA_HEADER));
 
           mirrorIn = new DataInputStream(NetUtils.getInputStream(mirrorSock));
 
@@ -447,7 +447,7 @@ class DataXceiver implements Runnable, FSConstants {
         replyOut.flush();
       }
 
-       ADGTrafficTrace.ADGSetSocketTrafficType(mirrorSock, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_WRITE_PIPELINE_DATA_PACKETS));
+       ADGTrafficTrace.ADGSetSocketTrafficType(mirrorSock, new ADGTrafficDesc(ADGTrafficTrace.TRAFFIC_WRITE_PIPELINE_DATA_PACKETS));
       // receive the block and mirror to the next target
       String mirrorAddr = (mirrorSock == null) ? null : mirrorNode;
       blockReceiver.receiveBlock(mirrorOut, mirrorIn, replyOut,
