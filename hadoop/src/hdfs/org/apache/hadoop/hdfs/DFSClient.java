@@ -1470,7 +1470,7 @@ public class DFSClient implements FSConstants, java.io.Closeable {
         //ADG:
         //Added code to instruct the socket to be marked as sending CHECKSUM_OK traffic
         //yangsuli 11/25/2012
-	ADGTrafficTrace.ADGSetSocketTrafficType(dnSock, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_READ_DATA_ACK));
+	ADGTrafficTrace.ADGSetSocketTrafficType(dnSock, new ADGTrafficDesc(ADGTrafficTrace.TRAFFIC_READ_DATA_ACK));
         checksumOk(dnSock);
       }
       return nRead;
@@ -1719,7 +1719,7 @@ public class DFSClient implements FSConstants, java.io.Closeable {
                                        String clientName)
                                        throws IOException {
       // in and out will be closed when sock is closed (by the caller)
-      ADGTrafficTrace.ADGSetSocketTrafficType(sock, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_READ_DATA_REQUEST));
+      ADGTrafficTrace.ADGSetSocketTrafficType(sock, new ADGTrafficDesc(ADGTrafficTrace.TRAFFIC_READ_DATA_REQUEST));
       DataOutputStream out = new DataOutputStream(
         new BufferedOutputStream(NetUtils.getOutputStream(sock,HdfsConstants.WRITE_TIMEOUT)));
 
@@ -2356,7 +2356,7 @@ public class DFSClient implements FSConstants, java.io.Closeable {
 	     * yangsuli 11/25/2012
 	     */
             dn = socketFactory.createSocket();
-      	    ADGTrafficTrace.ADGSetSocketTrafficType(dn, new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_READ_DATA_REQUEST));
+      	    ADGTrafficTrace.ADGSetSocketTrafficType(dn, new ADGTrafficDesc(ADGTrafficTrace.TRAFFIC_READ_DATA_REQUEST));
             NetUtils.connect(dn, targetAddr, socketTimeout);
             dn.setSoTimeout(socketTimeout);
             reader = BlockReader.newBlockReader(dn, src, 
@@ -3475,7 +3475,7 @@ public class DFSClient implements FSConstants, java.io.Closeable {
         //This includes opcode, blockId, client string and pipelined datanodes
         //And I think this socket is going to to closed after this particular socket
         //yangsuli 11/29/2012
-        ADGTrafficTrace.ADGSetSocketTrafficType(s,new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_WRITE_CLIENT_DATA_HEADER));
+        ADGTrafficTrace.ADGSetSocketTrafficType(s,new ADGTrafficDesc(ADGTrafficTrace.TRAFFIC_WRITE_CLIENT_DATA_HEADER));
 
         out.writeShort( DataTransferProtocol.DATA_TRANSFER_VERSION );
         out.write( DataTransferProtocol.OP_WRITE_BLOCK );
@@ -3497,7 +3497,7 @@ public class DFSClient implements FSConstants, java.io.Closeable {
         //After the header, this socket will be used to send block data excusively, I think
         //FIXME: need to verify this
         //yangsuli 11/29/2012
-        ADGTrafficTrace.ADGSetSocketTrafficType(s,new ADGTrafficDesc(ADGTrafficDesc.TRAFFIC_WRITE_CLIENT_DATA_PACKETS));
+        ADGTrafficTrace.ADGSetSocketTrafficType(s,new ADGTrafficDesc(ADGTrafficTrace.TRAFFIC_WRITE_CLIENT_DATA_PACKETS));
 
         // receive ack for connect
         pipelineStatus = blockReplyStream.readShort();
