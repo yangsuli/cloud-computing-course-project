@@ -1,5 +1,4 @@
-hdp_dir="/scratch/838-project/cloud-computing-course-project/hadoop/"
-cd $hdp_dir
+hdp_dir=`pwd`
 
 rm logs/*;
 
