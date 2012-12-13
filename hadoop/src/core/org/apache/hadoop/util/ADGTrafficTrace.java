@@ -914,6 +914,7 @@ public class ADGTrafficTrace {
 
     public static boolean ADGSetSocketTrafficType(Socket sock, ADGTrafficDesc desc, String tag){
         LOG.info("ADG Set Flow Type: " + ADGFlowLocGroupTraffic(ADGGroupTraffic(desc.type)));        
+        ADGSetSocketTOS.setSocketTOS(sock);
         
         return true;
     }
