@@ -913,8 +913,16 @@ public class ADGTrafficTrace {
     }
 
     public static boolean ADGSetSocketTrafficType(Socket sock, ADGTrafficDesc desc, String tag){
-        LOG.info("ADG Set Flow Type: " + ADGFlowLocGroupTraffic(ADGGroupTraffic(desc.type)));        
-        ADGSetSocketTOS.setSocketTOS(sock);
+        int flow_type = ADGFlowGroupTraffic(ADGGroupTraffic(desc.type));
+        LOG.info("ADG Set Flow Type: " + flow_type);        
+        if(sock == null){
+            LOG.error("Null socket when setting traffic type for flow type" + flow_type + "!");
+            return false;
+        }
+        int ret = ADGSetSocketTOS.setSocketTOS(sock, flow_type);
+        if(ret != 0){
+            LOG.error("Error when etting flow type " + flow_type +  "!");
+        }
         
         return true;
     }

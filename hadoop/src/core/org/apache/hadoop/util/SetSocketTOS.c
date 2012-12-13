@@ -41,87 +41,63 @@ static int getFd(JNIEnv *env, jobject sock)
 
 
 //note the type of return value is jint instead of int
-JNIEXPORT jint JNICALL Java_connectionClient_setSocketTOS(JNIEnv *env, jobject obj, jobject socket)
+JNIEXPORT jint Java_org_apache_hadoop_util_ADGSetSocketTOS_setSocketTOS(JNIEnv *env, jclass obj, jobject socket, jint flow_type)
 {
-//	printf("Brisk hello world!\n");
-//	return;
-	
-	
-	
-	 	static jclass channel_cls = NULL;
+
+    static jclass channel_cls = NULL;
     jclass cls;
     jfieldID fid;
-    
-    
-//    printf("fid : %d\n",getFd(env, socket));
-    
+
+
+    //    printf("fid : %d\n",getFd(env, socket));
+
     int sockfd = getFd(env, socket);
-    
-    
-    printf("fid : %d\n",sockfd);
-
-        int tos_local = 0x34;//last two bits check -- no use
-
-        if (setsockopt(sockfd, IPPROTO_IP, IP_TOS,  &tos_local, sizeof(tos_local))) {
-                  error("error at socket option");
-
-                  int tos=0;
-                        int toslen=sizeof(tos); //that line here
-
-                  if (getsockopt(sockfd, IPPROTO_IP, IP_TOS,  &tos, &toslen) < 0) {
-                          printf ("error to get option");
-                  }else {
-                          printf ("changing tos opt = %d\n",tos);
-                  }
-        }
-        else
-        {
-                  int tos=0;
-                        int toslen=sizeof(tos); //that line here
-
-                  if (getsockopt(sockfd, IPPROTO_IP, IP_TOS,  &tos, &toslen) < 0) {
-                          printf ("error to get option");
-                  }else {
-                          printf ("changing tos opt = %d\n",tos);
-                  }
-        }
 
 
 
-
-   
-   	return 0;
-   	
-/*   	
-   
-    if (channel_cls == NULL) {
-        cls = (*env)->FindClass (env, "java/nio/channels/SelectableChannel");
-//        assert (cls);
-        channel_cls = (jclass) (*env)->NewGlobalRef (env, cls);
-        (*env)->DeleteLocalRef (env, cls);
-//        assert (channel_cls);
+    //   int tos_local = flow_type;
+    int tos_local;
+    switch (flow_type) {
+        case 2: tos_local = 0x34;
+                break;
+        case 3: tos_local = 0x34;
+                break;
+        case 4: tos_local = 0x34;
+                break;
+        case 5: tos_local = 0x34;
+                break;
+        case 6: tos_local = 0x34;
+                break;
+        case 7: tos_local = 0x34;
+                break;
+        case 8: tos_local = 0x34;
+                break;
+        case 9: tos_local = 0x34;
+                break;
+        case 10: tos_local = 0x34;
+                break;
+        case 11: tos_local = 0x34;
+                break;
+        case 12: tos_local = 0x34;
+                break;
+        default:
+                printf("unkown flow type %d\n", flow_type);
+                return -2;
     }
-    if (!(*env)->IsInstanceOf (env, socket, channel_cls)) 
-        return -2;
 
-    cls = (*env)->GetObjectClass(env, socket);
-//    assert (cls);
 
-    fid = (*env)->GetFieldID(env, cls, "fdVal", "I");
-    
-//    env->DeleteLocalRef (cls);
+    if (setsockopt(sockfd, IPPROTO_IP, IP_TOS,  &tos_local, sizeof(tos_local))) {
+        printf("setsockopt syscall error to set tos to %d\n", tos_local);
+        return -1;
+    }
+    else
+    {   
+           printf ("TOS filed has been set to = %d\n",tos_local);
+           
+    }
 
-    if (fid == NULL) {
-    	printf("fid == NULL\n");
-      return -1;
-		}
-		
-    /* return the descriptor *//* 
-    int fd = (*env)->GetIntField(env, socket, fid);
-		
-		printf("fid != null\n");
-    return fd;
-    */
+    return 0;
+
 
 }
 
