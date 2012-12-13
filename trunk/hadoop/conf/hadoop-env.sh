@@ -19,6 +19,7 @@ export JAVA_HOME=/usr/lib/jvm/java-6-sun-1.6.0.26
 
 # Extra Java runtime options.  Empty by default.
 # export HADOOP_OPTS=-server
+export HADOOP_OPTS="-server -Djava.library.path=/home/openflow/hadoop-1.0.4/src/core/org/apache/hadoop/util"
 
 # Command specific options appended to HADOOP_OPTS when specified
 export HADOOP_NAMENODE_OPTS="-Dcom.sun.management.jmxremote $HADOOP_NAMENODE_OPTS"
