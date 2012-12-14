@@ -13,11 +13,6 @@ import java.lang.String;
 import java.lang.RuntimeException;
 import java.net.*;
 
-//This is jor the jni socket debuging:
-import javax.net.SocketFactory;
-import org.apache.hadoop.net.NetUtils;
-import org.apache.hadoop.net.StandardSocketFactory;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -939,35 +934,12 @@ public class ADGTrafficTrace {
             LOG.error("Null socket when setting traffic type for flow type" + flow_type + "!");
             return false;
         }
-        try{
 
-        if(sock.isBound()){
-            LOG.info("ADGSetSocketTrafficType: sock is bound.");
-        }else{
-            LOG.error("ADGSetSocketTrafficType: sock is NOT bound.");
-        }
-        if(sock.isConnected()){
-            LOG.info("ADGSetSocketTrafficType: sock is connected.");
-        }else{
-            LOG.error("ADGSetSocketTrafficType: sock is NOT connected.");
-        }
-        if(sock.isClosed()){
-            LOG.info("ADGSetSocketTrafficType: sock is closed.");
-        }else{
-            LOG.info("ADGSetSocketTrafficType: sock is NOT closed.");
-        }
- //       SocketFactory socketFactory = SocketFactory.getDefault();
-        SocketFactory socketFactory = new StandardSocketFactory();
-        Socket new_sock = socketFactory.createSocket();
         LOG.info("YANGSULI socket's class is:" + sock.getClass().getName());
-        SocketImpl impl = ADGSetSocketTOS.getImpl(sock);
-        LOG.info("YANGSULI impl's class is:" + impl.getClass().getName());
-        NetUtils.connect(new_sock, new InetSocketAddress("127.0.0.1", 9999), 0);
         int ret = ADGSetSocketTOS.setSocketTOS((sun.nio.ch.SocketAdaptor)sock, flow_type);
         if(ret != 0){
             LOG.error("Error when etting flow type " + flow_type +  "!");
-        }}catch(Exception e){
-            LOG.error("whaever...");
+            return false;
         }
         
         return true;
