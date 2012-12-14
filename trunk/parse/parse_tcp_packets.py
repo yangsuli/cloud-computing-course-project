@@ -12,11 +12,14 @@ class CFlow:
         self.clientPort=cport
         self.forward=[]
         self.backward=[]
-        self.tos=[]
+        self.tos={tos:plen}
         self.backward.append( (ts, plen, tos ))
     def __str__(self):
-        return (socket.inet_ntoa(self.serverIP), socket.inet_ntoa(self.clientIP), self.serverPort, self.clientPort).__str__()+"\n"+\
-                self.tos.__str__()+"\n"
+        return (socket.inet_ntoa(self.serverIP), socket.inet_ntoa(self.clientIP), self.serverPort, self.clientPort).__str__()+"\n"
+    def ts_size_info(self):
+        return self.forward.__str__()+"\n"+self.backward.__str__()+"\n"
+    def tos_info(self):
+        return "tos filed: coresponding size "+self.tos.__str__()+"\n"
     def GetNewPacket(self, pktTuple):
         srcIP=pktTuple[0]
         dstIP=pktTuple[1]
@@ -28,7 +31,9 @@ class CFlow:
         else:
             self.backward.append((times, payl))
         if tos not in self.tos:
-            self.tos.append(tos)
+            self.tos[tos]=payl
+        else:
+            self.tos[tos]+=payl
     def __hash__(self):
         return hash( (serverIP, clientIP, serverPort, clientPort))
     def __eq__(self, other):
@@ -50,6 +55,10 @@ def main():
                 continue
             tcp=ip.data
             tos=ip.tos
+            #ignore 0 payload size packet
+            #I am not quite sure whether I should do that though...
+            if len(tcp.data) == 0:
+                continue
             f=CFlow(ip.dst,ip.src,tcp.dport, tcp.sport, ts, len(tcp.data), tos)
             if f in flows:
                 ind=flows.index(f)
@@ -60,9 +69,15 @@ def main():
         print "exception", e
     fi.close()
     fi=open("tcp.txt",'w')
+    f2=open("ts_size.txt",'w')
 
     for f in flows:
         fi.write(f.__str__())
+        fi.write(f.tos_info())
+        fi.write("\n")
+        f2.write(f.__str__())
+        f2.write(f.ts_size_info())
     fi.close()
+    f2.close()
 main()
 
