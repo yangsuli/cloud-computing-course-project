@@ -13,5 +13,6 @@ public class ADGSetSocketTOS{
 
     //JNI
     public static native int setSocketTOS(Socket socket, int flow_type);
+    public static native SocketImpl getImpl(Socket socket);
 
 }

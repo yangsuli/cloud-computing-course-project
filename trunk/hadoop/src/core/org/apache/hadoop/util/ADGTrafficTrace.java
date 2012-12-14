@@ -11,6 +11,12 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.lang.String;
 import java.lang.RuntimeException;
+import java.net.*;
+
+//This is jor the jni socket debuging:
+import javax.net.SocketFactory;
+import org.apache.hadoop.net.NetUtils;
+import org.apache.hadoop.net.StandardSocketFactory;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -44,6 +50,12 @@ public class ADGTrafficTrace {
     //this conresponds to category 7 in google doc
     public static final byte TRAFFIC_GROUP_WRITE_ACK = (byte) 203;
 
+    /*
+     * The following share a socket(flow)
+     * From client to datanode
+     */
+    public static final byte TRAFFIC_BLOCK_CHECKSUM = (byte) 119;
+    public static final byte TRAFFIC_GROUP_BLOCK_CHECKSUM = (byte) 233;
 
     /*
      * The following share a socket (flow)
@@ -355,6 +367,9 @@ public class ADGTrafficTrace {
             case TRAFFIC_WRITE_DATA_ACK:
                 group = TRAFFIC_GROUP_WRITE_ACK;
                 break;
+            case TRAFFIC_BLOCK_CHECKSUM:
+                group = TRAFFIC_GROUP_BLOCK_CHECKSUM;
+                break;
             case TRAFFIC_WRITE_CLIENT_DATA_HEADER:
             case TRAFFIC_WRITE_CLIENT_DATA_PACKETS:
                 group = TRAFFIC_GROUP_WRITE_TRANSFER;
@@ -523,11 +538,15 @@ public class ADGTrafficTrace {
     public static final byte TRAFFIC_FLOW_READ_TRANSFER = (byte) 10;
     public static final byte TRAFFIC_FLOW_WRITE_TRANSFER = (byte) 11;
     public static final byte TRAFFIC_FLOW_READ_REQACK = (byte) 12;
+    public static final byte TRAFFIC_FLOW_BLOCK_CHECKSUM = (byte) 13;
     public static byte ADGFlowGroupTraffic(byte group){
         byte flow_type;
         switch(group){
             case TRAFFIC_GROUP_READ_REQACK:
                 flow_type = TRAFFIC_FLOW_READ_REQACK;
+                break;
+            case TRAFFIC_GROUP_BLOCK_CHECKSUM:
+                flow_type = TRAFFIC_FLOW_BLOCK_CHECKSUM;
                 break;
             case TRAFFIC_GROUP_WRITE_TRANSFER:
                 flow_type = TRAFFIC_FLOW_WRITE_TRANSFER;
@@ -605,6 +624,7 @@ public class ADGTrafficTrace {
         switch(group){
             case TRAFFIC_GROUP_READ_REQACK:
             case TRAFFIC_GROUP_WRITE_TRANSFER:
+            case TRAFFIC_GROUP_BLOCK_CHECKSUM:
                 loc_type = TRAFFIC_CLIENT_TO_DN;
                 break;
             case TRAFFIC_GROUP_READ_TRANSFER:
@@ -919,9 +939,35 @@ public class ADGTrafficTrace {
             LOG.error("Null socket when setting traffic type for flow type" + flow_type + "!");
             return false;
         }
-        int ret = ADGSetSocketTOS.setSocketTOS(sock, flow_type);
+        try{
+
+        if(sock.isBound()){
+            LOG.info("ADGSetSocketTrafficType: sock is bound.");
+        }else{
+            LOG.error("ADGSetSocketTrafficType: sock is NOT bound.");
+        }
+        if(sock.isConnected()){
+            LOG.info("ADGSetSocketTrafficType: sock is connected.");
+        }else{
+            LOG.error("ADGSetSocketTrafficType: sock is NOT connected.");
+        }
+        if(sock.isClosed()){
+            LOG.info("ADGSetSocketTrafficType: sock is closed.");
+        }else{
+            LOG.info("ADGSetSocketTrafficType: sock is NOT closed.");
+        }
+ //       SocketFactory socketFactory = SocketFactory.getDefault();
+        SocketFactory socketFactory = new StandardSocketFactory();
+        Socket new_sock = socketFactory.createSocket();
+        LOG.info("YANGSULI socket's class is:" + sock.getClass().getName());
+        SocketImpl impl = ADGSetSocketTOS.getImpl(sock);
+        LOG.info("YANGSULI impl's class is:" + impl.getClass().getName());
+        NetUtils.connect(new_sock, new InetSocketAddress("127.0.0.1", 9999), 0);
+        int ret = ADGSetSocketTOS.setSocketTOS((sun.nio.ch.SocketAdaptor)sock, flow_type);
         if(ret != 0){
             LOG.error("Error when etting flow type " + flow_type +  "!");
+        }}catch(Exception e){
+            LOG.error("whaever...");
         }
         
         return true;
