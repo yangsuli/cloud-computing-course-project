@@ -3478,7 +3478,6 @@ public class DFSClient implements FSConstants, java.io.Closeable {
         //This includes opcode, blockId, client string and pipelined datanodes
         //And I think this socket is going to to closed after this particular socket
         //yangsuli 11/29/2012
-        LOG.info("yangsuli debug, factory class name is: " + socketFactory.getClass().getName());
         ADGTrafficTrace.ADGSetSocketTrafficType(s,new ADGTrafficDesc(ADGTrafficTrace.TRAFFIC_WRITE_CLIENT_DATA_HEADER));
 
         out.writeShort( DataTransferProtocol.DATA_TRANSFER_VERSION );
@@ -3501,7 +3500,6 @@ public class DFSClient implements FSConstants, java.io.Closeable {
         //After the header, this socket will be used to send block data excusively, I think
         //FIXME: need to verify this
         //yangsuli 11/29/2012
-        LOG.info("yangsuli debug, factory class name is: " + socketFactory.getClass().getName());
         ADGTrafficTrace.ADGSetSocketTrafficType(s,new ADGTrafficDesc(ADGTrafficTrace.TRAFFIC_WRITE_CLIENT_DATA_PACKETS));
 
         // receive ack for connect

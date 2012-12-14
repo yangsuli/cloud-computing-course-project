@@ -44,33 +44,17 @@ static int getFd(JNIEnv *env, jobject sock)
         !(fid = e->GetFieldID(env,clazz,"sc","Lsun/nio/ch/SocketChannelImpl;")) ||
         !(impl = e->GetObjectField(env,sock,fid))) return -1;
 
-    printf("Impl: %p\n", impl);
 
     /* get the FileDescriptor from the SocketImpl */
-    /*
     if (!(clazz = e->GetObjectClass(env,impl)) ||
         !(fid = e->GetFieldID(env,clazz,"fd","Ljava/io/FileDescriptor;")) ||
         !(fdesc = e->GetObjectField(env,impl,fid))) return -1;
-        */
-    if (!(clazz = e->GetObjectClass(env,impl))){
-        printf("clazz of impl is null\n");
-        return -1;
-    }
-    if(!(fid = e->GetFieldID(env,clazz,"fd","Ljava/io/FileDescriptor;"))){
-        printf("filedID of impl->fd is null\n");
-        return -1;
-    }
-     if(   !(fdesc = e->GetObjectField(env,impl,fid))) {
-         printf("jobject of impl->fd is null\n");
-         return -1;
-     }
-    printf("fdesc: %p\n", fdesc);
+
 
     /* get the fd from the FileDescriptor */
     if (!(clazz = e->GetObjectClass(env,fdesc)) ||
         !(fid = e->GetFieldID(env,clazz,"fd","I"))) return -1;
 
-    printf("fid: %p\n", fid);
 
     /* return the descriptor */
     return e->GetIntField(env,fdesc,fid);
