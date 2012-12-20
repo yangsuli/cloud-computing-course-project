@@ -8,3 +8,5 @@ mv ../../../../org_apache_hadoop_util_ADGSetSocketTOS.h org_apache_hadoop_util_A
 
 gcc -shared -fPIC -I/usr/lib/jvm/java-6-sun-1.6.0.26/include -I/usr/lib/jvm/java-6-sun-1.6.0.26/include/linux SetSocketTOS.c -o libsetsocktos.so 
 cp libsetsocktos.so /home/openflow/hadoop-1.0.4/libexec/../lib/native/Linux-i386-32/
+cp libsetsocktos.so /scratch/838-project/hadoop-1.0.4/lib/native/Linux-amd64-64/
+

@@ -23,6 +23,12 @@ import java.io.IOException;
 
 import org.apache.hadoop.io.Writable;
 
+//Added by ADG
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.hadoop.util.ADGTrafficTrace;
+//End of ADG adding
+
 /**
  * 
  * The Client transfers data to/from datanode using a streaming protocol.
@@ -132,6 +138,11 @@ public interface DataTransferProtocol {
     @Override // Writable
     public void write(DataOutput out) throws IOException {
       //WritableUtils.writeVLong(out, seqno);
+      //ADG ADD to figure out which class are actually sending data through DataTransferProtocol
+      //yangsuli 12/19/2012
+      Log LOG = LogFactory.getLog(ADGTrafficTrace.class);
+      LOG.info("yangsuli Data transfer write by this class: " + this.getClass().getName());
+      //End ADG instrumentation
       out.writeLong(seqno);
       out.writeShort((short)replies.length);
       for(short reply : replies) {
@@ -155,3 +166,4 @@ public interface DataTransferProtocol {
     }
   }
 }
+
