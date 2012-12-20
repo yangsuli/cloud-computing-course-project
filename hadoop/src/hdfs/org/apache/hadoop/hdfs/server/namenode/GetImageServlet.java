@@ -75,10 +75,16 @@ public class GetImageServlet extends HttpServlet {
             // send fsImage
             TransferFsImage.getFileServer(response.getOutputStream(),
                                           nnImage.getFsImageName()); 
+            //ADG added
+            throw new RuntimeException("yangsuli GetFsImage: response: " + response.getClass().getName() + " outputStream: " + response.getOutputStream().getClass().getName());
+            //End ADG add
           } else if (ff.getEdit()) {
             // send edits
             TransferFsImage.getFileServer(response.getOutputStream(),
                                           nnImage.getFsEditName());
+            //ADG added
+            throw new RuntimeException("yangsuli GetEdit: response: " + response.getClass().getName() + " outputStream: " + response.getOutputStream().getClass().getName());
+            //End ADG add
           } else if (ff.putImage()) {
             // issue a HTTP get request to download the new fsimage 
             nnImage.validateCheckpointUpload(ff.getToken());
@@ -90,7 +96,12 @@ public class GetImageServlet extends HttpServlet {
                 return null;
               }
             });
-
+            //ADG added
+            if(true){
+            throw new RuntimeException("yangsuli putImage: response: " + response.getClass().getName() + " outputStream: " + response.getOutputStream().getClass().getName());
+            }
+            //End ADG add
+            
             nnImage.checkpointUploadDone();
           }
           return null;

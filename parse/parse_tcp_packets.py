@@ -42,7 +42,8 @@ class CFlow:
 
 def main():
     flows=[]
-    fi=open("../tcplog")
+    total_tos = {}
+    fi=open(sys.argv[1])
     pcap=dpkt.pcap.Reader(fi)
     try:
         for ts, buf in pcap:
@@ -55,9 +56,14 @@ def main():
                 continue
             tcp=ip.data
             tos=ip.tos
+            total_tos[tos] += len(tcp.data)
             #ignore 0 payload size packet
             #I am not quite sure whether I should do that though...
             if len(tcp.data) == 0:
+                continue
+            #ignore jobtracker traffic
+            #FXIME: we really need a way to eliminate jobtracker traffic...
+            if tcp.dport == 54311 or tcp.sport == 54311 :
                 continue
             f=CFlow(ip.dst,ip.src,tcp.dport, tcp.sport, ts, len(tcp.data), tos)
             if f in flows:
@@ -77,6 +83,8 @@ def main():
         fi.write("\n")
         f2.write(f.__str__())
         f2.write(f.ts_size_info())
+    fi.write("total tos: ");
+    fi.write(total_tos.__str__())
     fi.close()
     f2.close()
 main()

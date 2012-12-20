@@ -128,6 +128,9 @@ class TransferFsImage implements FSConstants {
         if (num <= 0) {
           break;
         }
+
+        //ADG:
+        //Should instrument here to set traffic type
         outstream.write(buf, 0, num);
       }
     } finally {
@@ -159,6 +162,11 @@ class TransferFsImage implements FSConstants {
     URLConnection connection = url.openConnection();
     InputStream stream = connection.getInputStream();
     FileOutputStream[] output = null;
+            //ADG added
+            if(true){
+            throw new RuntimeException("yangsuli checkpoint Client: response: " + connection.getClass().getName() + " inputStream: " + stream.getClass().getName());
+            }
+            //End ADG add
 
     try {
       if (localPath != null) {

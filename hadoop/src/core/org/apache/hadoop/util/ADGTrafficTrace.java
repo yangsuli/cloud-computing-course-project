@@ -803,7 +803,7 @@ public class ADGTrafficTrace {
 
 
     public static boolean ADGSetRPCResponseTrafficType(Socket sock, String method, String tag){
-        LOG.info("ADG RPC Respond Method (Tag: " + tag + "): "+method);        
+   //     LOG.info("ADG RPC Respond Method (Tag: " + tag + "): "+method);        
         if(method.equals("sendHeartbeat")){
             return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_RESPOND_HEARTBEAT),tag);  
         }else if(method.equals("register")
@@ -929,13 +929,13 @@ public class ADGTrafficTrace {
 
     public static boolean ADGSetSocketTrafficType(Socket sock, ADGTrafficDesc desc, String tag){
         int flow_type = ADGFlowGroupTraffic(ADGGroupTraffic(desc.type));
-        LOG.info("ADG Set Flow Type: " + flow_type);        
+ //       LOG.info("ADG Set Flow Type: " + flow_type);        
         if(sock == null){
             LOG.error("Null socket when setting traffic type for flow type" + flow_type + "!");
             return false;
         }
 
-        LOG.info("YANGSULI socket's class is:" + sock.getClass().getName());
+ //       LOG.info("YANGSULI socket's class is:" + sock.getClass().getName());
         int ret = ADGSetSocketTOS.setSocketTOS((sun.nio.ch.SocketAdaptor)sock, flow_type);
         if(ret != 0){
             LOG.error("Error when etting flow type " + flow_type +  "!");
