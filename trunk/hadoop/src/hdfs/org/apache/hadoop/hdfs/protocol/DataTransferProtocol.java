@@ -142,6 +142,9 @@ public interface DataTransferProtocol {
       //yangsuli 12/19/2012
       Log LOG = LogFactory.getLog(ADGTrafficTrace.class);
       LOG.info("yangsuli Data transfer write by this class: " + this.getClass().getName());
+      if(true){
+          throw new RuntimeException("yangsuli hopefully this will give me some kind of infomation....");
+      }
       //End ADG instrumentation
       out.writeLong(seqno);
       out.writeShort((short)replies.length);
