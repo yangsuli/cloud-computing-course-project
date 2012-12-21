@@ -70,6 +70,19 @@ public class ADGTrafficTrace {
     //this conresponds to category 7 in google doc
     public static final byte TRAFFIC_GROUP_WRITE_PIPELINE = (byte) 205;
 
+    /*
+     * The following is data transfer between datanodes
+     * I am not quite sure what this is responsible for
+     * maybe for re-replication? 
+     * Anyway, this seems like a one-way transfer
+     * Receiver doesn't even send any kind of ack
+     * yangsuli 12/19/2012
+     */
+    public static final byte TRAFFIC_DN_TRANSFER_HEADER = (byte) 145;
+    //this includes block checksum
+    public static final byte TRAFFIC_DN_TRANSFER_BLOCK = (byte) 146;
+
+    public static final byte TRAFFIC_GROUP_DN_DATA_TRANSFER = (byte) 238;
 
     /*
      * The following RPC traffic share the same socket/connection pool
@@ -373,6 +386,10 @@ public class ADGTrafficTrace {
             case TRAFFIC_WRITE_PIPELINE_DATA_PACKETS:
                 group = TRAFFIC_GROUP_WRITE_PIPELINE;
                 break;
+	    case TRAFFIC_DN_TRANSFER_HEADER:
+	    case TRAFFIC_DN_TRANSFER_BLOCK:
+	        	group = TRAFFIC_GROUP_DN_DATA_TRANSFER;
+	        	break;
             case TRAFFIC_RPC_SEND_HEARTBEAT:
                 group = TRAFFIC_GROUP_RPC_HEARTBEAT;
                 break;
@@ -534,6 +551,7 @@ public class ADGTrafficTrace {
     public static final byte TRAFFIC_FLOW_WRITE_TRANSFER = (byte) 11;
     public static final byte TRAFFIC_FLOW_READ_REQACK = (byte) 12;
     public static final byte TRAFFIC_FLOW_BLOCK_CHECKSUM = (byte) 13;
+    public static final byte TRAFFIC_FLOW_DN_DATA_TRANSFER = (byte) 14;
     public static byte ADGFlowGroupTraffic(byte group){
         byte flow_type;
         switch(group){
@@ -595,6 +613,8 @@ public class ADGTrafficTrace {
             case TRAFFIC_GROUP_RPC_OTHER:
                 flow_type = TRAFFIC_FLOW_UNKNOWN;
                 break;
+      	    case TRAFFIC_GROUP_DN_DATA_TRANSFER:
+		flow_type = TRAFFIC_FLOW_DN_DATA_TRANSFER;
             default:
                 throw new RuntimeException("Unrecognized traffic group: " + group + "!");
         }
@@ -803,7 +823,7 @@ public class ADGTrafficTrace {
 
 
     public static boolean ADGSetRPCResponseTrafficType(Socket sock, String method, String tag){
-   //     LOG.info("ADG RPC Respond Method (Tag: " + tag + "): "+method);        
+  //      LOG.info("ADG RPC Respond Method (Tag: " + tag + "): "+method);        
         if(method.equals("sendHeartbeat")){
             return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_RESPOND_HEARTBEAT),tag);  
         }else if(method.equals("register")
@@ -929,13 +949,13 @@ public class ADGTrafficTrace {
 
     public static boolean ADGSetSocketTrafficType(Socket sock, ADGTrafficDesc desc, String tag){
         int flow_type = ADGFlowGroupTraffic(ADGGroupTraffic(desc.type));
- //       LOG.info("ADG Set Flow Type: " + flow_type);        
+    //    LOG.info("ADG Set Flow Type: " + flow_type);        
         if(sock == null){
             LOG.error("Null socket when setting traffic type for flow type" + flow_type + "!");
             return false;
         }
 
- //       LOG.info("YANGSULI socket's class is:" + sock.getClass().getName());
+     //  LOG.info("YANGSULI socket's class is:" + sock.getClass().getName());
         int ret = ADGSetSocketTOS.setSocketTOS((sun.nio.ch.SocketAdaptor)sock, flow_type);
         if(ret != 0){
             LOG.error("Error when etting flow type " + flow_type +  "!");

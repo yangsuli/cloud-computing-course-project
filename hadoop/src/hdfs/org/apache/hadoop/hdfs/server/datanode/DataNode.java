@@ -130,6 +130,9 @@ import org.apache.hadoop.util.StringUtils;
 import org.apache.hadoop.util.VersionInfo;
 import org.mortbay.util.ajax.JSON;
 
+import org.apache.hadoop.util.ADGTrafficTrace;
+import org.apache.hadoop.util.ADGTrafficTrace.ADGTrafficDesc;
+
 /**********************************************************
  * DataNode is a class (and program) that stores a set of
  * blocks for a DFS deployment.  A single deployment can
@@ -1397,6 +1400,11 @@ public class DataNode extends Configured
         //
         // Header info
         //
+        //ADG
+        //Send header plus blocks
+        //yangsuli 12/20/2012
+        ADGTrafficTrace.ADGSetSocketTrafficType(sock, new ADGTrafficDesc(ADGTrafficTrace.TRAFFIC_DN_TRANSFER_HEADER));
+        //end ADG
         out.writeShort(DataTransferProtocol.DATA_TRANSFER_VERSION);
         out.writeByte(DataTransferProtocol.OP_WRITE_BLOCK);
         out.writeLong(b.getBlockId());
@@ -1418,6 +1426,11 @@ public class DataNode extends Configured
         }
         accessToken.write(out);
         // send data & checksum
+        // ADG
+        // Set traffic of data & checksum
+        // yangsuli 12/20/2012
+        ADGTrafficTrace.ADGSetSocketTrafficType(sock, new ADGTrafficDesc(ADGTrafficTrace.TRAFFIC_DN_TRANSFER_BLOCK));
+        //End ADG
         blockSender.sendBlock(out, baseStream, null);
 
         // no response necessary
