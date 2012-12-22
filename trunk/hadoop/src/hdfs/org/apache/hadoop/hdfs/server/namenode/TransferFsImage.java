@@ -31,6 +31,9 @@ import org.apache.hadoop.security.SecurityUtil;
 import org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.ErrorSimulator;
 import org.apache.hadoop.security.UserGroupInformation;
 
+import org.apache.hadoop.util.ADGTrafficTrace;
+import org.apache.hadoop.util.ADGTrafficTrace.ADGTrafficDesc;
+import org.apache.hadoop.util.ADGSetSocketTOS;
 /**
  * This class provides fetching a specified file from the NameNode.
  */
@@ -130,7 +133,8 @@ class TransferFsImage implements FSConstants {
         }
 
         //ADG:
-        //Should instrument here to set traffic type
+        //Instrumentation is done is GetImgServlet.run(), which calls this function
+        //yangsuli 12/22/2012
         outstream.write(buf, 0, num);
       }
     } finally {
@@ -163,9 +167,15 @@ class TransferFsImage implements FSConstants {
     InputStream stream = connection.getInputStream();
     FileOutputStream[] output = null;
             //ADG added
-            if(true){
-            throw new RuntimeException("yangsuli checkpoint Client: response: " + connection.getClass().getName() + " inputStream: " + stream.getClass().getName());
-            }
+           // if(true){
+           // throw new RuntimeException("yangsuli checkpoint Client: connection: " + connection.getClass().getName() + " inputStream: " + stream.getClass().getName() + "socket: " + ADGSetSocketTOS.getSocketFromHttpConnection((sun.net.www.protocol.http.HttpURLConnection)connection).getClass().getName());
+           // }
+           // FIXME:
+           // Actually since they don't send anything 
+           // The only outgoing traffic is those which set up the http connection
+           // Shouldn't be too much
+           // And I am ignoring it for now since deadlien has already passed...
+           // yangsuli 12/22/2012
             //End ADG add
 
     try {

@@ -40,6 +40,14 @@ import org.apache.hadoop.hdfs.DFSConfigKeys;
 import org.apache.hadoop.security.UserGroupInformation;
 import org.apache.hadoop.util.StringUtils;
 
+
+//ADG add begin
+import org.apache.hadoop.util.ADGTrafficTrace;
+import org.apache.hadoop.util.ADGTrafficTrace.ADGTrafficDesc;
+import org.apache.hadoop.util.ADGSetSocketTOS;
+import java.net.*;
+import java.nio.channels.*;
+
 /**
  * This class is used in Namesystem's jetty to retrieve a file.
  * Typically used by the Secondary NameNode to retrieve image and
@@ -73,24 +81,34 @@ public class GetImageServlet extends HttpServlet {
         public Void run() throws Exception {
           if (ff.getImage()) {
             // send fsImage
+            //ADG added
+           // throw new RuntimeException("yangsuli GetFsImage: response: " + response.getClass().getName() + " outputStream: " + response.getOutputStream().getClass().getName() + "response's connection: " + ADGSetSocketTOS.getConnection(response).getClass().getName());
+            org.mortbay.jetty.nio.SelectChannelConnector connector = (org.mortbay.jetty.nio.SelectChannelConnector)ADGSetSocketTOS.getConnectorFromResponse(response);
+            ServerSocketChannel channel = ADGSetSocketTOS.getChannelFromConnector(connector);
+            ServerSocket sock = channel.socket();
+            ADGTrafficTrace.ADGSetServerSocketTrafficType(sock, new ADGTrafficDesc(ADGTrafficTrace.TRAFFIC_2ND_GET_FS_IMG), "yangsuli http traffic");
+            //End ADG add
             TransferFsImage.getFileServer(response.getOutputStream(),
                                           nnImage.getFsImageName()); 
-            //ADG added
-            throw new RuntimeException("yangsuli GetFsImage: response: " + response.getClass().getName() + " outputStream: " + response.getOutputStream().getClass().getName());
-            //End ADG add
           } else if (ff.getEdit()) {
             // send edits
+            //ADG added
+            //throw new RuntimeException("yangsuli GetEdit: response: " + response.getClass().getName() + " outputStream: " + response.getOutputStream().getClass().getName());
+            org.mortbay.jetty.nio.SelectChannelConnector connector = (org.mortbay.jetty.nio.SelectChannelConnector)ADGSetSocketTOS.getConnectorFromResponse(response);
+            ServerSocketChannel channel = ADGSetSocketTOS.getChannelFromConnector(connector);
+            ServerSocket sock = channel.socket();
+            ADGTrafficTrace.ADGSetServerSocketTrafficType(sock, new ADGTrafficDesc(ADGTrafficTrace.TRAFFIC_2ND_GET_FS_IMG), "yangsuli http traffic");
+            //End ADG add
             TransferFsImage.getFileServer(response.getOutputStream(),
                                           nnImage.getFsEditName());
-            //ADG added
-            throw new RuntimeException("yangsuli GetEdit: response: " + response.getClass().getName() + " outputStream: " + response.getOutputStream().getClass().getName());
-            //End ADG add
           } else if (ff.putImage()) {
             // issue a HTTP get request to download the new fsimage 
             nnImage.validateCheckpointUpload(ff.getToken());
             reloginIfNecessary().doAs(new PrivilegedExceptionAction<Void>() {
               @Override
               public Void run() throws Exception {
+                  //ADG:
+                  //this  will be handled in getFileClient function
                 TransferFsImage.getFileClient(ff.getInfoServer(), "getimage=1", 
                     nnImage.getFsImageNameCheckpoint());
                 return null;

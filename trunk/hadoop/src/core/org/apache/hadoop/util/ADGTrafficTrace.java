@@ -303,6 +303,11 @@ public class ADGTrafficTrace {
     /*
      * Coummunication between secondary NameNode and Namenode
      */
+    public static final byte TRAFFIC_2ND_GET_FS_IMG = (byte) 149;
+    public static final byte TRAFFIC_2ND_GET_EDIT_IMG = (byte) 148;
+    public static final byte TRAFFIC_GROUP_2ND_GET_FS_IMG = (byte) 243;
+    public static final byte TRAFFIC_GROUP_2ND_GET_EDIT_IMG = (byte) 244;
+
     public static final byte TRAFFIC_RPC_2ND_GET_BLOCK = (byte)85;
     public static final byte TRAFFIC_RPC_2ND_GET_BLOCK_RESPOND = (byte)86;
     public static final byte TRAFFIC_RPC_2ND_GET_BLOCK_KEYS = (byte)87;
@@ -528,6 +533,12 @@ public class ADGTrafficTrace {
             case TRAFFIC_RPC_OTHER_RESPOND:
                 group = TRAFFIC_GROUP_RPC_OTHER_RESPOND;
                 break;
+            case TRAFFIC_2ND_GET_FS_IMG:
+                group = TRAFFIC_GROUP_2ND_GET_FS_IMG;
+                break;
+            case TRAFFIC_2ND_GET_EDIT_IMG:
+                group = TRAFFIC_GROUP_2ND_GET_EDIT_IMG;
+                break;
             default:
                 throw new RuntimeException("Unknown Traffic Type when Grouping!!!!");
         }
@@ -552,6 +563,8 @@ public class ADGTrafficTrace {
     public static final byte TRAFFIC_FLOW_READ_REQACK = (byte) 12;
     public static final byte TRAFFIC_FLOW_BLOCK_CHECKSUM = (byte) 13;
     public static final byte TRAFFIC_FLOW_DN_DATA_TRANSFER = (byte) 14;
+    public static final byte TRAFFIC_FLOW_2ND_GET_FS_IMG = (byte)15;
+    public static final byte TRAFFIC_FLOW_2ND_GET_EDIT_IMG = (byte)16;
     public static byte ADGFlowGroupTraffic(byte group){
         byte flow_type;
         switch(group){
@@ -615,6 +628,12 @@ public class ADGTrafficTrace {
                 break;
       	    case TRAFFIC_GROUP_DN_DATA_TRANSFER:
 		flow_type = TRAFFIC_FLOW_DN_DATA_TRANSFER;
+            case TRAFFIC_GROUP_2ND_GET_FS_IMG:
+        flow_type = TRAFFIC_FLOW_2ND_GET_FS_IMG;
+        break;
+            case TRAFFIC_GROUP_2ND_GET_EDIT_IMG:
+       flow_type = TRAFFIC_FLOW_2ND_GET_EDIT_IMG;
+        break;
             default:
                 throw new RuntimeException("Unrecognized traffic group: " + group + "!");
         }
@@ -685,6 +704,12 @@ public class ADGTrafficTrace {
                 loc_type = TRAFFIC_2NDNN_TO_NN;
                 break;
             case TRAFFIC_GROUP_RPC_CHECKPOINT_RESPOND:
+            //FIXME:
+            //honestly I am not quite sure whether get img always from nn to 2nd nn
+            //Needs to confirm
+            //yangsuli 12/21/2012
+            case TRAFFIC_GROUP_2ND_GET_FS_IMG:
+            case TRAFFIC_GROUP_2ND_GET_EDIT_IMG:
                 loc_type = TRAFFIC_NN_TO_2NDNN;
                 break;
             case TRAFFIC_GROUP_RPC_OTHER_RESPOND:
@@ -711,9 +736,7 @@ public class ADGTrafficTrace {
     //SO it is easer for whoever calls it.
     //yangsuli 11/30/2012
     public static boolean ADGSetRPCSendTrafficType(Socket sock, String method, String tag){
-        //FIXME:
-        //implementing it
-        LOG.info("ADG RPC Request Method (Tag: " + tag + "): "+method);        
+        //LOG.info("ADG RPC Request Method (Tag: " + tag + "): "+method);        
         if(method.equals("sendHeartbeat")){
             return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_SEND_HEARTBEAT),tag);  
         }else if(method.equals("register") ||
@@ -957,6 +980,25 @@ public class ADGTrafficTrace {
 
      //  LOG.info("YANGSULI socket's class is:" + sock.getClass().getName());
         int ret = ADGSetSocketTOS.setSocketTOS((sun.nio.ch.SocketAdaptor)sock, flow_type);
+        if(ret != 0){
+            LOG.error("Error when etting flow type " + flow_type +  "!");
+            return false;
+        }
+        
+        return true;
+    }
+
+    public static boolean ADGSetServerSocketTrafficType(ServerSocket sock, ADGTrafficDesc desc, String tag){
+
+        int flow_type = ADGFlowGroupTraffic(ADGGroupTraffic(desc.type));
+    //    LOG.info("ADG Set Flow Type: " + flow_type);        
+        if(sock == null){
+            LOG.error("Null socket when setting traffic type for flow type" + flow_type + "!");
+            return false;
+        }
+
+     //  LOG.info("YANGSULI socket's class is:" + sock.getClass().getName());
+        int ret = ADGSetSocketTOS.setServerSocketTOS(sock, flow_type);
         if(ret != 0){
             LOG.error("Error when etting flow type " + flow_type +  "!");
             return false;
