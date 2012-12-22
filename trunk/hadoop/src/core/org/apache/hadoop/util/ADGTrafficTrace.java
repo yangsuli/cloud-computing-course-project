@@ -111,6 +111,15 @@ public class ADGTrafficTrace {
     public static final byte TRAFFIC_GROUP_RPC_HEARTBEAT_RESPOND = (byte) 207;
 
 
+    //Recovery traffic
+    //This could either be from NN to DN, or from Client to DN
+    //see http://www.linuxidc.com/Linux/2012-03/57315.htm for detail
+    //yangsuli 12/22/2012
+    public static final byte TRAFFIC_RPC_RECOVER_BLOCK = (byte) 167;
+    public static final byte TRAFFIC_RPC_RESPOND_RECOVER_BLOCK = (byte) 168;
+    public static final byte TRAFFIC_GROUP_RPC_RECOVER_BLOCK = (byte) 241;
+    public static final byte TRAFFIC_GROUP_RPC_RESPOND_RECOVER_BLOCK = (byte) 242;
+
     //traffic only happens at system start up, thus deemed not important
     public static final byte TRAFFIC_RPC_STARTUP_INIT = (byte) 21;
     public static final byte TRAFFIC_RPC_RESPOND_STARTUP_INIT = (byte) 22;
@@ -370,6 +379,13 @@ public class ADGTrafficTrace {
     public static byte ADGGroupTraffic(byte type){
         byte group;
         switch(type){
+            case TRAFFIC_RPC_RECOVER_BLOCK:
+                group = TRAFFIC_GROUP_RPC_RECOVER_BLOCK;
+                break;
+            case TRAFFIC_RPC_RESPOND_RECOVER_BLOCK:
+                group = TRAFFIC_GROUP_RPC_RESPOND_RECOVER_BLOCK;
+                break;
+
             case TRAFFIC_READ_DATA_ACK:
             case TRAFFIC_READ_DATA_REQUEST:
                 group = TRAFFIC_GROUP_READ_REQACK;
@@ -589,6 +605,7 @@ public class ADGTrafficTrace {
             case TRAFFIC_GROUP_RPC_HEARTBEAT:
             case TRAFFIC_GROUP_RPC_BLOCK_REPORT:
             case TRAFFIC_GROUP_RPC_BLOCK_OP:
+            case TRAFFIC_GROUP_RPC_RECOVER_BLOCK:
             case TRAFFIC_GROUP_DN_RPC_OTHER:
                 flow_type = TRAFFIC_FLOW_DN_RPC;
                 break;
@@ -837,6 +854,11 @@ public class ADGTrafficTrace {
                 method.equals("getSystemDir")
                 ){//Somt non-HDFS traffic, really shouldn't be here
             return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_OTHER), tag);
+        }else if(method.equals("recoverBlock")){
+            //This could either be from NN to DN, or from Client to DN
+            //see http://www.linuxidc.com/Linux/2012-03/57315.htm for detail
+            //yangsuli 12/22/2012
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_RECOVER_BLOCK), tag);
         }else{
             LOG.warn("ADG WARNING:Don't know such a method: " + method +"! Probably missed something!!!!");
             return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_UNKNOWN), tag);
@@ -945,6 +967,11 @@ public class ADGTrafficTrace {
             return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_SECURITY_REFRESH_RESPOND), tag);
         }else if(method.equals("heartbeat")){//Somt non-HDFS traffic, really shouldn't be here
             return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_OTHER_RESPOND), tag);
+        }else if(method.equals("recoverBlock")){
+            //This could either be from NN to DN, or from Client to DN
+            //see http://www.linuxidc.com/Linux/2012-03/57315.htm for detail
+            //yangsuli 12/22/2012
+            return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_RESPOND_RECOVER_BLOCK), tag);
         }else{
             LOG.warn("ADG WARNING:Don't know such a method! Probably missed something!!!!");
             return ADGSetSocketTrafficType(sock, new ADGTrafficDesc(TRAFFIC_RPC_UNKNOWN_RESPOND), tag);
