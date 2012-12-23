@@ -170,7 +170,7 @@ def main():
             flow_type=packet[5]
 
 	    if flow_type == FIN_PACKET:
-		print "process one FIN packet"
+		#print "process one FIN packet"
 		# One flow finalized
             	f=CFlow(dst, src, dport, sport, ts, ip_len, flow_type)
 		if f not in flows:
@@ -223,7 +223,7 @@ def main():
     for f in finalized_flows:
         fi.write(f.__str__())
         fi.write(f.cflow.type_info())
-	fi.write("duration time: " + (f.fin_time - f.begin_time()).__str__())
+	fi.write("duration time: " + (f.fin_time - f.begin_time()).__str__() + "\n")
         fi.write("\n")
         f2.write(f.__str__())
 	f2.write(f.cflow.type_info())
