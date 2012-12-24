@@ -123,6 +123,11 @@ class CFlow:
             self.flow_type[flow_type]=ip_len
         else:
             self.flow_type[flow_type]+=ip_len
+    def total_size(self):
+	total_size = 0
+	for key in self.flow_type:
+		total_size += self.flow_type[key]
+	return total_size
     def __hash__(self):
         return hash( (serverIP, clientIP, serverPort, clientPort))
     def __eq__(self, other):
@@ -132,6 +137,7 @@ class Complete_CFlow:
         def __init__(self, cflow, fin_time):
                 self.cflow = cflow
                 self.fin_time = fin_time
+		self.unfinalized = False
                 #self.forward_btime = self.cflow.forward[0][0]
 
 		if fin_time is None:
@@ -144,13 +150,18 @@ class Complete_CFlow:
 				if final_ts > forward[len(forward) - 1][0]:
 					final_ts = forward[len(forward) - 1][0]
 			self.fin_time = final_ts
+			self.unfinalized = True
 
 	def __str__(self):
-		return self.cflow.__str__() + "BEGIN_TIME: " + self.begin_time().__str__() + " FIN TIME: " + self.fin_time.__str__() + "\n"
+		if self.unfinalized == False:
+			return self.cflow.__str__() + "BEGIN_TIME: " + self.begin_time().__str__() + " FIN TIME: " + self.fin_time.__str__() + "\n"
+		else:
+			return self.cflow.__str__() + "BEGIN_TIME: " + self.begin_time().__str__() + " (Unfinalized) END TIME: " + self.fin_time.__str__() + "\n"
+			
         def __hash__(self):
-		return hash((self.cflow, self.fin_time))
+		return hash(self.cflow)
 	def __eq__(self, other):
-		return self.cflow == other.cflow and self.fin_time == other.fin_time
+		return self.cflow == other.cflow
 	def begin_time(self):
 		begin_ts = 0
 		backward = self.cflow.backward
@@ -238,8 +249,11 @@ def main():
 	#f2.write(f.type_info())
         #f2.write(f.ts_size_info())
 	#finalized_flows.append(Complete_CFlow(f, None))
-	print "Unfinalzied Flow!!!"
-	print f.__str__()
+	cf = Complete_CFlow(f, None)
+	if cf not in finalized_flows:
+		print "Unfinalzied Flow!!!"
+		print f.__str__()
+		finalized_flows.append(Complete_CFlow(f,None))
     #fi.write("total tos: ");
     #fi.write(total_type.__str__())
     #fi.write("\n")
@@ -248,6 +262,7 @@ def main():
         fi.write(f.__str__())
         fi.write(f.cflow.type_info())
 	fi.write("duration time: " + (f.fin_time - f.begin_time()).__str__() + "\n")
+	fi.write("total size: " + f.cflow.total_size().__str__() + "\n")
         fi.write("\n")
         f2.write(f.__str__())
 	f2.write(f.cflow.type_info())
