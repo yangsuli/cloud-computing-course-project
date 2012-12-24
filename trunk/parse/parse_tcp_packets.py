@@ -174,12 +174,13 @@ def main():
 		# One flow finalized
             	f=CFlow(dst, src, dport, sport, ts, ip_len, flow_type)
 		if f not in flows:
-			print "fin packets for flow " + f.__str__() + " not in flows"
+			#print "fin packets for flow " + f.__str__() + " not in flows"
 			#do nothing here
 			#as for one flow we will have tow FIN packets
 			#print "Yangsuli"
 			#print f.__str__()
 			#raise Exception("finalize a flow which we haven't seen before!")
+			pass
 	        else:
 			ind = flows.index(f)
 			#print "remove flow: ", flows[ind].__str__(), " from flows"

@@ -1,0 +1,1117 @@
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x88cc
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.35 src port: 40875 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.35 dst port: 40875 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 38828 dst IP: 10.10.101.37 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.37 src port: 50010 dst IP: 10.10.101.39 dst port: 38828 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.34 src port: 36763 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.34 dst port: 36763 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 54366 dst IP: 10.10.101.35 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.35 src port: 50010 dst IP: 10.10.101.39 dst port: 54366 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.37 src port: 43663 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.37 dst port: 43663 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 54367 dst IP: 10.10.101.35 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.35 src port: 50010 dst IP: 10.10.101.39 dst port: 54367 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.37 src port: 43665 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.37 dst port: 43665 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.37 src port: 43666 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.37 dst port: 43666 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 49775 dst IP: 10.10.101.36 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.36 src port: 50010 dst IP: 10.10.101.39 dst port: 49775 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.36 src port: 60659 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.36 dst port: 60659 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.35 src port: 40878 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.35 dst port: 40878 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 38833 dst IP: 10.10.101.37 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.37 src port: 50010 dst IP: 10.10.101.39 dst port: 38833 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x88cc
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.34 src port: 36774 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.34 dst port: 36774 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.34 src port: 36775 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.34 dst port: 36775 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 54371 dst IP: 10.10.101.35 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.35 src port: 50010 dst IP: 10.10.101.39 dst port: 54371 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.35 src port: 40880 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.35 dst port: 40880 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 49779 dst IP: 10.10.101.36 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.36 src port: 50010 dst IP: 10.10.101.39 dst port: 49779 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.37 src port: 43672 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.37 dst port: 43672 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 49781 dst IP: 10.10.101.36 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.36 src port: 50010 dst IP: 10.10.101.39 dst port: 49781 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.34 src port: 36782 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.34 dst port: 36782 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.37 src port: 43673 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.37 dst port: 43673 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.34 src port: 36784 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.34 dst port: 36784 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.36 src port: 60661 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.36 dst port: 60661 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.36 src port: 60662 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.36 dst port: 60662 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.34 src port: 36788 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.34 dst port: 36788 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.37 src port: 43674 dst IP: 10.10.101.39 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 50010 dst IP: 10.10.101.37 dst port: 43674 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 54375 dst IP: 10.10.101.35 dst port: 50010 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.35 src port: 50010 dst IP: 10.10.101.39 dst port: 54375 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x88cc
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 103 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 230 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 103 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 106 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 104 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 207 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 208 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 108 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 108 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 112 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52039 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.39 src port: 52039 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52039 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52039 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52039 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 103 src IP: 10.10.101.39 src port: 52039 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52039 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52039 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52039 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 230 src IP: 10.10.101.39 src port: 52039 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 103 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52039 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 106 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52039 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 104 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52039 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52039 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 207 src IP: 10.10.101.39 src port: 52039 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52039 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52039 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52039 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 208 src IP: 10.10.101.39 src port: 52039 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52039 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52039 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52039 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52039 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52039 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52039 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52039 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52039 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52039 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 215 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 144 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 120 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52040 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 14 src IP: 10.10.101.39 src port: 52040 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52040 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52040 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52040 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 215 src IP: 10.10.101.39 src port: 52040 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52040 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52040 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52040 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52041 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 14 src IP: 10.10.101.39 src port: 52041 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52041 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52041 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52041 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52041 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52041 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52041 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52041 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 7 src IP: 10.10.101.39 src port: 52041 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52041 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 160 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 120 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52042 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 14 src IP: 10.10.101.39 src port: 52042 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52042 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52042 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52042 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 215 src IP: 10.10.101.39 src port: 52042 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52042 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52042 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52042 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 162 src IP: 10.10.101.39 src port: 52042 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 126 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52042 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52042 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52042 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 162 src IP: 10.10.101.39 src port: 52042 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 440 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52042 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52042 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52042 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 162 src IP: 10.10.101.39 src port: 52042 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 275 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52042 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52042 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52042 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 162 src IP: 10.10.101.39 src port: 52042 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 364 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52042 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52042 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52042 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 7 src IP: 10.10.101.39 src port: 52042 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52042 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 148 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 248 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 148 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 248 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 140 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 1448 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 1448 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 1448 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 1448 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 1448 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 76 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 144 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 120 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 140 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 120 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x88cc
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 144 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 120 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 2896 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 584 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 140 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 140 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 164 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 148 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 2896 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 2896 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 1280 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 140 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 140 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 7 src IP: 10.10.101.39 src port: 52040 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52040 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52039 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52038 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52038 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x88cc
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x88cc
+Ethernet type is not IP: 0x806
+protocol is not TCP: 17
+protocol is not TCP: 17
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 103 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 230 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 103 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 106 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 104 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 207 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 208 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 108 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 108 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 112 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52054 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.39 src port: 52054 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52054 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52054 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52054 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 103 src IP: 10.10.101.39 src port: 52054 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52054 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52054 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52054 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 230 src IP: 10.10.101.39 src port: 52054 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 103 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52054 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 106 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52054 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 104 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52054 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 207 src IP: 10.10.101.39 src port: 52054 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52054 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52054 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52054 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52054 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52054 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 208 src IP: 10.10.101.39 src port: 52054 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52054 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52054 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52054 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52054 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52054 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52054 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52054 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52054 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52054 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52054 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52053 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52053 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 103 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 230 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 103 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 106 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 104 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 207 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 208 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 132 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 124 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52056 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.39 src port: 52056 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52056 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52056 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52056 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 103 src IP: 10.10.101.39 src port: 52056 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52056 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52056 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52056 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 230 src IP: 10.10.101.39 src port: 52056 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 103 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52056 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 106 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52056 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 104 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52056 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52056 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 207 src IP: 10.10.101.39 src port: 52056 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52056 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52056 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52056 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 208 src IP: 10.10.101.39 src port: 52056 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52056 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52056 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52056 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52056 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52056 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52056 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52056 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52056 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52056 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52056 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52055 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52055 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 103 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 230 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 103 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 106 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 104 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 207 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 208 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 128 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 116 src IP: 10.10.101.4 src port: 2049 dst IP: 10.10.101.39 dst port: 800 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 800 dst IP: 10.10.101.4 dst port: 2049 TCP flags: 00010000
+Ethernet type is not IP: 0x806
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52058 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.39 src port: 52058 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52058 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52058 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52058 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 103 src IP: 10.10.101.39 src port: 52058 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52058 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52058 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52058 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 230 src IP: 10.10.101.39 src port: 52058 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 103 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52058 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 106 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52058 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 104 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52058 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 207 src IP: 10.10.101.39 src port: 52058 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52058 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52058 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52058 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52058 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52058 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 208 src IP: 10.10.101.39 src port: 52058 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 71 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52058 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52058 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52058 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52058 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52058 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52058 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52058 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52058 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52058 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 215 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 0 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00010000
+Tos == 0 but not SYN or FIN, with data length: 210 src IP: 10.10.101.39 src port: 52057 dst IP: 10.10.101.4 dst port: 389 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 378 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+Tos == 0 but not SYN or FIN, with data length: 22 src IP: 10.10.101.4 src port: 389 dst IP: 10.10.101.39 dst port: 52057 TCP flags: 00011000
+process exception 'str' object has no attribute 'p'

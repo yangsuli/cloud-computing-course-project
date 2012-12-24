@@ -1,0 +1,9 @@
+input:
+a data file (see test.dat)
+
+command:
+bash plotcdf.sh name_of_data_file
+
+output:
+cdf.eps
+

@@ -12,12 +12,12 @@ def ParsePkts(line):
         if len(ts_size) != 2:
             break
         size = int (ts_size[1])
-        if size == 0:
-            continue
-        total_size += size
+        #if size == 0:
+         #   continue
         #when calculating flow duration time
         #we do not count in those packets which has 0 payload size
         #thus we have some error as not counting flow setting up and tearing down (as SYN packets etc. have 0 payload size
+        total_size += size
         time_stamps.append(float(ts_size[0]))
     return [total_size, time_stamps]
 
