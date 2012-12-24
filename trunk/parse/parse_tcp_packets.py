@@ -45,6 +45,12 @@ def processPacket(buf):
 		return None
 	if socket.inet_ntoa(ip.src) == "10.10.101.2" or socket.inet_ntoa(ip.dst) == "10.10.101.2":
 		return None
+	if tcp.dport == 22 or tcp.sport ==22:
+		# throw out all ssh traffic for now
+		# because we have bugs parsing them
+		# apprently we lost a lot of ssh traffic
+		# yangsuli 12/23/2012
+		return None
 
 			
 	data_len1 = len(tcp.data)
@@ -200,7 +206,9 @@ def main():
 		        #print "ind = ", ind, "and len(flows) = ", len(flows)
 			finalized_flows.append(Complete_CFlow(flows[ind], ts))
 		        #print "this point2!"
-			del flows[ind]
+			# keep the finalized flow in flows pool
+			# so that we don't falsely start a new flow when we get the final ACK packet
+			#del flows[ind]
 			continue
 
 	    if flow_type not in total_type:
@@ -229,7 +237,9 @@ def main():
         #f2.write(f.__str__())
 	#f2.write(f.type_info())
         #f2.write(f.ts_size_info())
-	finalized_flows.append(Complete_CFlow(f, None))
+	#finalized_flows.append(Complete_CFlow(f, None))
+	print "Unfinalzied Flow!!!"
+	print f.__str__()
     #fi.write("total tos: ");
     #fi.write(total_type.__str__())
     #fi.write("\n")
