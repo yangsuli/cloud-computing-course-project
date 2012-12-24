@@ -1,0 +1,151 @@
+('10.10.101.4', '10.10.101.33', 389, 58979)
+BEGIN_TIME: 1356318444.57 FIN TIME: 1356318444.57
+traffic type: coresponding size {0: 1178}
+duration time: 0.00259304046631
+
+('10.10.101.4', '10.10.101.33', 389, 58964)
+BEGIN_TIME: 1356318521.63 FIN TIME: 1356318521.63
+traffic type: coresponding size {0: 59}
+duration time: 2.59876251221e-05
+
+('10.10.101.33', '10.10.101.2', 22, 39760)
+BEGIN_TIME: 1356318444.04 FIN TIME: 1356318521.64
+traffic type: coresponding size {99: 2652}
+duration time: 77.5952110291
+
+('10.10.101.4', '10.10.101.33', 389, 58963)
+BEGIN_TIME: 1356318521.64 FIN TIME: 1356318521.64
+traffic type: coresponding size {999: 52}
+duration time: 0.000126123428345
+
+('10.10.101.2', '10.10.101.33', 39760, 22)
+BEGIN_TIME: 1356318521.64 FIN TIME: 1356318521.64
+traffic type: coresponding size {99: 52}
+duration time: 0.00426506996155
+
+('10.10.101.4', '10.10.101.33', 389, 58962)
+BEGIN_TIME: 1356318521.64 FIN TIME: 1356318521.64
+traffic type: coresponding size {0: 3272}
+duration time: 0.00453209877014
+
+('10.10.101.33', '10.10.101.34', 22, 59178)
+BEGIN_TIME: 1356318614.85 FIN TIME: 1356318615.1
+traffic type: coresponding size {99: 7590}
+duration time: 0.248394012451
+
+('10.10.101.4', '10.10.101.33', 389, 59001)
+BEGIN_TIME: 1356318615.08 FIN TIME: 1356318615.1
+traffic type: coresponding size {0: 4776}
+duration time: 0.0233299732208
+
+('10.10.101.34', '10.10.101.33', 59178, 22)
+BEGIN_TIME: 1356318615.1 FIN TIME: 1356318615.1
+traffic type: coresponding size {99: 52}
+duration time: 0.0033860206604
+
+('10.10.101.4', '10.10.101.33', 389, 59000)
+BEGIN_TIME: 1356318614.91 FIN TIME: 1356318615.1
+traffic type: coresponding size {0: 12086}
+duration time: 0.188449144363
+
+('10.10.101.33', '10.10.101.34', 22, 59201)
+BEGIN_TIME: 1356318616.88 FIN TIME: 1356318617.11
+traffic type: coresponding size {99: 7590}
+duration time: 0.239409923553
+
+('10.10.101.4', '10.10.101.33', 389, 59004)
+BEGIN_TIME: 1356318617.09 FIN TIME: 1356318617.12
+traffic type: coresponding size {0: 4724}
+duration time: 0.021653175354
+
+('10.10.101.34', '10.10.101.33', 59201, 22)
+BEGIN_TIME: 1356318617.11 FIN TIME: 1356318617.12
+traffic type: coresponding size {99: 52}
+duration time: 0.00372910499573
+
+('10.10.101.4', '10.10.101.33', 389, 59003)
+BEGIN_TIME: 1356318616.93 FIN TIME: 1356318617.12
+traffic type: coresponding size {0: 12138}
+duration time: 0.184684991837
+
+('10.10.101.33', '10.10.101.4', 58979, 389)
+BEGIN_TIME: 1356318444.58 FIN TIME: 1356318444.58
+traffic type: coresponding size {0: 52, 999: 52}
+duration time: 0.0
+
+('10.10.101.4', '10.10.101.33', 2049, 952)
+BEGIN_TIME: 1356318521.54 FIN TIME: 1356318617.35
+traffic type: coresponding size {0: 25980}
+duration time: 95.8128578663
+
+('10.10.101.33', '10.10.101.4', 58964, 389)
+BEGIN_TIME: 1356318521.63 FIN TIME: 1356318521.63
+traffic type: coresponding size {0: 52, 999: 52}
+duration time: 0.0
+
+('10.10.101.4', '10.10.101.33', 389, 58963)
+BEGIN_TIME: 1356318521.64 FIN TIME: 1356318521.64
+traffic type: coresponding size {0: 52}
+duration time: 0.0
+
+('10.10.101.33', '10.10.101.2', 22, 39760)
+BEGIN_TIME: 1356318521.64 FIN TIME: 1356318521.64
+traffic type: coresponding size {99: 52}
+duration time: 0.0
+
+('10.10.101.33', '10.10.101.4', 58962, 389)
+BEGIN_TIME: 1356318521.64 FIN TIME: 1356318521.64
+traffic type: coresponding size {0: 52, 999: 52}
+duration time: 0.0
+
+('10.10.101.33', '10.10.101.4', 59001, 389)
+BEGIN_TIME: 1356318615.1 FIN TIME: 1356318615.1
+traffic type: coresponding size {0: 52, 999: 52}
+duration time: 0.0
+
+('10.10.101.33', '10.10.101.34', 22, 59178)
+BEGIN_TIME: 1356318615.1 FIN TIME: 1356318615.1
+traffic type: coresponding size {99: 52}
+duration time: 0.0
+
+('10.10.101.33', '10.10.101.4', 59000, 389)
+BEGIN_TIME: 1356318615.1 FIN TIME: 1356318615.1
+traffic type: coresponding size {0: 52, 999: 52}
+duration time: 0.0
+
+('10.10.101.33', '10.10.101.4', 59004, 389)
+BEGIN_TIME: 1356318617.12 FIN TIME: 1356318617.12
+traffic type: coresponding size {0: 52, 999: 52}
+duration time: 0.0
+
+('10.10.101.33', '10.10.101.34', 22, 59201)
+BEGIN_TIME: 1356318617.12 FIN TIME: 1356318617.12
+traffic type: coresponding size {99: 52}
+duration time: 0.0
+
+('10.10.101.33', '10.10.101.4', 59003, 389)
+BEGIN_TIME: 1356318617.12 FIN TIME: 1356318617.12
+traffic type: coresponding size {0: 52, 999: 52}
+duration time: 0.0
+
+('10.10.101.33', '10.10.101.34', 22, 59203)
+BEGIN_TIME: 1356318617.12 FIN TIME: 1356318617.35
+traffic type: coresponding size {99: 7346}
+duration time: 0.224370956421
+
+('10.10.101.4', '10.10.101.33', 389, 59005)
+BEGIN_TIME: 1356318617.18 FIN TIME: 1356318617.35
+traffic type: coresponding size {0: 11325}
+duration time: 0.166069030762
+
+('10.10.101.4', '10.10.101.33', 389, 59007)
+BEGIN_TIME: 1356318617.34 FIN TIME: 1356318617.35
+traffic type: coresponding size {0: 4776}
+duration time: 0.00424385070801
+
+('10.10.101.4', '10.10.101.33', 389, 59008)
+BEGIN_TIME: 1356318617.36 FIN TIME: 1356318617.36
+traffic type: coresponding size {0: 1124}
+duration time: 0.000828981399536
+
+total tos: {0: 81854, 99: 25490, 999: 416}
