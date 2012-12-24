@@ -15,6 +15,6 @@ for line in f:
 	except:
 		continue	
 f.close()
-cdf.calc_cdf(numpy.array(L), 1000, filename="test_data_for_plot")
+cdf.calc_cdf(numpy.array(L), 100000, filename="test_data_for_plot")
 
 
