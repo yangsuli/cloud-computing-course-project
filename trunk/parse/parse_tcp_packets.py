@@ -38,6 +38,14 @@ def processPacket(buf):
         #FXIME: we really need a way to eliminate jobtracker traffic...
 	if tcp.dport == 54311 or tcp.sport == 54311: #"Hadoop Job Traffic, not HDFS traffic"
 		return None
+	if tcp.dport == 389 or tcp.sport == 389: #LDAP traffic
+		return None
+
+	if socket.inet_ntoa(ip.src) == "10.10.101.4" or socket.inet_ntoa(ip.dst) == "10.10.101.4":
+		return None
+	if socket.inet_ntoa(ip.src) == "10.10.101.2" or socket.inet_ntoa(ip.dst) == "10.10.101.2":
+		return None
+
 			
 	data_len1 = len(tcp.data)
 	data_len2 = int(ip.len - 4*(ip.v_hl & 0x0f) - 4*((tcp.off_x2 & 0xf0) >> 4))
@@ -63,6 +71,11 @@ def processPacket(buf):
 	
 	if tcp.dport == 22 or tcp.sport ==22:
 		flow_type = 99
+		# throw out all ssh traffic for now
+		# because we have bugs parsing them
+		# apprently we lost a lot of ssh traffic
+		# yangsuli 12/23/2012
+		return None
 	else:
 		flow_type = ip.tos
 
