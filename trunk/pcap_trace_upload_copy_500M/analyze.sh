@@ -5,3 +5,6 @@ do
 	mv tcp.txt ${file}_tcp.txt
 	mv ts_size.txt ${file}_ts_size.txt
 done
+
+#per flow statistics
+python type_flow.py `ls *tcp.txt`
