@@ -1,0 +1,100 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: llx lly urx ury
+
+% *** (A) The numbers llx etc. in the line above 
+% should set the bounding box of the final document,
+% usually that of the main figure.
+
+%%Pages: 1
+
+%%EndComments
+%%BeginProlog
+
+/BeginEPSF {
+  /EPSFsave save def
+  count /OpStackSize exch def
+  /DictStackSize countdictstack def
+  % turn off showpage
+  /showpage {} def
+  % set up default graphics state
+  0 setgray 0 setlinecap
+  1 setlinewidth 0 setlinejoin
+  10 setmiterlimit [] 0 setdash newpath
+  /languagelevel where
+  {pop languagelevel 1 ne
+    {false setstrokeadjust false setoverprint} if
+  } if
+} bind def
+
+/EndEPSF {
+  count OpStackSize sub
+  dup 0 lt {neg {pop} repeat} {pop} ifelse
+  countdictstack DictStackSize sub 
+  dup 0 lt {neg {end} repeat} {pop} ifelse
+  EPSFsave restore
+} bind def
+
+% llx lly urx ury
+/EPSFBox {
+  4 dict begin
+  /ury exch def
+  /urx exch def
+  /lly exch def
+  /llx exch def
+  llx lly moveto
+  urx lly lineto
+  urx ury lineto
+  llx ury lineto
+  closepath
+  end
+} def
+
+%%EndProlog
+
+%%Page: 1 1
+
+/pagesave save def
+
+% - main figure ----------------------------------------------
+
+BeginEPSF
+
+% Normally nothing needed here to make coordinate changes for the figure.
+
+%%BeginDocument: [figure filename]
+
+% *** (B) Include text of figure file here.
+
+%%EndDocument
+EndEPSF
+
+% - first label ----------------------------------------------
+
+BeginEPSF
+
+% *** (C) Change the lines below to make coordinate adjustments.
+% (a) Remove comment signs '%'.  
+% (b) Replace x y by first two coordinates of label location within figure
+% (Use ghostview/GSView on the figure to find these with the mouse.)
+% (c) Replace llx lly by first two coordinates of label's BoundingBox
+
+% x y translate
+% -llx -llx translate
+
+%%BeginDocument: [filename]
+
+% *** (D) Include the whole label file here.
+
+%%EndDocument
+EndEPSF
+
+% - more labels ---------------------------------------------
+
+% *** (E) If you want more labels
+% repeat the previous section for each one.
+
+% - finish up ---------------------------------------------
+
+
+pagesave restore showpage
+%%EOF
