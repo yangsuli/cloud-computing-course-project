@@ -1,0 +1,43 @@
+run 6 writes at the same time, each on a slave node (bilbo, aragorn, pippin, gollum) + masters
+
+each write 1GB(1024*1024*1024 bytes)
+
+
+HDFS block size is 64MB (64*1024*1024)
+replica number: 3
+
+network bandwidth: all 1Gbps
+
+
+More info on these writes:
+
+single write durtion: 50968ms
+
+bandwidth is: 20.091037513734108MB/s
+
+Done!
+single write durtion: 53536ms
+
+bandwidth is: 19.127316198445907MB/s
+
+Done!
+single write durtion: 54277ms
+
+bandwidth is: 18.8661864141349MB/s
+
+Done!
+single write durtion: 53774ms
+
+bandwidth is: 19.042660021571763MB/s
+
+Done!
+single write durtion: 51622ms
+
+bandwidth is: 19.836503816202395MB/s
+
+Done!
+single write durtion: 54585ms
+
+bandwidth is: 18.759732527251078MB/s
+
+Done!

@@ -1,0 +1,39 @@
+run 4 reads at the same time, each on a slave node (bilbo, aragorn, pippin, gollum)
+
+each read 1GB(1024*1024*1024 bytes)
+
+
+HDFS block size is 64MB (64*1024*1024)
+replica number: 3
+
+network bandwidth: all 1Gbps
+
+
+More info on these 4 reads:
+---------------------------------------
+single read durtion: 5355 ms
+
+Total read bytes: 1024.0 MBytes
+
+bandwidth is: 191.22315592903828MB/s
+
+
+single read durtion: 5187 ms
+
+Total read bytes: 1024.0 MBytes
+
+bandwidth is: 197.41661846925004MB/s
+
+
+single read durtion: 5349 ms
+
+Total read bytes: 1024.0 MBytes
+
+bandwidth is: 191.43765189755095MB/s
+
+
+single read durtion: 5346 ms
+
+Total read bytes: 1024.0 MBytes
+
+bandwidth is: 191.54508043396933MB/s
