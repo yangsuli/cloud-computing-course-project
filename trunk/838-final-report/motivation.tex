@@ -1,0 +1,71 @@
+\section{A motivating example}
+\label{section:motivation}
+
+Let's look more closely and motivate our work with a more concrete example. 
+For that purpose we will consider GFS \cite{gfs}, and its open source version HDFS. GFS and its variation has been widely adapted in a lot of data centers, and many other storage system, e.g, Microsoft Azure cloud storage \cite{azure-storage}, adopted similar design options with GFS. We will briefly describe how GFS uses network, and identify potential performance boost we could get using an understanding of the nature of the interaction of GFS and network.
+
+A GFS cluster consists of a single master and multiple chunkservers and is accessed by mulitple clients. The size of a GFS cluster could be in order of thousands. Some major GFS network communication include:
+
+\begin{itemize}
+\item{}
+client will ask the master for metadata information and master will reply. The data exchanged this way is typically small 
+%(FIXME: what size typically?)
+
+\item{}
+Master will request chunk location information from chunkservers at startup, and periodically thereafter.
+
+\item{}
+Master will backup its operation log in server backup machines, this will be of moderate size.
+
+\item{}
+Master will grant and renew leases for each active chunk to the chunk servers.
+
+\item{}
+Client will push data to chunk servers to write. The data changeed here is typically large, at least 64M in size in a typical setting.
+
+\item{}
+Chunk server will pipeline this write to different servers for replication, in a chain which is chosen freely by the system. Where to replicate these data is also within control of the system.
+
+\item{}
+Chunk server will transfer data to client when client performs reading. GFS is free to choose from which replica to serve the client. This is typically large, persistent data transfer too. And if data is striped over multiple chunk servers, all the servers will feed the client data in parallel.
+
+\item{}
+Client and chunk servers will exchange control message to ensure ordering in the read/write process, for consistency purpose. These messages are small but delivering them in low latency will be critical for performance.
+
+\item{}
+GFS will do re-replication and rebalancing, either because a replica of a chunk is unavaible, or because some chunkserver is more empty/full than others. Those are also large data transfer, but the speed of this transfer is not critical for system performance.
+
+\item{}
+Master and chunkservers periodically exchange HeartBeat and chunk identication informations.
+
+\end{itemize}
+In this (incomplete) list we can find that GFS use the network for many kinds of communications. Even though some communcations are bandwidth/latency sensitive, e.g, ordering message to coordinate a write, or transferring data which the client is blocking on; some other commnunications are not so critical for the system's performance and longer latency/lower bandwidth, or even postponeing these communications for a while would be acceptable. So if the network know something about the storage system, or could infer these information, it could make more intellegient optimzation decisions. It could give better service to the storage system when it needs high quaity network, and maybe give bandwidth to some other applicttion or even other cloud tenants when the storage system is not very latency/bandwisth sensitive.  And such logic could potentially be realized by a storage-asware network controller in an SDN setting. 
+
+We could also see that the GFS system actually has quite some freedom on how it utilizes network. For example, it could choose where to replicate data upon a write request, how to chain the pipeline, and from which replica (which is in different location in the network) to serve a write, and many more other choices. If the storage system could know something about the current status about the network, e.g., which link is congested, if a high-bandwidth link (say, an optical link) availabe, what's the chance of package loss for a particular nodes, etc.,the storage system could make more optimzed choices too. In particular, Hadoop cluster is often been bottlenecked in the suffling phase. If HDFS could know about this network congestion, it could potentially postpone some of its data transfer for background activities, say, re-replication or chunk migration.
+
+Notice that the above mentioned optimizations are not restricted to GFS, or GFS like storage system. In fact, any modern distributed storage system would have multiple types of communication going on, and will make choices on data placement/replicate choosing, etc. So those knowledges will be usefull for virtually every stroage system in a modern data center.
+
+However, to wisely use the combined knowledge of network and storage system, and leveage the fine-grain control to achieve network/stroage system collabaration, we have some fundamental questions to answer:
+
+\begin{itemize}
+\item {}
+Is it necessary? That is, can we achieve good performance without the neckwork knoledge for a storage system.
+%(I hope the examples give in \ref{section:intro} have convinced you that it is necessary....)
+
+\item {}
+Is it feasible? That is, can we identify some interesting/useful properties of the interaction, which makes the coordination of network/storage an easier problem than it seems to be? Or will collecting those information and changing system behavior according to it too expensive or too hard, so that the performance improvment brought by it is not really worth it?
+
+\item{}
+How useful could it be? That is, if the above optimzation could be impletened, how much performance gain can we get? Could that performance gain justfy the effort put into to realize it?
+
+\end{itemize}
+
+Answering those questions will require a comprehensive understanding of storage/network interaction, and how that interaction changes the behavior of both storage system and network.
+Our project aims at answering these two questions by doing detailed measurement/analysis on storage/network interaction. 
+Hopefully this will bring light to the researchers who are designing storage system or SDS, in terms of how they should use network, how storage/network should interact, and what kind of abstractions should SDN provide to SDS.
+% and maybe come up with novel architeture design.
+
+
+
+
+%GFS reduce network overhead by keep a persistent TCP connection long? Prabablly not very important?

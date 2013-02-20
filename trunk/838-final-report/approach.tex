@@ -1,0 +1,61 @@
+\section{approach}
+\label{sec:approach}
+The basic idea would be closely measuring the behavior/interaction between the storage and network layer, and understand the correlations. We will aslo change different aspect of network, and see how that will (or will not) affect storage performance/behavior.
+
+Ideally, given a current network conditon (say, in a graph G), we want to know the utility function U(G) for storage system (this utility could have muliple dimensions, say, lentency, throughput, IOPS, etc.).Of course, this function will depend on what's going on in the storage system, too. So it is really U(G,S), where G is the network condtion and S is the storage  condition. How to meanfully define U, G and S and build an accurate model might be beyond the scope of this course project, though. So we try to break this know and ask the following questions, all of which would be useful when doing optimizations described in section \ref{section:motivation}.
+
+1. What network traffic is storage system responsible for? What's the charactertics of such traffic (e.g., flow rate distribution and flow duration distribution).
+
+2. When is the storage system senstive to latency/jitter? When is it senstive to bandwidth/throughput? When is it not senstive to the performance of network and we could use the network to do other important stuff? 
+
+3. Can we differiate different kinds of communication in a storage system %(like synchronized reading)
+, either by inferring, or by explictly passing hints; and give different level of QoS to different communications, thus improve performance? (Instrumentation required.)
+
+4. When is I/O the performance bottleneck? And when is network the performance bottleneck? Are those two correlated? Could we do something to better avid those bottlenecks?
+
+5. Is the bursty network traffic correlated with bursty storage activity at the same time? 
+
+
+\subsection {\bf Testbed Setup}
+Ideally, we would like to conduct our measurement in a real data center storage system deployed on a real datacenter network. Since that is not possible, how do we setup our testbed to make sure our results are still relevant? 
+We choose HDFS to study, as it is a typical storage system in many data centers, and it is open sourced. We will deploy HDFS on a 12 nodes network. We plan to run several kinds of workload on WAIL machines to collect traces. Currently we could use up to 12 machines with 3-tier tree topology. We could also change the network topology and the oversubscription factor. 
+
+
+\subsection {\bf Measurement}
+We plan to run a couple of representative Hadoop workloads on HDFS and collect network/storage traces.
+
+On the network level, we plan to collect the link utilization/congestion statistics and the flow charateritics(rate, duration, etc.) of storage traffic, the network topology, traffic matrices and rechability matrices. It is possible to take other network charactetistics into account, like network coding, middleboxes placed within the network, but we defer that into future network. 
+
+Of course, we also need a way to differeiate HDFS traffic from other traffic, and also different kind of communication between HDFS nodes. We plan to instrument HDFS and the Linux network stack so that every packet has a special value in a particular field, indicating whether it is HDFS traffic, and what kind of HDFS traffic it is.
+
+On the storage level, we plan to monitor the disk usage (bandwidth, IOPS), and also record key events happening in HDFS (e.g., when does HDFS accept a write, when does it do block migration.) 
+
+
+\begin{itemize}
+	\item {\bf Metrics and Workloads}
+
+Overall, we care about I/O throughput and latency. We plan to run some synthetic benchmark such as sequential/random read/write, plus some comprehensive cloud storage benchmark e.g. YCSB~\cite{YCSB}.
+
+%We consider some representative Hadoop workloads:
+%1) K-means: CPU intensive
+%2) Terasort: Moderate CPU, Moderate I/O
+%3) Grep: Moderate CPU and small I/O
+%(Ask AA or Remzi: what kind of workload? I think we should start with an I/O intensive workload. But let's ask AA or Remzi for any better insights! Maybe ask AA or Remzi about using traces instead of artificial workloads?)
+	
+%	\item {\bf Scenarios}
+%1) Single workload
+%2) Mixed workload
+
+\end{itemize}
+
+\subsection{\bf Initial Simulations}
+With these traces we collected, we also plan to simulated some potetential optimzations mentioned in section \ref{section:motivation} by replaying these traces in different, network/storage aware style, and measure how each optimzation will affect the system performance.
+
+
+%\begin{comment}
+%After analyzing traces, we expect to come up with some heuristics and conduct initial simulations to demonstrate the benefits of network-aware storage. %%Some of the heuristics we have in mind now are:
+%I think we listed potential optimzations in motivation section, so don't need to repeat here.
+%%1) When reading blocks, if the data locality cannot be met, rather than randomly schedule a map task with the nearest input replica, we could choose a map task with the replica which it could fetch most quickly. When writing blocks, rather than randomly place a replica on a node in remote rack, we may also take how congested the link is into consideration when choosing the replica location/path to the destination.
+ %Put off HDFS block writes. We may put off HDFS writes of some replicas of a block when some links are heavy loaded.
+%\end{comment}
+
