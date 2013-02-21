@@ -4,20 +4,36 @@
 We have instrumented HDFS for application awareness packet tracking on HDFS. The implementation include 3 parts. 
 
 \subsection{Packet marking facility}
-     The ulitmiate goal of this facility is to provide a setTrafficType() call for upper layer to call to set traffic type based on their application level knowledge. 
-      We have choose tos filed in the ip layer  to mark our packets. (Add some explaination why here). We take advantage of Linux's setsockopt system call, which manipulate options for a particular socket. More specifically, when the upper layer asks to set traffic from one particular socket to be a particular type, we set the tos of the socket to be the value we specified to indicate traffic type. This setting will be reflected in the corresponding sock data structure in Linux kernel; and any traffic which this socket is responsible for will later consult this field of sock struct to set the tos field of the packets. Note that this doesn't mean we can only set one type for all the traffic sent from one socket, because setSockType could be called mulitple times on one socket, each time with different traffic type.
-       We then later use tcpdump and other packet tracing/analyzing tools to trace all the packets with the tos field value we set. And based on these packets, we could analyze the traffic characteris of each particular applicaiton level traffic. 
+     The ultimate goal of this facility is to provide a setTrafficType() call for upper layer to call to set traffic type based on their application level knowledge. 
+      We have choose tos filed in the IP layer  to mark our packets, because it has some nice properties. It does not affect the regular TCP transmissions in our network setting,; and it is easy to configure switches so that it could take some special actions (logging, sending copies of packets, or different bandwidth guarantee) based on the value of this field. We could also use some existing tools, such as tcpdump to analyze the tos field in the header. We take advantage of Linux's setsockopt system call, which manipulate options for a particular socket. More specifically, when the upper layer asks to set traffic from one particular socket to be a particular type, we set the tos of the socket to be the value we specified to indicate traffic type. This setting will be reflected in the corresponding sock data structure in Linux kernel; and any traffic which this socket is responsible for will later consult this field of sock struct to set the tos field of the packets. Note that this doesn't mean we can only set one type for all the traffic sent from one socket, because setSockType could be called multiple times on one socket, each time with different traffic type.
+       We then later use tcpdump and other packet tracing/analyzing tools to trace all the packets with the tos field value we set. And based on these packets, we could analyze the traffic characteristics of each particular application level traffic. 
         One difficulty here is that since HDFS is written in Java, and Java doesn't provide a setsockopt library call. We have to use JNI to directly call the Linux system call. 
+
+\begin{table*}
+\centering
+\begin{tabular}{|c|c|} \hline
+Traffic Type & Description\\ \hline
+Unknown & We were not able to recognize this traffic and attribute it to specific storage actions \\ \hline
+Checkpoint & HDFS checkpoint traffic\\ \hline
+Client RPC & RPC calls/responses between HDFS clients and the name node\\ \hline
+DataNode RPC & RPC calls/responses between HDFS data nodes and the name node\\ \hline
+PIPELINED WRITE & The pipelined write between data nodes to make replicas of blocks of data\\ \hline
+READ DATA TRANSFER & Data transfered between the client and data nodes for a read operation\\ \hline
+WRITE DATA TRANSFER & Data transfered between the client and the data nodes for a write operation \\ \hline
+FS IMAGE & File system image transfer to the secondary name node for back-up \\ \hline
+\end{tabular}\label{table:type}
+\caption{Description of each traffic type}
+\end{table*}
 
 \subsection{HDFS instrumentation}
      In this project we directly instrument the HDFS code to call setTrafficType(). In the future, we might implement a compiler which will take the traffic type description, and some annotation in the code indicating traffic type, and automatically inject setTrafficType() call to the application source code. However, due to time constraints, this is deferred as future work. 
-       We have divided HDFS traffic in to 16 categories, shown in Table 1. (Here give a table of description of each traffic type). There are three kinds of data transmission which happens in HDFS.
-     a. a node directly open a socket, connect it to another node, and write/read data to/from it. In this case, we just set traffic type on this socket. 
-     b. Traffic which happens in the form of RPC. We have instrumented the call RPC library to set traffic type upon getting an request to call or respond a remote proceduare call based on function call name. 
-     c. Http traffic. Some traffic inside HDFS takes the form of HTTP data transfer, e.g, 2nd name node download fs image and edit image from a http server primary namenode opens. This kind of traffic is kind of tricky due to the particular implementation detail of Java's http client. When opening an http connection, what we got access is an HttpConnection instance, which is just an abstract class with no socket field. In order to get the socket underlying this HttpConnection, we have to first use reflection to get the actual instance of HttpConnection, which is of a different class type; then use JNI in order to access its priate socket filed. After we get access to the socket, setting traffic type can proceed as usual 
+       We have divided HDFS traffic in to 16 categories, shown in Table \ref{table:type}. There are three kinds of data transmission which happens in HDFS.
+     a. A node directly open a socket, connect it to another node, and write/read data to/from it. In this case, we just set traffic type on this socket. 
+     b. Traffic which happens in the form of RPC. We have instrumented the call RPC library to set traffic type upon getting an request to call or respond a remote procedure call based on function call name. 
+     c. Http traffic. Some traffic inside HDFS takes the form of HTTP data transfer, e.g., 2nd name node download fs image and edit image from a http server primary namenode opens. This kind of traffic is kind of tricky due to the particular implementation detail of Java's http client. When opening an http connection, what we got access is an HttpConnection instance, which is just an abstract class with no socket field. In order to get the socket underlying this HttpConnection, we have to first use reflection to get the actual instance of HttpConnection, which is of a different class type; then use JNI in order to access its pirate socket filed. After we get access to the socket, setting traffic type can proceed as usual 
 
-\subsection{Traffic analyzing utiliy}
-    We use tcpdump and other prgroms to collect all the packets we marked. Then we have developed different tools to analyze these traffic and visualize them. 
+\subsection{Traffic analyzing utility}
+    We use tcpdump and other pogroms to collect all the packets we marked. Then we have developed different tools to analyze these traffic and visualize them. 
 
-Packet instrumentation facility and HDFS instrumentation require roughly 1,500 lines of Java code. But about half of them are just static traffic type defination and RPC method matching. Only half of them actually require coding effort. Traffic analyzing require another 5,00 lines of code, mostly in python. In general, this is a modest change to the current system.
+Packet instrumentation facility and HDFS instrumentation require roughly 1,500 lines of Java code. But about half of them are just static traffic type definition and RPC method matching. Only half of them actually require coding effort. Traffic analyzing require another 5,00 lines of code, mostly in python. In general, this is a modest change to the current system.
 
