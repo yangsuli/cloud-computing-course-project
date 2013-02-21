@@ -9,7 +9,11 @@ import subprocess
 #all_type1 = re.findall(r'(\d+):', str)
 #all_type = [int(d) for d in all_type1 if (d != "0")]
 #print all_type
-
+def key_string(key):
+	key_str=""
+	for s in key:
+		key_str+=str(s)+"_"
+	return key_str
 
 def processOneFile(tcp_file):
 	subprocess.call(['rm', '-rf', tcp_file+'_type'])
@@ -38,7 +42,7 @@ def processOneFile(tcp_file):
 		else:
 			flow_pool[flow_type] = [(flow_des, flow_time, flow_type_size, flow_dur_time, flow_total_size)]
 	for key in flow_pool:
-		fi = open(tcp_file + '_type/' + str(key[0]) + '_' + str(key[1]), 'w')
+		fi = open(tcp_file + '_type/' + key_string(key) + "type", 'w')
 		#fi.write(key.__str__())
 		#fi.write("\n") 
 		#fi.write("\n")
@@ -67,10 +71,10 @@ def main():
 				total_pool[key] = one_pool[key]
 
 	for key in total_pool:
-		fi = open("total_type/" + str(key[0]) + '_' + str(key[1]),'w')
+		fi = open("total_type/" + key_string(key) + "type",'w')
 		for flow in total_pool[key]:
 			for line in flow:
-				print line
+				#print line
 				fi.write(line)
 			fi.write("\n")
 		fi.close()
