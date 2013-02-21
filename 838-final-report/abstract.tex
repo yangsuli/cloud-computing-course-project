@@ -1,12 +1,6 @@
-%\twocolumn[
-%\begin{@twocolumnfalse}
-%\section{Abstract}
-%\maketitle
 \begin{abstract}
 \label{section:abstract}
-In the past several years, cloud computing has gained a lot of attention and lots of applications are now hosted in public cloud. Thus cloud performance becomes of interest to application designers, cloud providers and researchers.
+Storage systems have long been relying on network to deliver its service. However, the interaction between storage systems and network is hardly well understood. In a modern data center setting, with more dynamic network and more fine control offered by software defined network (SDN), understanding this interaction becomes more important.
 
-In this paper, we examined two popular cloud offerings: Amazon AWS and Microsoft Azure. We measured their performance on different aspects: computation, persistent storage and network. We have identified several interest observations coming from our measurement results; and gave some suggestions on how to leverage cloud offerings in an effective way based on our observations.
+In this paper, we examined how HDFS uses network and try to understand the characteristics of the traffic HDFS generates. We have developed a new methodology called application aware packet tracing, which could attribute network traffic to specific application actions which are responsible for the traffic. We have used this tracing technique to understand how the internals of HDFS affects the way it stresses network.
 \end{abstract}
-%\end{@twocolumnfalse}
-%]
