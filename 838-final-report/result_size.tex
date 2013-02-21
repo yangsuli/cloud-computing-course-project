@@ -18,17 +18,16 @@ We have analyzed the flow size for each specific type of flows, and the results 
 %\end{comment}
 
 \begin{figure*}[!htpb]
-\label{fig:read_size}
 \centering
   \begin{subfigure}[b]{.45\linewidth}
    \centering
-	\includegraphics[width=.99\textwidth]{figures/4read/24_28_flow_size.eps} 
+	\includegraphics[width=.99\textwidth]{figures/4read/24_28_type_size.eps} 
 	\caption{RPC between Client and DataNodes}\label{fig:read_size:rpc}
    \end{subfigure}%
   \begin{subfigure}[b]{.45\linewidth}
    \centering
-	\includegraphics[width=.99\textwidth]{figures/4read/8_12_flow_size.eps} 
-	\caption{Should have read data transfer here}\label{fig:read_size:fixme}
+	\includegraphics[width=.99\textwidth]{figures/4read/24_28_20_16_type_size.eps} 
+	\caption{Should have read data transfer here}\label{fig:read_size:nn_rpc}
    \end{subfigure} \\%
   \begin{subfigure}[b]{.55\linewidth}
    \centering
@@ -36,13 +35,13 @@ We have analyzed the flow size for each specific type of flows, and the results 
 	\caption{All Traffic}\label{fig:read_size:all}
    \end{subfigure}%
 \caption{Read Flow Size Distribution}
+\label{fig:read_size}
 \end{figure*}
 
 FXIME: read workload doesn't make sense here, needs to fix it.
 
 
 \begin{figure*}[!htpb]
-\label{fig:write_size}
 \centering
   \begin{subfigure}[b]{.45\linewidth}
    \centering
@@ -70,13 +69,13 @@ FXIME: read workload doesn't make sense here, needs to fix it.
 	\caption{All Traffic}\label{fig:write_size:all}
    \end{subfigure}%
 \caption{Write Flow Size Distribution}
+\label{fig:write_size}
 \end{figure*}
 
 
 The flow size distribution of the write workload shown in figure ~\ref{fig:write_size} revealed some information about HDFS's internal operation. We can see that there are twon kinds of flows, RPC flows, which typically has very small data transferred; and data transfer flows, including the pipelined data transfer between data nodes and the data client writes to the datanodes, which is around 65 MB. This is in compliance with the fact that HDFS has separate flows for RPC calls/responses and data transfers; and data transfer is done in the unit of blocks, which is 64 MB in our configuration. We could also see that less than 5\% of the flows are used for RPC calls to transfer control information, while the majority of the flows are used for data transfer, which is as expected. 
 
 \begin{figure*}[!htpb]
-\label{fig:replica_size}
 \centering
   \begin{subfigure}[b]{.45\linewidth}
    \centering
@@ -94,6 +93,7 @@ The flow size distribution of the write workload shown in figure ~\ref{fig:write
 	\caption{All Traffic}\label{fig:read_size:all}
    \end{subfigure}%
 \caption{Replciation Level Change Flow Size Distribution}
+\label{fig:replica_size}
 \end{figure*}
 
 The flow size distribution of the replication level change workload in figure ~\ref{fig:replica_size} exihibed the same characteristics, except for that we have less data transfers and relatively more control messages. 
