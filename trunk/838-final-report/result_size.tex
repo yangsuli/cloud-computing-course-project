@@ -1,5 +1,5 @@
 \subsection{\bf Flow Size Analysis}
-We have analyzed the flow size for each specific type of flows, and the results are shown in figure \ref{fig:read_size}, \ref{fig:write_size} and \ref{fig:replica_size}.
+We have analyzed the flow size for each specific type of flows, and the results are shown in figure ~\ref{fig:read_size}, ~\ref{fig:write_size} and ~\ref{fig:replica_size}.
 
 
 
@@ -17,7 +17,7 @@ We have analyzed the flow size for each specific type of flows, and the results 
 %\end{figure*}
 %\end{comment}
 
-\begin{figure*}[!ht]
+\begin{figure*}[!htpb]
 \label{fig:read_size}
 \centering
   \begin{subfigure}[b]{.45\linewidth}
@@ -30,7 +30,7 @@ We have analyzed the flow size for each specific type of flows, and the results 
 	\includegraphics[width=.99\textwidth]{figures/4read/8_12_flow_size.eps} 
 	\caption{Should have read data transfer here}\label{fig:read_size:fixme}
    \end{subfigure} \\%
-  \begin{subfigure}[b]{.75\linewidth}
+  \begin{subfigure}[b]{.55\linewidth}
    \centering
 	\includegraphics[width=.99\textwidth]{figures/4read/flow_size.eps}
 	\caption{All Traffic}\label{fig:read_size:all}
@@ -41,7 +41,7 @@ We have analyzed the flow size for each specific type of flows, and the results 
 FXIME: read workload doesn't make sense here, needs to fix it.
 
 
-\begin{figure*}[!ht]
+\begin{figure*}[!htpb]
 \label{fig:write_size}
 \centering
   \begin{subfigure}[b]{.45\linewidth}
@@ -64,7 +64,7 @@ FXIME: read workload doesn't make sense here, needs to fix it.
 	\includegraphics[width=.99\textwidth]{figures/6writes/32_36_type_flow_size.eps} 
 	\caption{Client Data Transfer to DataNodes}\label{fig:write_size:client_write}
    \end{subfigure} \\%
-  \begin{subfigure}[b]{.75\linewidth}
+  \begin{subfigure}[b]{.55\linewidth}
    \centering
 	\includegraphics[width=.99\textwidth]{figures/6writes/flow_size.eps}
 	\caption{All Traffic}\label{fig:write_size:all}
@@ -73,9 +73,9 @@ FXIME: read workload doesn't make sense here, needs to fix it.
 \end{figure*}
 
 
-The flow size distribution of the write workload shown in figure \ref{fig:write_size} revealed some information about HDFS's internal operation. We can see that there are twon kinds of flows, RPC flows, which typically has very small data transferred; and data transfer flows, including the pipelined data transfer between data nodes and the data client writes to the datanodes, which is around 65 MB. This is in compliance with the fact that HDFS has separate flows for RPC calls/responses and data transfers; and data transfer is done in the unit of blocks, which is 64 MB in our configuration. We could also see that less than 5\% of the flows are used for RPC calls to transfer control information, while the majority of the flows are used for data transfer, which is as expected. 
+The flow size distribution of the write workload shown in figure ~\ref{fig:write_size} revealed some information about HDFS's internal operation. We can see that there are twon kinds of flows, RPC flows, which typically has very small data transferred; and data transfer flows, including the pipelined data transfer between data nodes and the data client writes to the datanodes, which is around 65 MB. This is in compliance with the fact that HDFS has separate flows for RPC calls/responses and data transfers; and data transfer is done in the unit of blocks, which is 64 MB in our configuration. We could also see that less than 5\% of the flows are used for RPC calls to transfer control information, while the majority of the flows are used for data transfer, which is as expected. 
 
-\begin{figure*}[!ht]
+\begin{figure*}[!htpb]
 \label{fig:replica_size}
 \centering
   \begin{subfigure}[b]{.45\linewidth}
@@ -88,7 +88,7 @@ The flow size distribution of the write workload shown in figure \ref{fig:write_
 	\includegraphics[width=.99\textwidth]{figures/replica_change/36_32_flow_size.eps} 
 	\caption{Pipelined Writes between DataNodes}\label{fig:replica_size:pipe_write}
    \end{subfigure} \\%
-  \begin{subfigure}[b]{.75\linewidth}
+  \begin{subfigure}[b]{.55\linewidth}
    \centering
 	\includegraphics[width=.99\textwidth]{figures/replica_change/flow_size.eps}
 	\caption{All Traffic}\label{fig:read_size:all}
@@ -96,5 +96,5 @@ The flow size distribution of the write workload shown in figure \ref{fig:write_
 \caption{Replciation Level Change Flow Size Distribution}
 \end{figure*}
 
-The flow size distribution of the replication level change workload in figure \ref{fig:replica_size} exihibed the same characteristics, except for that we have less data transfers and relatively more control messages. 
+The flow size distribution of the replication level change workload in figure ~\ref{fig:replica_size} exihibed the same characteristics, except for that we have less data transfers and relatively more control messages. 
 
