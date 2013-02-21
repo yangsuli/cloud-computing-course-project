@@ -15,7 +15,7 @@ We first run one HDFS client which writes a 1GB file into HDFS on each of the 6 
 We then run four HDFS clients at the same time, one on each slave node (4 nodes in total). Each client will read the 1GB file we just generated on that slave node. HDFS block size is set to 64MB and replica number is 3.
 
 (3) Change the number of replica on the fly
-We then change the number of replicas from 3 to 4 for one 1GB file we just generated in HDFS with command "hadoop dfs -setrep -w 4 the_path_of_the_file"
+We then change the number of replicas from 3 to 4 for one 1GB file we just generated in HDFS with command "hadoop dfs -setrep -w 4 the\_path\_of\_the\_file"
 
 \input{result_size}
 \input{result_duration}
