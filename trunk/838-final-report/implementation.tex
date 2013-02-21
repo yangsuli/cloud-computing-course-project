@@ -9,7 +9,7 @@ We have instrumented HDFS for application awareness packet tracking on HDFS. The
        We then later use tcpdump and other packet tracing/analyzing tools to trace all the packets with the tos field value we set. And based on these packets, we could analyze the traffic characteristics of each particular application level traffic. 
         One difficulty here is that since HDFS is written in Java, and Java doesn't provide a setsockopt library call. We have to use JNI to directly call the Linux system call. 
 
-\begin{table*}
+\begin{table*}[!htpb]
 \centering
 \begin{tabular}{|c|c|} \hline
 Traffic Type & Description\\ \hline
