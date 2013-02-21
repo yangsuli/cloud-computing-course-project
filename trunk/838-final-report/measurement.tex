@@ -3,7 +3,7 @@
 
 
 \subsection{\bf Experiment Setup}
-We set up Hadoop (1.0.4) on 6 nodes which form a two-tier tree topology. We have two machines in each rack and thus have three racks in total. Each machine in a rack connects to a ToR switch and three ToR switches connect to a high-level aggregation switch. The bandwidth of each physical link is 1Gbps. The master(JobTracker and NameNode) and Secondary NameNode are put in the same rack. The hostname and IP address used as well as the functionality each machine takes are as follows:
+We set up Hadoop (1.0.4) with our instrumented version of HDFS on 6 nodes which form a two-tier tree topology. We have two machines in each rack and thus have three racks in total. Each machine in a rack connects to a ToR switch and three ToR switches connect to a high-level aggregation switch. The bandwidth of each physical link is 1Gbps. The master(JobTracker and NameNode) and Secondary NameNode are put in the same rack. The hostname and IP address used as well as the functionality each machine takes are as follows:
 \begin{itemize}
 \item {\bf 1st rack:}
 \\
@@ -25,16 +25,50 @@ aragorn (10.10.101.39)	(TaskTracker and DataNode)
 \end{itemize}
 
 \subsection{\bf Workload Description}
-We run three kinds of workloads and capture the pcap trace on each machine.
+We run three kinds of workloads and use tcpdump to capture the pcap trace on each machine.
 
 (1) Write files to HDFS
 We first run one HDFS client which writes a 1GB file into HDFS on each of the 6 machines at the same time. Each client will write 4KB at one time until it reaches 1GB. HDFS block size is set to 64MB and replica number is 3.
 
+Note since HDFS is designed to optimize stream I/O, it only supports sequential (or append) write right now.
+
 (2) Read
 We then run four HDFS clients at the same time, one on each slave node (4 nodes in total). Each client will read the 1GB file we just generated on that slave node. HDFS block size is set to 64MB and replica number is 3.
 
+Note HDFS only supports sequential read at this moment.
+
 (3) Change the number of replica on the fly
 We then change the number of replicas from 3 to 4 for one 1GB file we just generated in HDFS with command "hadoop dfs -setrep -w 4 the\_path\_of\_the\_file"
+
+\subsection{\bf Completion Time and Write/Read Bandwidth}
+
+The completion time as well as average bandwidth of each HDFS client in write/read experiment is summarized in Table 1 and Table 2.
+
+\begin{table}[!thb]
+\centering
+\begin{tabular}{|c|c|} \hline
+Completion Time & Average Bandwidth\\ \hline
+51.0 sec & 20.1 MB/s\\ \hline
+53.5 sec & 19.1 MB/s\\ \hline
+54.3 sec & 18.9 MB/s\\ \hline
+53.8 sec & 19.0 MB/s\\ \hline
+51.6 sec & 19.8 MB/s\\ \hline
+54.6 sec & 18.8 MB/s\\ \hline
+\end{tabular}\label{t1}
+\caption{Write of 6 HDFS clients}
+\end{table}
+
+\begin{table}[!thb]
+\centering
+\begin{tabular}{|c|c|} \hline
+Completion Time & Average Bandwidth\\ \hline
+5.4 sec & 191.2 MB/s\\ \hline
+5.2 sec & 197.4 MB/s\\ \hline
+5.3 sec & 191.4 MB/s\\ \hline
+5.3 sec & 191.5 MB/s\\ \hline
+\end{tabular}\label{t1}
+\caption{Read of 4 HDFS clients}
+\end{table}
 
 \input{result_size}
 \input{result_duration}
