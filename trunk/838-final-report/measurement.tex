@@ -7,8 +7,15 @@
 Fill experiment setup here.
 
 \subsection{\bf Workload Description}
-We have run three different kinds of workloads: read, write, and replication level change. For read, we have four clients each read 1 GB of data in ...
+We run three kinds of workloads and capture the pcap trace on each machine.
+(1) Write files to HDFS
+We first run one HDFS client which writes a 1GB file into HDFS on each of the 6 machines at the same time. Each client will write 4KB at one time until it reaches 1GB. HDFS block size is set to 64MB and replica number is 3.
 
+(2) Read
+We then run four HDFS clients at the same time, one on each slave node (4 nodes in total). Each client will read the 1GB file we just generated on that slave node. HDFS block size is set to 64MB and replica number is 3.
+
+(3) Change the number of replica on the fly
+We then change the number of replicas from 3 to 4 for one 1GB file we just generated in HDFS with command "hadoop dfs -setrep -w 4 the_path_of_the_file"
 
 \input{result_size}
 \input{result_duration}
