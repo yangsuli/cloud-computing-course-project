@@ -22,8 +22,7 @@ The flow duration distributions for each kind of workloads are shown in figure \
 \label{fig:read_duration}
 \end{figure*}
 
-FXIME: read workload doesn't make sense here, needs to fix it.
-
+Again, we could see in figure \ref{fig:read_duration} that for the read workloads, almost all the flows are long lived RPC flows.
 
 \begin{figure*}[!htbp]
 \centering
@@ -61,7 +60,7 @@ FXIME: read workload doesn't make sense here, needs to fix it.
 \label{fig:write_duration}
 \end{figure*}
 
-For the write workload, we can again see the radical differences between RPC calls/responds flows, which are long lived and shared amoung multiple RPC calls; and data transfer flows, which transfers one block of file data in HDFS in its lifetime. However, we have noticed that the data transfer flows' duration spans a wide range, from less than 2 seconds to more than seven seconds, even though all of them transfer the same amount of data. In order to determine whether this is caused by network congestion or any hotspots within the network, we looked the flow duration on each link of the network, and found that this distribution is not dependent on the network location. Actually flows between any two nodes in our network exhibit the similar duration distribution (results omitted in the interest of space). The time series of the flow duration is also shown in figure \ref{fig:write:time_series}, and we could see periodic spike in the flow duration. We think it could be related to the network condition, but no further information is avaiable to investigate the cause of it.
+For the write workload, we can again see the radical differences between RPC calls/responds flows, which are long lived and shared among multiple RPC calls; and data transfer flows, which transfers one block of file data in HDFS in its lifetime. However, we have noticed that the data transfer flows' duration spans a wide range, from less than 2 seconds to more than seven seconds, even though all of them transfer the same amount of data. In order to determine whether this is caused by network congestion or any hotspots within the network, we looked the flow duration on each link of the network, and found that this distribution is not dependent on the network location. Actually flows between any two nodes in our network exhibit the similar duration distribution (results omitted in the interest of space). The time series of the flow duration is also shown in figure \ref{fig:write:time_series}, and we could see periodic spike in the flow duration. We think it could be related to the network condition, but no further information is available to investigate the cause of it.
 
 \begin{figure*}[!htbp]
 \centering
@@ -84,5 +83,5 @@ For the write workload, we can again see the radical differences between RPC cal
 \label{fig:replica_duration}
 \end{figure*}
 
-The flow duration distribution of the replication level change workload in figure \ref{fig:replica_duration} exihibed the same characteristics, except for that there is fewer data transfered, thus flows are generally shorter. 
+The flow duration distribution of the replication level change workload in figure \ref{fig:replica_duration} exhibit the same characteristics, except for that there is fewer data transfered, thus flows are generally shorter. 
 

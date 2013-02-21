@@ -18,6 +18,7 @@ We have analyzed the flow size for each specific type of flows, and the results 
 %\end{comment}
 
 \begin{figure*}[!htpb]
+%\begin{figure*}[H]
 \centering
   \begin{subfigure}[b]{.45\linewidth}
    \centering
@@ -38,8 +39,7 @@ We have analyzed the flow size for each specific type of flows, and the results 
 \label{fig:read_size}
 \end{figure*}
 
-FXIME: read workload doesn't make sense here, needs to fix it.
-
+From figure \ref{fig:read_size} we could see that for the read workload, all the flows transfer very little data. They are mainly used for RPC calls/responses to transfer control messages. This means that HDFS served all the read locally without using the network. Because HDFS is carefully tuned to place data locally, and serve requests from local nodes whenever possible, this result is expected and actually shows that HDFS does a good job in terms of data locality.
 
 \begin{figure*}[!htpb]
 \centering
@@ -73,7 +73,7 @@ FXIME: read workload doesn't make sense here, needs to fix it.
 \end{figure*}
 
 
-The flow size distribution of the write workload shown in figure ~\ref{fig:write_size} revealed some information about HDFS's internal operation. We can see that there are twon kinds of flows, RPC flows, which typically has very small data transferred; and data transfer flows, including the pipelined data transfer between data nodes and the data client writes to the datanodes, which is around 65 MB. This is in compliance with the fact that HDFS has separate flows for RPC calls/responses and data transfers; and data transfer is done in the unit of blocks, which is 64 MB in our configuration. We could also see that less than 5\% of the flows are used for RPC calls to transfer control information, while the majority of the flows are used for data transfer, which is as expected. 
+The flow size distribution of the write workload shown in figure ~\ref{fig:write_size} revealed some information about HDFS's internal operation. We can see that there are two kinds of flows, RPC flows, which typically has very small data transferred; and data transfer flows, including the pipelined data transfer between data nodes and the data client writes to the data nodes, which is around 65 MB. This is in compliance with the fact that HDFS has separate flows for RPC calls/responses and data transfers; and data transfer is done in the unit of blocks, which is 64 MB in our configuration. We could also see that less than 5\% of the flows are used for RPC calls to transfer control information, while the majority of the flows are used for data transfer, which is as expected. 
 
 \begin{figure*}[!htpb]
 \centering
@@ -96,5 +96,5 @@ The flow size distribution of the write workload shown in figure ~\ref{fig:write
 \label{fig:replica_size}
 \end{figure*}
 
-The flow size distribution of the replication level change workload in figure ~\ref{fig:replica_size} exihibed the same characteristics, except for that we have less data transfers and relatively more control messages. 
+The flow size distribution of the replication level change workload in figure ~\ref{fig:replica_size} exhibited the same characteristics, except for that we have less data transfers and relatively more control messages. 
 
