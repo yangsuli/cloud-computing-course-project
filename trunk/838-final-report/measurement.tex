@@ -3,7 +3,7 @@
 
 
 \subsection{\bf Experiment Setup}
-We set up Hadoop (1.0.4) on 6 nodes which form a two-tier tree topology. We have two machines in each rack and thus have three racks in total. Each machine in a rack connects to a ToR switch and three ToR switches connect to a high-level aggregation switch. The master(JobTracker and NameNode) and Secondary NameNode are put in the same rack. The hostname and IP address used as well as the functionality each machine takes are as follows:
+We set up Hadoop (1.0.4) on 6 nodes which form a two-tier tree topology. We have two machines in each rack and thus have three racks in total. Each machine in a rack connects to a ToR switch and three ToR switches connect to a high-level aggregation switch. The bandwidth of each physical link is 1Gbps. The master(JobTracker and NameNode) and Secondary NameNode are put in the same rack. The hostname and IP address used as well as the functionality each machine takes are as follows:
 \begin{itemize}
 \item {\bf 1st rack:}
 \\
@@ -26,6 +26,7 @@ aragorn (10.10.101.39)	(TaskTracker and DataNode)
 
 \subsection{\bf Workload Description}
 We run three kinds of workloads and capture the pcap trace on each machine.
+
 (1) Write files to HDFS
 We first run one HDFS client which writes a 1GB file into HDFS on each of the 6 machines at the same time. Each client will write 4KB at one time until it reaches 1GB. HDFS block size is set to 64MB and replica number is 3.
 
