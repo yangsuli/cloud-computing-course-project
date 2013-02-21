@@ -3,8 +3,26 @@
 
 
 \subsection{\bf Experiment Setup}
+We set up Hadoop (1.0.4) on 6 nodes which form a two-tier tree topology. We have two machines in each rack and thus have three racks in total. Each machine in a rack connects to a ToR switch and three ToR switches connect to a high-level aggregation switch. The master(JobTracker and NameNode) and Secondary NameNode are put in the same rack. The hostname and IP address used as well as the functionality each machine takes are as follows:
+\begin{itemize}
+\item {\bf 1st rack:}
+\\
+frodo (10.10.101.34) (JobTracker and NameNode)
 
-Fill experiment setup here.
+boromir (10.10.101.34) (Secondary NameNode)
+
+\item {\bf 2nd rack:}
+\\
+gollum (10.10.101.35) (TaskTracker and DataNode)
+
+bilbo (10.10.101.36)	(TaskTracker and DataNode)
+
+\item {\bf 3rd rack:}
+\\
+pippin (10.10.101.37)	(TaskTracker and DataNode)
+
+aragorn (10.10.101.39)	(TaskTracker and DataNode)
+\end{itemize}
 
 \subsection{\bf Workload Description}
 We run three kinds of workloads and capture the pcap trace on each machine.
